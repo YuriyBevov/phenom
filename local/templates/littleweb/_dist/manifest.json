@@ -1,0 +1,17 @@
+{
+  "local/templates/littleweb/_src/js/index.js": {
+    "file": "template_scripts.l0sNRNKZ.js",
+    "name": "script",
+    "src": "local/templates/littleweb/_src/js/index.js",
+    "isEntry": true
+  },
+  "local/templates/littleweb/_src/scss/template.scss": {
+    "file": "template_styles.C4f79RQd.css",
+    "src": "local/templates/littleweb/_src/scss/template.scss",
+    "isEntry": true,
+    "name": "template",
+    "names": [
+      "template.css"
+    ]
+  }
+}

@@ -13,7 +13,8 @@ lerna-debug.log*
 /cache/
 /node_modules/
 /.vscode/
-.access.php
+
+create-project.js
 
 /workup.php
 

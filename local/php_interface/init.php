@@ -17,11 +17,11 @@ require_once $includesPath . 'core.php';
 require_once $includesPath . 'debug.php';
 
 // Подключаю глобальные стили и скрипты
-EventManager::getInstance()->addEventHandler(
-  'main',
-  'OnPageStart',
-  function () {
-    includeGlobalAssets();
-    initBitrixCore('popup');
-  }
-);
+// EventManager::getInstance()->addEventHandler(
+//   'main',
+//   'OnPageStart',
+//   function () {
+//     includeGlobalAssets();
+//     initBitrixCore('popup');
+//   }
+// );

@@ -1,0 +1,45 @@
+@use "@scss/base/container-queries" as *;
+@use "@scss/mixins" as *;
+
+.brands {
+	container: brands / inline-size;
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+		gap: 20px;
+
+		&-item {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.brand-preview-card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	outline: 1px solid red;
+
+	&__header {
+		border-radius: 16px;
+		background-color: var(--white);
+
+		img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1/1;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+
+		.text {
+			@include line-clamp(3);
+		}
+	}
+}

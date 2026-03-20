@@ -1,4 +1,6 @@
+@use "@scss/base/container-queries" as *;
 
-	@use "@scss/base/container-queries" as *;
-
-	.header {}
+.header {
+	min-height: 240px; //TEMP
+	background-color: var(--white);
+}

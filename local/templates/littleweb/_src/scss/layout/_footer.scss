@@ -1,4 +1,6 @@
+@use "@scss/base/container-queries" as *;
 
-	@use "@scss/base/container-queries" as *;
-
-	.footer {}
+.footer {
+	min-height: 440px; //TEMP
+	background-color: var(--white);
+}

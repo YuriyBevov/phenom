@@ -1,4 +1,8 @@
 {
+  "_pagination-Cu-0E_eX.js": {
+    "file": "assets/pagination-Cu-0E_eX.js",
+    "name": "pagination"
+  },
   "local/templates/littleweb/_src/js/index.js": {
     "file": "template_scripts.l0sNRNKZ.js",
     "name": "script",
@@ -6,12 +10,48 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.C4f79RQd.css",
+    "file": "template_styles.DGpOEP0-.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
     "names": [
       "template.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/brands/_src/js/index.js": {
+    "file": "components/bitrix/news.list/brands/script.CWht4cbn.js",
+    "name": "bitrix_news_list_brands_js",
+    "src": "local/templates/littleweb/components/bitrix/news.list/brands/_src/js/index.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-Cu-0E_eX.js"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/brands/style.BuQJehMO.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_brands_scss",
+    "names": [
+      "bitrix_news_list_brands_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js": {
+    "file": "components/bitrix/news.list/top-banner/script.CWht4cbn.js",
+    "name": "bitrix_news_list_top-banner_js",
+    "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js",
+    "isEntry": true,
+    "imports": [
+      "_pagination-Cu-0E_eX.js"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/top-banner/style.B-ECqOXf.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_top-banner_scss",
+    "names": [
+      "bitrix_news_list_top-banner_scss.css"
     ]
   }
 }

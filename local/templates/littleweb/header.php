@@ -10,8 +10,18 @@
 
   <? $APPLICATION->ShowHead(); ?>
   <title><? $APPLICATION->ShowTitle() ?></title>
+
+  <?
+  includeGlobalAssets();
+  initBitrixCore('popup');
+  ?>
 </head>
 
 <body>
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
-  <main class="workarea">
+  <header class="header">
+    <div class="container">
+      HEADER
+    </div>
+  </header>
+  <main id="workarea">

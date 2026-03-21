@@ -1,1 +1,1 @@
-
+import "./modules/swiper-instance";

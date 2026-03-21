@@ -1,7 +1,5 @@
 :root {
-	--primary-font: ;
-	--secondary-font: ;
-
+	--primary-font: "HelveticaNeueCyr", sans-serif;
 	--content-width: 1500px;
 	--container-offset: clamp(10px, 2vw, 60px);
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -13,14 +11,14 @@
 
 	--black: #000000;
 	--white: #ffffff;
-	--primary: #2b519d;
-	--secondary: #f8f8f8;
-	--warning: #f5c542;
-	--danger: #e63e3e;
-	--success: #42c486;
-	--info: #fff8db;
-	--dark: #222222;
-	--light: #f4f4f4;
+	// --primary: #2b519d;
+	// --secondary: #f8f8f8;
+	// --warning: #f5c542;
+	--danger: #d90429;
+	// --success: #42c486;
+	// --info: #fff8db;
+	--dark: #2b2d42;
+	--light: #b5b5b5;
 
 	--scrollbar-color: var(--secondary);
 	--scrollbar-width: 10px;

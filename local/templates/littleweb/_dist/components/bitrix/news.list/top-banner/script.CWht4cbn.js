@@ -1,2 +1,0 @@
-import{S as o,N as i,P as a}from"../../../../assets/pagination-Cu-0E_eX.js";o.use([i,a]);const e=document.querySelector(".top-banner .swiper");if(e){const t=e.parentNode.querySelector(".swiper-btn--prev"),r=e.parentNode.querySelector(".swiper-btn--next"),n=e.parentNode.querySelector(".swiper-pagination");console.log(n),new o(e,{slidesPerView:1,spaceBetween:24,navigation:{nextEl:r||null,prevEl:t||null},pagination:{el:n||null,clickable:!0}})}
-//# sourceMappingURL=script.CWht4cbn.js.map

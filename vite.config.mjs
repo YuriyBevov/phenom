@@ -1,4 +1,3 @@
-
 // vite.config.mjs
 
 import { defineConfig } from "vite";
@@ -296,6 +295,7 @@ const getCssOutputPath = (fileName) => {
 // Основная конфигурация
 export default defineConfig({
 	base: `${BASE_PATH}/_dist/`,
+	publicDir: path.resolve(__dirname, `${TEMPLATE_PATH}/_src/public`), // Файлы отсюда будут скопированы в _dist как есть
 
 	plugins: [
 		vue(),
@@ -335,11 +335,12 @@ export default defineConfig({
 
 			output: {
 				// Обработка JS-файлов
+				// format: "es",
 				entryFileNames: (chunkInfo) => {
 					const name = chunkInfo.name;
 
 					if (name === "script") {
-						return `template_scripts.[hash].js`;
+						return `template_scripts.[hash].mjs`;
 					}
 
 					if (name.endsWith("_js")) {
@@ -391,6 +392,8 @@ export default defineConfig({
 
 		outDir: DIST_PATH,
 		emptyOutDir: true,
+		copyPublicDir: true,
+		// minify: "esbuild",
 	},
 
 	resolve: {
@@ -399,6 +402,7 @@ export default defineConfig({
 			"@scss": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/scss`),
 			"@img": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/images`),
 			"@fonts": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/fonts`),
+			"@public": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/public`),
 			"@vue-components": path.resolve(
 				__dirname,
 				`${TEMPLATE_PATH}/_src/vue-components`,

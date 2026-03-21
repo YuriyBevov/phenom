@@ -8,4 +8,7 @@
 	}
 }
 
-@include font-face("Roboto", "Roboto-Regular", 400, normal);
+@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Light", 300, normal);
+@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Regular", 400, normal);
+@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Medium", 500, normal);
+@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Bold", 700, normal);

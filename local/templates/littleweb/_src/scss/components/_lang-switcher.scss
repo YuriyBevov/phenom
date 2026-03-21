@@ -1,0 +1,23 @@
+.lang-switcher {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 16px;
+	background-color: rgba(237, 242, 244, 0.2);
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 6px;
+		font-size: 12px;
+		font-weight: 500;
+		text-transform: uppercase;
+		border-radius: 16px;
+		min-width: 40px;
+
+		&.active {
+			background-color: white;
+		}
+	}
+}

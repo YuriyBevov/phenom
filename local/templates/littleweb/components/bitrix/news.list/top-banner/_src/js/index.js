@@ -1,5 +1,6 @@
 const slider = document.querySelector(".top-banner .swiper");
 
+console.log("TOP-BANNER JS", Swiper);
 if (slider) {
 	const btnPrev = slider.parentNode.querySelector(".swiper-btn--prev");
 	const btnNext = slider.parentNode.querySelector(".swiper-btn--next");

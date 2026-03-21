@@ -340,7 +340,7 @@ export default defineConfig({
 					const name = chunkInfo.name;
 
 					if (name === "script") {
-						return `template_scripts.[hash].mjs`;
+						return `template_scripts.[hash].js`;
 					}
 
 					if (name.endsWith("_js")) {

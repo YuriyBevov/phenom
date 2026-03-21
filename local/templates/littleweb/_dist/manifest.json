@@ -16,7 +16,7 @@
     "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Regular.woff2"
   },
   "local/templates/littleweb/_src/js/index.js": {
-    "file": "template_scripts.Bzxn_q48.mjs",
+    "file": "template_scripts.Bzxn_q48.js",
     "name": "script",
     "src": "local/templates/littleweb/_src/js/index.js",
     "isEntry": true
@@ -46,7 +46,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js": {
-    "file": "components/bitrix/news.list/top-banner/script.C6NAGyga.js",
+    "file": "components/bitrix/news.list/top-banner/script.BcoAJ_Rq.js",
     "name": "bitrix_news_list_top-banner_js",
     "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js",
     "isEntry": true

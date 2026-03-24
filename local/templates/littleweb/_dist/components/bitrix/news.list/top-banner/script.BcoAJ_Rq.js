@@ -1,2 +1,0 @@
-const e=document.querySelector(".top-banner .swiper");console.log("TOP-BANNER JS",Swiper);if(e){const t=e.parentNode.querySelector(".swiper-btn--prev"),r=e.parentNode.querySelector(".swiper-btn--next"),n=e.parentNode.querySelector(".swiper-pagination");console.log(n),new Swiper(e,{slidesPerView:1,spaceBetween:24,navigation:{nextEl:r||null,prevEl:t||null},pagination:{el:n||null,clickable:!0}})}
-//# sourceMappingURL=script.BcoAJ_Rq.js.map

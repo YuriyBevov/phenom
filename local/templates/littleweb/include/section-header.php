@@ -1,7 +1,7 @@
-<div class="section-header">
+<div class="section-header <?= $arParams["CLASS"] ? $arParams["CLASS"] : '' ?>">
   <div class="section-header-row">
     <h2 class="title"><?= $arParams["TITLE"] ?></h2>
-    <? if ($arParams["DETAIL_LINK"] !== ""): ?>
+    <? if ($arParams["DETAIL_LINK"] && $arParams["DETAIL_LINK"] !== ""): ?>
       <a href="<?= $arParams["DETAIL_LINK"] ?>">
         <?= $arParams["DETAIL_LINK_TEXT"]  ? $arParams["DETAIL_LINK_TEXT"] : 'Смотреть все' ?>
       </a>

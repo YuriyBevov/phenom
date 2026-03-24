@@ -1,7 +1,6 @@
 @use "@scss/base/container-queries" as *;
 
 .header {
-	min-height: 240px; //TEMP
 	background-color: var(--white);
 
 	&__row {

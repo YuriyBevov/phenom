@@ -69,6 +69,44 @@ $APPLICATION->SetTitle("Phenom.su");
 	false
 ); ?>
 
+<?
+// Категории товаров
+$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"category-list",
+	array(
+		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "Y",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "sectionsFilter",
+		"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array(
+			0 => "PICTURE",
+			1 => "UF_*",
+			2 => "",
+		),
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_URL" => "/catalog/#SECTION_CODE_PATH#/",
+		"SECTION_USER_FIELDS" => array(
+			0 => "UF_IS_TOP_CAT",
+			1 => "",
+		),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "4",
+		"VIEW_MODE" => "LINE",
+		"COMPONENT_TEMPLATE" => "category-list"
+	),
+	false
+); ?>
+
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"brands",
@@ -132,6 +170,73 @@ $APPLICATION->SetTitle("Phenom.su");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
+
+<? $APPLICATION->IncludeComponent(
+	"bitrix:catalog.top", 
+	"catalog-top", 
+	array(
+		"IBLOCK_TYPE" => "products",
+		"IBLOCK_ID" => "2",
+		"ELEMENT_SORT_FIELD" => "shows",
+		"ELEMENT_SORT_ORDER" => "desc",
+		"ELEMENT_SORT_FIELD2" => "active_from",
+		"ELEMENT_SORT_ORDER2" => "asc",
+		"SECTION_URL" => "/catalog/#SECTION_CODE_PATH#/",
+		"DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+		"BASKET_URL" => "/personal/basket.php",
+		"ACTION_VARIABLE" => "action",
+		"PRODUCT_ID_VARIABLE" => "id",
+		"SECTION_ID_VARIABLE" => "SECTION_ID",
+		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
+		"PRODUCT_PROPS_VARIABLE" => "prop",
+		"DISPLAY_COMPARE" => "N",
+		"ELEMENT_COUNT" => "12",
+		"LINE_ELEMENT_COUNT" => "4",
+		"PROPERTY_CODE" => "",
+		"PRICE_CODE" => array(
+			0 => "PRICE",
+		),
+		"USE_PRICE_COUNT" => "N",
+		"SHOW_PRICE_COUNT" => "1",
+		"PRICE_VAT_INCLUDE" => "Y",
+		"CONVERT_CURRENCY" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"COMPONENT_TEMPLATE" => "catalog-top",
+		"FILTER_NAME" => "",
+		"OFFERS_LIMIT" => "5",
+		"VIEW_MODE" => "SECTION",
+		"TEMPLATE_THEME" => "blue",
+		"ADD_PICT_PROP" => "-",
+		"LABEL_PROP" => "",
+		"ROTATE_TIMER" => "30",
+		"SHOW_PAGINATION" => "Y",
+		"PRODUCT_SUBSCRIPTION" => "Y",
+		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'3','BIG_DATA':false},{'VARIANT':'3','BIG_DATA':false},{'VARIANT':'3','BIG_DATA':false}]",
+		"ENLARGE_PRODUCT" => "STRICT",
+		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+		"SHOW_SLIDER" => "Y",
+		"MESS_BTN_BUY" => "Купить",
+		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
+		"MESS_BTN_DETAIL" => "Подробнее",
+		"MESS_NOT_AVAILABLE" => "Нет в наличии",
+		"MESS_NOT_AVAILABLE_SERVICE" => "Недоступно",
+		"SEF_MODE" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_FILTER" => "N",
+		"USE_PRODUCT_QUANTITY" => "N",
+		"ADD_PROPERTIES_TO_BASKET" => "N",
+		"PARTIAL_PRODUCT_PROPERTIES" => "N",
+		"MESS_BTN_COMPARE" => "Сравнить",
+		"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"COMPATIBLE_MODE" => "N",
+		"SLIDER_INTERVAL" => "3000",
+		"SLIDER_PROGRESS" => "N",
+		"COMPARE_PATH" => ""
 	),
 	false
 ); ?>

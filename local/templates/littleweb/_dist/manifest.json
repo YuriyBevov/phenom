@@ -22,12 +22,30 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.BBoSjZeA.css",
+    "file": "template_styles.DeJ9rwIW.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
     "names": [
       "template.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/catalog.section.list/category-list/_src/scss/index.scss": {
+    "file": "components/bitrix/catalog.section.list/category-list/style.D-OakIue.css",
+    "src": "local/templates/littleweb/components/bitrix/catalog.section.list/category-list/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_catalog_section_list_category-list_scss",
+    "names": [
+      "bitrix_catalog_section_list_category-list_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/catalog.top/catalog-top/_src/scss/index.scss": {
+    "file": "components/bitrix/catalog.top/catalog-top/style.CzawiWwk.css",
+    "src": "local/templates/littleweb/components/bitrix/catalog.top/catalog-top/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_catalog_top_catalog-top_scss",
+    "names": [
+      "bitrix_catalog_top_catalog-top_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/brands/_src/js/index.js": {
@@ -37,7 +55,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/brands/style.BuQJehMO.css",
+    "file": "components/bitrix/news.list/brands/style.nUKTwpb2.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_brands_scss",
@@ -46,7 +64,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js": {
-    "file": "components/bitrix/news.list/top-banner/script.BcoAJ_Rq.js",
+    "file": "components/bitrix/news.list/top-banner/script.BVTf9Abx.js",
     "name": "bitrix_news_list_top-banner_js",
     "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js",
     "isEntry": true

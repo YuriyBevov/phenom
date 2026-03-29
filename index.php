@@ -175,8 +175,8 @@ $APPLICATION->IncludeComponent(
 ); ?>
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:catalog.top", 
-	"catalog-top", 
+	"bitrix:catalog.top",
+	"catalog-top",
 	array(
 		"IBLOCK_TYPE" => "products",
 		"IBLOCK_ID" => "2",
@@ -195,7 +195,12 @@ $APPLICATION->IncludeComponent(
 		"DISPLAY_COMPARE" => "N",
 		"ELEMENT_COUNT" => "12",
 		"LINE_ELEMENT_COUNT" => "4",
-		"PROPERTY_CODE" => "",
+		"PROPERTY_CODE" => array(
+			"PRICE",
+			"PRICE_CURRENCY",
+			"MIN_COUNT",
+			"DISCOUNT"
+		),
 		"PRICE_CODE" => array(
 			0 => "PRICE",
 		),

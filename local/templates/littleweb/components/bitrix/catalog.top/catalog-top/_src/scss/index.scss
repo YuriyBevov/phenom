@@ -4,11 +4,7 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
 		gap: 32px 20px;
-
-		&-item {
-		}
 	}
 }
 
@@ -59,10 +55,31 @@
 		@include line-clamp(2);
 	}
 
+	&__discount {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
 	&__price {
 		font-size: clamp(18px, 3.2vw, 24px);
 		line-height: 1;
 		font-weight: 700;
+
+		&-default {
+			font-size: 14px;
+		}
+
+		&-old {
+			text-decoration: line-through;
+			color: var(--light);
+		}
+
+		&-currency {
+			font-size: 16px;
+			font-weight: 400;
+			color: var(--dark);
+		}
 
 		small {
 			font-size: 14px;
@@ -91,5 +108,9 @@
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 1;
+	}
+
+	&--warning {
+		background-color: var(--warning);
 	}
 }

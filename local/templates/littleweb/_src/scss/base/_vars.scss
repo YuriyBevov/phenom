@@ -1,5 +1,5 @@
 :root {
-	--primary-font: "HelveticaNeueCyr", sans-serif;
+	--primary-font: "Arial", sans-serif;
 	--content-width: 1500px;
 	--container-offset: clamp(10px, 2vw, 60px);
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -13,7 +13,7 @@
 	--white: #ffffff;
 	// --primary: #2b519d;
 	// --secondary: #f8f8f8;
-	// --warning: #f5c542;
+	--warning: #f5a458;
 	--danger: #d90429;
 	// --success: #42c486;
 	// --info: #fff8db;

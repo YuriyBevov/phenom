@@ -6,12 +6,19 @@
 
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
 		gap: 20px;
 
 		&-item {
 			width: 100%;
 			height: 100%;
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		&-slide {
+			max-width: 180px;
 		}
 	}
 }

@@ -1,0 +1,26 @@
+.swiper-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 44px;
+	height: 44px;
+
+	background: var(--white);
+	border-radius: 16px;
+	border: 1px solid var(--light);
+	cursor: pointer;
+
+	svg {
+		fill: var(--light);
+	}
+
+	&--next {
+	}
+
+	&--prev {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+}

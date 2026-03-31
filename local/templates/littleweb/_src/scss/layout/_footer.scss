@@ -1,6 +1,48 @@
 @use "@scss/base/container-queries" as *;
 
 .footer {
-	min-height: 440px; //TEMP
-	background-color: var(--white);
+	container: footer / inline-size;
+	&__section {
+		&--main {
+			padding: clamp(24px, 4vw, 64px) 0;
+
+			.container {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 24px;
+
+				@include container-up("footer", 534px) {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				@include container-up("footer", 960px) {
+					grid-template-columns: repeat(4, 1fr);
+				}
+			}
+		}
+
+		&--bottom {
+			padding: 16px 0;
+			background-color: var(--gray);
+
+			.container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 24px;
+
+				a,
+				small {
+					font-size: 12px;
+					font-weight: 400;
+					color: var(--light);
+				}
+
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	// background-color: var(--white);
 }

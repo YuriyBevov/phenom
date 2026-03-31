@@ -40,17 +40,16 @@ $this->setFrameMode(true);
 
 							<div class="product-card__body">
 
-								<div class="label">
-									<svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-										<use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-cube'></use>
-									</svg>
-									<? if ($arItem["PROPERTIES"]["MIN_COUNT"]["VALUE"]): ?>
-										<span><?= $arItem["PROPERTIES"]["MIN_COUNT"]["VALUE"] ?>&nbsp;шт.</span>
-									<? else: ?>
-										<span>120&nbsp;шт.</span>
-									<? endif; ?>
-								</div>
+								<? if ($arItem["PROPERTIES"]["MIN_COUNT"]["VALUE"]): ?>
+									<div class="label">
+										<svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
+											<use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-cube'></use>
+										</svg>
 
+										<span><?= $arItem["PROPERTIES"]["MIN_COUNT"]["VALUE"] ?>&nbsp;шт.</span>
+
+									</div>
+								<? endif; ?>
 								<? if ($hasDiscount): ?>
 									<div class="product-card__discount">
 										<div class="label label--warning">

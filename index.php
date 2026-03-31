@@ -108,6 +108,26 @@ $APPLICATION->IncludeComponent(
 ); ?>
 
 <? $APPLICATION->IncludeComponent(
+	"bitrix:form.result.list",
+	"littleweb",
+	array(
+		"CHAIN_ITEM_LINK" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"EDIT_URL" => "",
+		"NAME_TEMPLATE" => "",
+		"NEW_URL" => "",
+		"NOT_SHOW_FILTER" => array("", ""),
+		"NOT_SHOW_TABLE" => array("", ""),
+		"SEF_MODE" => "N",
+		"SHOW_ADDITIONAL" => "N",
+		"SHOW_ANSWER_VALUE" => "N",
+		"SHOW_STATUS" => "Y",
+		"VIEW_URL" => "",
+		"WEB_FORM_ID" => "1"
+	)
+); ?>
+
+<? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"brands",
 	array(
@@ -123,7 +143,7 @@ $APPLICATION->IncludeComponent(
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
+		"DETAIL_URL" => "/brands/#ELEMENT_CODE#/",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
@@ -155,7 +175,6 @@ $APPLICATION->IncludeComponent(
 		"PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
-			2 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -169,7 +188,8 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "brands",
+		"USE_SLIDER" => "Y"
 	),
 	false
 ); ?>
@@ -193,13 +213,13 @@ $APPLICATION->IncludeComponent(
 		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"DISPLAY_COMPARE" => "N",
-		"ELEMENT_COUNT" => "12",
+		"ELEMENT_COUNT" => "16",
 		"LINE_ELEMENT_COUNT" => "4",
 		"PROPERTY_CODE" => array(
-			"PRICE",
-			"PRICE_CURRENCY",
-			"MIN_COUNT",
-			"DISCOUNT"
+			0 => "PRICE",
+			1 => "PRICE_CURRENCY",
+			2 => "MIN_COUNT",
+			3 => "DISCOUNT",
 		),
 		"PRICE_CODE" => array(
 			0 => "PRICE",

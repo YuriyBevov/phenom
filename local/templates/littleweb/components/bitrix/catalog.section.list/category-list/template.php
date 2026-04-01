@@ -10,8 +10,11 @@ $this->setFrameMode(true);
       $APPLICATION->IncludeFile(
         SITE_TEMPLATE_PATH . '/include/section-header.php',
         array(
-          'CLASS' => "visually-hidden",
-          'TITLE' =>  "Популярные категории"
+          // 'CLASS' => "visually-hidden",
+          'TITLE' =>  "Популярные разделы",
+          'DESCRIPTION' => $arResult["DESCRIPTION"],
+          'DETAIL_LINK' => '/catalog/',
+          'DETAIL_LINK_TEXT' => "Смотреть все"
         ),
         array('MODE' => 'html', 'NAME' => 'шапку раздела', 'SHOW_BORDER' => false)
       );

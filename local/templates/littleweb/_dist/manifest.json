@@ -22,7 +22,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.BkApSYps.css",
+    "file": "template_styles.-l0PTmDw.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -55,6 +55,15 @@
     "name": "bitrix_form_result_list_littleweb_scss",
     "names": [
       "bitrix_form_result_list_littleweb_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/form.result.new/littleweb/_src/scss/index.scss": {
+    "file": "components/bitrix/form.result.new/littleweb/style.yQT1bfGO.css",
+    "src": "local/templates/littleweb/components/bitrix/form.result.new/littleweb/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_form_result_new_littleweb_scss",
+    "names": [
+      "bitrix_form_result_new_littleweb_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss": {

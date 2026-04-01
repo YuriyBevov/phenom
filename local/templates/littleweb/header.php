@@ -72,9 +72,11 @@
             <span>Каталог</span>
           </button>
           <div class="search-title">
-            <label class="main-input-wrapper">
-              <input type="text" class="main-input" placeholder="Поиск">
-            </label>
+            <div class="main-input-wrapper">
+              <label>
+                <input type="text" class="main-input" placeholder="Поиск">
+              </label>
+            </div>
             <button aria-label="Поиск">
               <svg width='16' height='16' role='img' aria-hidden='true' focusable='false'>
                 <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>

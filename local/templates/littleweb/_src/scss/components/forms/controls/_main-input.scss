@@ -1,0 +1,33 @@
+@use "@scss/extends";
+.main-input-wrapper {
+	&:not(:has(input[type="submit"])) {
+		border: 1px solid var(--light);
+		border-radius: 4px;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	input:not([type="submit"]) {
+		@extend %form-input;
+
+		&::placeholder {
+			@extend %form-input-placeholder;
+		}
+	}
+
+	&.invalid-fld {
+		input {
+			border-color: var(--danger);
+		}
+	}
+
+	input[type="submit"] {
+		color: var(--white);
+		background-color: var(--primary);
+		width: 100%;
+	}
+}

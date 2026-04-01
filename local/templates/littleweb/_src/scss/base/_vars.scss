@@ -1,5 +1,5 @@
 :root {
-	--primary-font: "Arial", sans-serif;
+	--primary-font: "Arial", sans-serif; //HelveticaNeueCyr
 	--content-width: 1500px;
 	--container-offset: clamp(10px, 2vw, 60px);
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));

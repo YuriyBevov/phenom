@@ -1,7 +1,13 @@
 @use "./main-btn";
 @use "./iconed-btn";
-@use "./main-input";
+
 @use "./currency-label";
 @use "./lang-switcher";
 @use "./label";
 @use "./swiper";
+
+// form controls
+@use "./forms/controls/main-input";
+@use "./forms/controls/main-textarea";
+
+@use "./forms/partials/captcha-block";

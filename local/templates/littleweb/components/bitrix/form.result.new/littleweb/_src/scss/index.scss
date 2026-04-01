@@ -1,0 +1,41 @@
+.request {
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+}
+
+.request-form {
+	width: 100%;
+	max-width: 640px;
+	// padding: clamp(16px, 3.2vw, 32px);
+	// border-radius: 16px;
+	// border: 1px solid var(--light);
+	margin: 0 auto;
+
+	&__header {
+		margin-bottom: 32px;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+
+		*:first-child,
+		.main-checkbox-wrapper,
+		.main-textarea-wrapper {
+			grid-column: -1/1;
+		}
+	}
+
+	.captcha-block {
+		margin: 12px 0;
+	}
+}

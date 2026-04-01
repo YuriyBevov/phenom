@@ -1,0 +1,29 @@
+@use "@scss/extends";
+
+.main-textarea-wrapper {
+	border: 1px solid var(--light);
+	border-radius: 4px;
+	label {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	textarea {
+		width: 100%;
+		resize: none;
+
+		@extend %form-input;
+
+		&::placeholder {
+			@extend %form-input-placeholder;
+		}
+	}
+
+	&.invalid-fld {
+		textarea {
+			border-color: var(--danger);
+			animation: shaker var(--main-transition);
+		}
+	}
+}

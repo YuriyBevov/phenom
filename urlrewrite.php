@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/products/index.php',
     'SORT' => 100,
   ),
+  4 => 
+  array (
+    'CONDITION' => '#^/requests/#',
+    'RULE' => '',
+    'ID' => 'bitrix:iblock.element.add.form',
+    'PATH' => '/workup.php',
+    'SORT' => 100,
+  ),
   3 => 
   array (
     'CONDITION' => '#^/catalog/#',

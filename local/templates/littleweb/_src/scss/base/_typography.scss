@@ -46,3 +46,8 @@ p {
 	text-transform: uppercase;
 	color: var(--dark);
 }
+
+.subtitle {
+	font-size: clamp(18px, 2.4vw, 24px);
+	font-weight: 600;
+}

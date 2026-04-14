@@ -25,9 +25,21 @@
 
 						<div class="grid">
 							<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
+
+
 								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "text"): ?>
 									<div class="main-input-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
 										<label>
+											<?= $arQuestion["HTML_CODE"] ?>
+										</label>
+									</div>
+								<? endif; ?>
+
+								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "dropdown"): ?>
+									<!-- custom-select ? -->
+									<div class="main-dropdown-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+										<label>
+											<?= $arQuestion["CAPTION"] ?>
 											<?= $arQuestion["HTML_CODE"] ?>
 										</label>
 									</div>

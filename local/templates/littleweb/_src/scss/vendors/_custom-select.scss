@@ -1,0 +1,110 @@
+.custom-select-container {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+}
+.custom-select-container * {
+	box-sizing: border-box;
+}
+.custom-select-container.is-disabled {
+	opacity: 0.333;
+}
+
+.custom-select-opener {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 8px 20px;
+	border-radius: 4px;
+	border: 1px solid var(--light);
+
+	background-color: var(--white);
+	cursor: pointer;
+
+	span {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&::after {
+		content: "";
+		width: 16px;
+		height: 12px;
+		background-image: url("@img/icon-arrow-sm.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		transform: rotate(-90deg);
+		transition: transform var(--main-transition);
+	}
+}
+
+.custom-select-container select {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.custom-select-panel {
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	position: absolute;
+	top: calc(100% + 5px);
+	width: 100%;
+	max-height: 0;
+	background-color: var(--white);
+	z-index: 101;
+	overflow: hidden;
+
+	border-radius: 4px;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--primary);
+		border-radius: 4px;
+	}
+}
+
+.custom-select-container.is-open {
+	.custom-select-panel {
+		max-height: 240px;
+		overflow-y: auto;
+		border: 1px solid var(--light);
+	}
+
+	.custom-select-opener::after {
+		transform: rotate(90deg);
+	}
+}
+
+.custom-select-option {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 8px 20px;
+	font-size: 14px;
+	background-color: var(--white);
+	cursor: pointer;
+	transition: background-color var(--main-transition);
+
+	&:first-child {
+		padding-top: 12px;
+	}
+
+	&:last-child {
+		padding-bottom: 12px;
+	}
+}
+
+.custom-select-option.has-focus {
+	background-color: var(--light);
+}

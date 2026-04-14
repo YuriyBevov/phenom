@@ -16,13 +16,13 @@
     "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Regular.woff2"
   },
   "local/templates/littleweb/_src/js/index.js": {
-    "file": "template_scripts.DCqINAKD.js",
+    "file": "template_scripts.DEKkx7Z1.js",
     "name": "script",
     "src": "local/templates/littleweb/_src/js/index.js",
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.-l0PTmDw.css",
+    "file": "template_styles.BW3B0dGQ.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -64,6 +64,24 @@
     "name": "bitrix_form_result_new_littleweb_scss",
     "names": [
       "bitrix_form_result_new_littleweb_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss": {
+    "file": "components/bitrix/iblock.element.add.form/littleweb/style.BBwk3kCJ.css",
+    "src": "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_iblock_element_add_form_littleweb_scss",
+    "names": [
+      "bitrix_iblock_element_add_form_littleweb_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/iblock.element.add/littleweb/_src/scss/index.scss": {
+    "file": "components/bitrix/iblock.element.add/littleweb/style.tn0RQdqM.css",
+    "src": "local/templates/littleweb/components/bitrix/iblock.element.add/littleweb/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_iblock_element_add_littleweb_scss",
+    "names": [
+      "bitrix_iblock_element_add_littleweb_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss": {

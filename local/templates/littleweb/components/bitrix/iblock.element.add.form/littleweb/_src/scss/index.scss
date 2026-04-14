@@ -1,0 +1,151 @@
+@use "@scss/extends";
+@use "@scss/base/container-queries" as *;
+
+.add-request-form {
+	width: 100%;
+
+	container: add-request-form / inline-size;
+
+	.starrequired {
+		color: var(--danger);
+	}
+
+	&__success {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		.subtitle {
+			color: var(--success);
+		}
+	}
+
+	&__error-list {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		padding: 0 24px;
+		margin: 24px 0;
+
+		color: var(--danger);
+
+		li span {
+			color: var(--danger);
+		}
+	}
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+
+		@include container-up("add-request-form", 620px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.add-request-form-buttons {
+			grid-column: -1/1;
+		}
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.captcha-block {
+		margin: 12px 0;
+	}
+
+	.fieldset {
+		display: flex;
+		flex-direction: column;
+		gap: 18px 24px;
+		height: fit-content;
+
+		margin: 0;
+		padding: 24px;
+		border-radius: 16px;
+		border: 1px solid var(--light);
+
+		container: fieldset / inline-size;
+
+		&--company-info {
+			@include container-up("add-request-form", 620px) {
+				position: sticky;
+				top: 40px;
+			}
+		}
+	}
+
+	&__field {
+		display: flex;
+		flex-direction: column;
+		gap: 6px 24px;
+
+		@include container-up("fieldset", 420px) {
+			&:not(:has(textarea)) {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+
+		&-title {
+			font-size: 14px;
+			font-weight: 600;
+			width: 100%;
+
+			@include container-up("fieldset", 420px) {
+				max-width: 160px;
+			}
+		}
+
+		&-control {
+			display: flex;
+			width: 100%;
+		}
+
+		textarea,
+		input[type="text"] {
+			width: 100%;
+
+			@extend %form-input;
+			border: 1px solid var(--light);
+			outline: none;
+
+			min-height: 32px;
+
+			&::placeholder {
+				@extend %form-input-placeholder;
+			}
+
+			&.invalid-fld {
+				border-color: var(--danger);
+				color: var(--danger);
+			}
+		}
+
+		input[type="text"] {
+			border: none;
+			border-bottom: 1px dashed var(--light);
+			border-radius: 0;
+		}
+
+		textarea {
+			width: 100%;
+			min-height: 120px;
+			resize: none;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		input[type="submit"] {
+			width: 100%;
+			max-width: 200px;
+		}
+	}
+}

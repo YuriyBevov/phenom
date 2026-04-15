@@ -108,6 +108,15 @@
       "bitrix_news_list_brands_scss.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/news.list/request-list/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/request-list/style.CW81bjHj.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/request-list/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_request-list_scss",
+    "names": [
+      "bitrix_news_list_request-list_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js": {
     "file": "components/bitrix/news.list/top-banner/script.l0sNRNKZ.js",
     "name": "bitrix_news_list_top-banner_js",

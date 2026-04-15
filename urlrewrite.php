@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  4 => 
+  array (
+    'CONDITION' => '#^/request-list/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/request-list/index.php',
+    'SORT' => 100,
+  ),
   0 => 
   array (
     'CONDITION' => '#^/services/#',
@@ -14,14 +22,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/products/index.php',
-    'SORT' => 100,
-  ),
-  4 => 
-  array (
-    'CONDITION' => '#^/requests/#',
-    'RULE' => '',
-    'ID' => 'bitrix:iblock.element.add.form',
-    'PATH' => '/workup.php',
     'SORT' => 100,
   ),
   3 => 

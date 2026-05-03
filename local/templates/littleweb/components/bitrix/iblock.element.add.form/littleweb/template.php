@@ -70,11 +70,7 @@ $this->setFrameMode(false);
 							<input class="main-btn" type="submit" name="iblock_apply" value="<?= GetMessage("IBLOCK_FORM_APPLY") ?>" />
 							<input type="button" class="main-btn" name="iblock_cancel" value="<?= GetMessage('IBLOCK_FORM_CANCEL'); ?>" onclick="location.href='<?= CUtil::JSEscape($arParams["LIST_URL"]) ?>';">
 						<? endif ?>
-
-
 					</div>
-
-
 				</form>
 			<? endif; ?>
 		</div>

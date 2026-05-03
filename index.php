@@ -131,7 +131,7 @@ $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"request-list", 
 	[
-		"ACTIVE_DATE_FORMAT" => "m.d.Y",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",

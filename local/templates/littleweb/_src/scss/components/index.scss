@@ -1,10 +1,14 @@
 @use "./main-btn";
 @use "./iconed-btn";
-
+@use "./accordeon";
 @use "./currency-label";
 @use "./lang-switcher";
 @use "./label";
 @use "./swiper";
+@use "./prop-list";
+@use "./files-list";
+@use "./bx-popup";
+@use "./popup-form";
 
 // form controls
 @use "./forms/controls/main-input";

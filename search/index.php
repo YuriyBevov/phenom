@@ -12,9 +12,9 @@ $APPLICATION->SetTitle("Поиск");
 		"USE_TITLE_RANK" => "N",
 		"DEFAULT_SORT" => "rank",
 		"arrFILTER" => [
-			0 => "no",
+			0 => "iblock_products",
 		],
-		"SHOW_WHERE" => "Y",
+		"SHOW_WHERE" => "N",
 		"SHOW_WHEN" => "N",
 		"PAGE_RESULT_COUNT" => "5",
 		"AJAX_MODE" => "N",
@@ -45,7 +45,10 @@ $APPLICATION->SetTitle("Поиск");
 		"TAGS_INHERIT" => "Y",
 		"SHOW_RATING" => "",
 		"RATING_TYPE" => "",
-		"PATH_TO_USER_PROFILE" => ""
+		"PATH_TO_USER_PROFILE" => "",
+		"arrFILTER_iblock_products" => [
+			0 => "all",
+		]
 	],
 	false
 );?>

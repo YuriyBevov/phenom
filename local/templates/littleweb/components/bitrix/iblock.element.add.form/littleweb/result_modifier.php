@@ -64,7 +64,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
     }
 
     if ($property["MULTIPLE"] == "Y") {
-      $inputNum = ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) ? count($arResult["ELEMENT_PROPERTIES"][$propertyID]) : 0;
+      $inputNum = ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) ? count($arResult["ELEMENT_PROPERTIES"][$propertyID] ?? []) : 0;
       $inputNum += $property["MULTIPLE_CNT"];
     } else {
       $inputNum = 1;
@@ -79,7 +79,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
     switch ($INPUT_TYPE):
       case "USER_TYPE":
         for ($i = 0; $i < $inputNum; $i++):
-          if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+          if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
             $value = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["~VALUE"] : $arResult["ELEMENT"][$propertyID];
             $description = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["DESCRIPTION"] : "";
           } elseif ($i == 0) {
@@ -124,7 +124,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
 
       case "T":
         for ($i = 0; $i < $inputNum; $i++):
-          if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+          if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
             $value = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
           } elseif ($i == 0) {
             $value = $isPropertyId ? "" : $property["DEFAULT_VALUE"];
@@ -140,7 +140,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
       case "S":
       case "N":
         for ($i = 0; $i < $inputNum; $i++):
-          if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+          if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
             $value = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
           } elseif ($i == 0) {
             $value = !$isPropertyId ? "" : $property["DEFAULT_VALUE"];
@@ -201,7 +201,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
           case "radio":
             foreach ($property["ENUM"] as $key => $arEnum) {
               $checked = false;
-              if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+              if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
                 if (is_array($arResult["ELEMENT_PROPERTIES"][$propertyID])) {
                   foreach ($arResult["ELEMENT_PROPERTIES"][$propertyID] as $arElEnum) {
                     if ($arElEnum["VALUE"] == $key) {
@@ -230,7 +230,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
 
               foreach ($property["ENUM"] as $key => $arEnum) {
                 $checked = false;
-                if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+                if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
                   if (isset($arResult[$sKey][$propertyID]) && is_array($arResult[$sKey][$propertyID])) {
                     foreach ($arResult[$sKey][$propertyID] as $arElEnum) {
                       if ($key == $arElEnum["VALUE"]) {

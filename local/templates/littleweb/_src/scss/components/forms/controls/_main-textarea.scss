@@ -1,8 +1,6 @@
 @use "@scss/extends";
 
 .main-textarea-wrapper {
-	border: 1px solid var(--light);
-	border-radius: 4px;
 	label {
 		display: flex;
 		flex-direction: column;

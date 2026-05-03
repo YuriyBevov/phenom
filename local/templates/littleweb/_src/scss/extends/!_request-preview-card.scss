@@ -1,0 +1,150 @@
+@use "@scss/base/container-queries" as *;
+%request-preview-card {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	width: 100%;
+	max-width: 540px;
+	height: 100%;
+
+	padding: 16px;
+	border-radius: 16px;
+	background-color: var(--white);
+	container: request-preview-card / inline-size;
+
+	&__header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 16px;
+
+		&-title {
+			position: relative;
+			font-size: clamp(16px, 2.4vw, 18px);
+			font-weight: 600;
+			padding-left: 6px;
+
+			&::before {
+				position: absolute;
+				top: 7px;
+				left: -4px;
+				width: 6px;
+				height: 6px;
+				content: "";
+				border-radius: 50%;
+				background-color: var(--danger);
+			}
+		}
+
+		&-date {
+			font-size: 14px;
+			color: var(--light);
+		}
+	}
+
+	&__description {
+		font-size: 16px;
+		margin: 0;
+		color: var(--light);
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin-top: auto;
+		a {
+			font-size: 12px;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding: 12px 0;
+		border-top: 1px solid var(--info);
+		outline: 1px solid red;
+
+		&-row {
+			display: flex;
+
+			&--labels {
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 4px;
+			}
+
+			&--company {
+				gap: 16px;
+				justify-content: space-between;
+				flex-direction: column;
+				margin-top: auto;
+
+				@include container-up("request-preview-card", 360px) {
+					flex-direction: row;
+					align-items: center;
+				}
+			}
+		}
+
+		&-company {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+
+			&:has(.request-preview-card__footer-company-logo) {
+				position: relative;
+				padding-left: 40px;
+
+				.request-preview-card__footer-company-logo {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					width: 32px;
+					height: 32px;
+					border-radius: 12px;
+					border: 1px solid rgba(237, 242, 244, 1);
+				}
+			}
+
+			&-name {
+				font-size: 14px;
+				font-weight: 600;
+			}
+
+			&-city {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				font-size: 12px;
+				line-height: 1;
+				color: var(--light);
+
+				svg {
+					width: 12px;
+					height: 12px;
+					fill: var(--light);
+				}
+			}
+		}
+
+		&-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 14px 16px;
+			border-radius: 8px;
+			width: 100%;
+
+			color: var(--light);
+			background-color: var(--lighter);
+
+			@include container-up("request-preview-card", 360px) {
+				max-width: 190px;
+			}
+		}
+	}
+}

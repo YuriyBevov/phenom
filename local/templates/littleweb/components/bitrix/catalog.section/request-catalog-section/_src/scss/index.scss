@@ -1,0 +1,24 @@
+@use "@scss/mixins" as *;
+
+.request-catalog-section {
+	&-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+}
+
+.request-preview-card {
+	@include request-preview-card;
+	max-width: 100%;
+	background-color: var(--lighter);
+
+	&__footer-link {
+		background-color: var(--white);
+
+		&:hover,
+		&:focus {
+			color: var(--light);
+		}
+	}
+}

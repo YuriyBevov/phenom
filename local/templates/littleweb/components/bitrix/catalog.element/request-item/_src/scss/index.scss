@@ -1,0 +1,100 @@
+@use "@scss/base/container-queries" as *;
+
+.bx-catalog-element {
+	container: bx-catalog-element / inline-size;
+
+	.title {
+		margin-bottom: 40px;
+	}
+
+	.grid {
+		width: 100%;
+		display: grid;
+		gap: 24px;
+		margin-bottom: 24px;
+
+		@include container-up(bx-catalog-element, 850px) {
+			grid-template-columns: 2fr 3fr;
+		}
+
+		&-item {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+
+			&--gallery {
+				max-width: 640px;
+				height: fit-content;
+
+				@include container-up(bx-catalog-element, 850px) {
+					position: sticky;
+					top: 80px;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	.swiper.--base {
+		width: 100%;
+		height: 100%;
+
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1/1;
+		background-color: var(--white);
+		border: 1px solid var(--lighter);
+		border-radius: 12px;
+
+		.swiper-slide {
+			display: flex;
+			width: 100% !important;
+			padding: 16px 16px 8px;
+
+			img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+				aspect-ratio: 1/1;
+			}
+		}
+
+		.swiper-pagination {
+			bottom: 0 !important;
+			margin-bottom: 8px;
+		}
+	}
+
+	.prop-list-item-name {
+		font-size: 1em;
+	}
+
+	.prop-list-item-value {
+		font-size: 1em;
+	}
+
+	&-btn-row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 16px;
+		padding-top: 48px;
+	}
+}
+
+.company-info {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+
+	&-field {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		align-items: center;
+
+		span {
+			font-size: 16px;
+		}
+	}
+}

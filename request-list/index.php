@@ -1,9 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Запросы закупщиков");
-?><? $APPLICATION->IncludeComponent(
+$APPLICATION->SetPageProperty("description", "Описание раздела");
+$APPLICATION->SetPageProperty("title", "Запросы закупщиков");
+$APPLICATION->SetTitle("Запросы закупщиков на производство продукции");
+?>
+
+<? $APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
-	"store_v3", 
+	"request-list", 
 	[
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -19,7 +23,7 @@ $APPLICATION->SetTitle("Запросы закупщиков");
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
+		"CACHE_TYPE" => "N",
 		"COMPATIBLE_MODE" => "N",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
 		"DETAIL_BACKGROUND_IMAGE" => "-",
@@ -45,21 +49,19 @@ $APPLICATION->SetTitle("Запросы закупщиков");
 		"DETAIL_USE_COMMENTS" => "N",
 		"DETAIL_USE_VOTE_RATING" => "N",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILTER_HIDE_ON_MOBILE" => "N",
-		"FILTER_NAME" => "",
 		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"IBLOCK_ID" => "7",
 		"IBLOCK_TYPE" => "products",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
 		"LABEL_PROP" => [
-			0 => "CATHEGORY",
 		],
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
@@ -96,7 +98,6 @@ $APPLICATION->SetTitle("Запросы закупщиков");
 		"PAGE_ELEMENT_COUNT" => "30",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => [
-			0 => "MAX_PRICE",
 		],
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
@@ -112,7 +113,7 @@ $APPLICATION->SetTitle("Запросы закупщиков");
 		"SECTIONS_SHOW_PARENT_NAME" => "Y",
 		"SECTIONS_VIEW_MODE" => "LIST",
 		"SECTION_BACKGROUND_IMAGE" => "-",
-		"SECTION_COUNT_ELEMENTS" => "Y",
+		"SECTION_COUNT_ELEMENTS" => "N",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_MODE" => "Y",
@@ -153,19 +154,25 @@ $APPLICATION->SetTitle("Запросы закупщиков");
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => "store_v3",
-		"LABEL_PROP_MOBILE" => [
-		],
-		"LABEL_PROP_POSITION" => "top-left",
+		"COMPONENT_TEMPLATE" => "request-list",
+		"FILTER_NAME" => "arRequest",
 		"SEF_FOLDER" => "/request-list/",
-		"SIDEBAR_SECTION_POSITION" => "right",
-		"SIDEBAR_DETAIL_POSITION" => "right",
+		"LIST_PROPERTY_CODE_MOBILE" => [
+		],
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => [
+			0 => "COUNT_FROM",
+			1 => "COUNT_TO",
+			2 => "TIME_FROM",
+			3 => "TIME_TO",
+			4 => "PRICE_FROM",
+			5 => "PRICE_TO",
+		],
 		"SEF_URL_TEMPLATES" => [
 			"sections" => "",
-			"section" => "#SECTION_CODE#/",
-			"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
+			"section" => "#SECTION_CODE_PATH#/",
+			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 			"compare" => "compare.php?action=#ACTION_CODE#",
-			"smart_filter" => "filter/#SMART_FILTER_PATH#/apply/",
+			"smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
 		],
 		"VARIABLE_ALIASES" => [
 			"compare" => [

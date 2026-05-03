@@ -85,7 +85,7 @@
 		gap: 6px 24px;
 
 		@include container-up("fieldset", 420px) {
-			&:not(:has(textarea)) {
+			&:not(:has(textarea)):not(:has(input[type="file"])) {
 				flex-direction: row;
 				align-items: center;
 			}
@@ -104,6 +104,11 @@
 		&-control {
 			display: flex;
 			width: 100%;
+
+			&:has(input[type="file"]) {
+				flex-direction: column;
+				gap: 6px;
+			}
 		}
 
 		textarea,

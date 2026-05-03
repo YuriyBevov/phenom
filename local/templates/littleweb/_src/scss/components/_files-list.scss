@@ -1,0 +1,28 @@
+.files-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 24px 0;
+
+	li {
+		a {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+
+			img {
+				width: 24px;
+				height: auto;
+				object-fit: contain;
+			}
+
+			img:last-child {
+				width: 32px;
+				margin-left: auto;
+			}
+		}
+	}
+}

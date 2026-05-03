@@ -1,0 +1,11 @@
+.bx-filter:not(:has(.bx-filter-content > *)) {
+	display: none;
+}
+
+.catalog-section {
+	.grid {
+		display: grid;
+		grid-template-columns: 320px auto;
+		gap: 32px;
+	}
+}

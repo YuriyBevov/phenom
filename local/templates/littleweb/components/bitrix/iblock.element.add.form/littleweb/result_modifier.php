@@ -10,6 +10,118 @@ $arResult["GROUPED_PROPERTY_IDS"] = array(
   "REQUEST_FIELDS" => array(),
   "COMPANY_FIELDS" => array()
 );
+$arResult["GROUPED_PROPERTIES_WITH_PAIRS"] = array(
+  "REQUEST_FIELDS" => array(),
+  "COMPANY_FIELDS" => array()
+);
+$arResult["GROUPED_PROPERTY_IDS_WITH_PAIRS"] = array(
+  "REQUEST_FIELDS" => array(),
+  "COMPANY_FIELDS" => array()
+);
+$arResult["PROPERTY_PAIRS"] = array();
+$arResult["PROPERTY_LIST_WITH_PAIRS"] = array();
+$arResult["PROPERTY_LIST_FULL_WITH_PAIRS"] = array();
+$arResult["GROUPED_PROPERTY_PAIRS"] = array(
+  "REQUEST_FIELDS" => array(),
+  "COMPANY_FIELDS" => array()
+);
+
+$pairProperties = array();
+
+foreach ($arResult["PROPERTY_LIST"] as $propertyId) {
+  if (empty($arResult["PROPERTY_LIST_FULL"][$propertyId]["CODE"])) {
+    continue;
+  }
+
+  $property = $arResult["PROPERTY_LIST_FULL"][$propertyId];
+  $property["ID"] = $propertyId;
+
+  if (!preg_match('/^(.+)_(from|to)$/i', $property["CODE"], $matches)) {
+    continue;
+  }
+
+  $pairCode = strtolower($matches[1]);
+  $pairSide = strtolower($matches[2]);
+  $pairIndex = $pairSide === "from" ? 0 : 1;
+
+  if (!isset($pairProperties[$pairCode])) {
+    $pairProperties[$pairCode] = array(
+      "name" => "",
+      "sort" => 0,
+      "properties" => array()
+    );
+  }
+
+  $pairProperties[$pairCode]["properties"][$pairIndex] = $property;
+
+  if ($pairSide === "from" || $pairProperties[$pairCode]["name"] === "") {
+    $pairProperties[$pairCode]["name"] = $property["NAME"];
+    $pairProperties[$pairCode]["sort"] = $property["SORT"];
+  }
+}
+
+foreach ($pairProperties as $pairCode => $pair) {
+  if (!isset($pair["properties"][0], $pair["properties"][1])) {
+    continue;
+  }
+
+  ksort($pair["properties"]);
+  $pair["properties"] = array_values($pair["properties"]);
+  $pair["type"] = "pair";
+  $pair["code"] = $pairCode;
+  $pair["NAME"] = $pair["name"];
+  $pair["CODE"] = $pairCode;
+  $pair["SORT"] = $pair["sort"];
+  $pair["IS_PAIR"] = true;
+  $pair["PROPERTIES"] = $pair["properties"];
+
+  $arResult["PROPERTY_PAIRS"][$pairCode] = $pair;
+}
+
+$skippedPairPropertyIds = array();
+
+foreach ($arResult["PROPERTY_PAIRS"] as $pairCode => $pair) {
+  foreach ($pair["properties"] as $property) {
+    $skippedPairPropertyIds[$property["ID"]] = true;
+  }
+}
+
+foreach ($arResult["PROPERTY_LIST"] as $propertyId) {
+  if (isset($skippedPairPropertyIds[$propertyId])) {
+    $propertyCode = $arResult["PROPERTY_LIST_FULL"][$propertyId]["CODE"];
+
+    if (!preg_match('/^(.+)_from$/i', $propertyCode, $matches)) {
+      continue;
+    }
+
+    $pairCode = strtolower($matches[1]);
+
+    if (!isset($arResult["PROPERTY_PAIRS"][$pairCode])) {
+      continue;
+    }
+
+    $arResult["PROPERTY_LIST_WITH_PAIRS"][] = $pairCode;
+    $arResult["PROPERTY_LIST_FULL_WITH_PAIRS"][$pairCode] = $arResult["PROPERTY_PAIRS"][$pairCode];
+    $arResult["PROPERTY_LIST_FULL"][$pairCode] = $arResult["PROPERTY_PAIRS"][$pairCode];
+
+    continue;
+  }
+
+  $arResult["PROPERTY_LIST_WITH_PAIRS"][] = $propertyId;
+  $arResult["PROPERTY_LIST_FULL_WITH_PAIRS"][$propertyId] = $arResult["PROPERTY_LIST_FULL"][$propertyId];
+}
+
+foreach ($arResult["PROPERTY_LIST_WITH_PAIRS"] as $fieldId) {
+  $field = $arResult["PROPERTY_LIST_FULL_WITH_PAIRS"][$fieldId];
+  $propertyCode = !empty($field["IS_PAIR"]) ? $field["PROPERTIES"][0]["CODE"] : ($field["CODE"] ?? "");
+  $groupCode = (
+    strpos($propertyCode, "COMPANY_") === 0 ||
+    $fieldId === "PREVIEW_PICTURE"
+  ) ? "COMPANY_FIELDS" : "REQUEST_FIELDS";
+
+  $arResult["GROUPED_PROPERTIES_WITH_PAIRS"][$groupCode][$fieldId] = $field;
+  $arResult["GROUPED_PROPERTY_IDS_WITH_PAIRS"][$groupCode][] = $fieldId;
+}
 
 foreach ($arResult["PROPERTY_LIST"] as $propertyId) {
   if (
@@ -24,33 +136,87 @@ foreach ($arResult["PROPERTY_LIST"] as $propertyId) {
   }
 }
 
+foreach ($arResult["PROPERTY_PAIRS"] as $pairCode => $pair) {
+  $firstProperty = $pair["properties"][0];
+  $groupCode = (
+    isset($firstProperty["CODE"]) &&
+    strpos($firstProperty["CODE"], "COMPANY_") === 0
+  ) ? "COMPANY_FIELDS" : "REQUEST_FIELDS";
+
+  $arResult["GROUPED_PROPERTY_PAIRS"][$groupCode][$pairCode] = $pair;
+}
+
 // Функция для рендеринга полей свойств
-$arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResult, $arParams) {
+$arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResult, $arParams, $hideTitle = false, $placeholder = "") {
   if (empty($arrIds)) return '';
 
   $output = '';
 
   foreach ($arrIds as $propertyID):
     $property = $arrFields[$propertyID];
+
+    if (!empty($property["IS_PAIR"])) {
+      $isRequiredPair = false;
+
+      foreach ($property["PROPERTIES"] as $pairProperty) {
+        if (in_array($pairProperty["ID"], $arResult["PROPERTY_REQUIRED"])) {
+          $isRequiredPair = true;
+          break;
+        }
+      }
+
+      $output .= '<div class="add-request-form__field add-request-form__field--pair">';
+      $output .= '<label class="add-request-form__field-title">' . htmlspecialchars($property["NAME"]) . ':';
+
+      if ($isRequiredPair) {
+        $output .= '<span class="starrequired">*</span>';
+      }
+
+      $output .= '</label>';
+      $output .= '<div class="add-request-form__field-control add-request-form__field-control--pair">';
+
+      foreach ($property["PROPERTIES"] as $pairPropertyIndex => $pairProperty) {
+        $pairPropertyId = $pairProperty["ID"];
+        $pairPlaceholder = $pairPropertyIndex === 0 ? "от" : "до";
+
+        $output .= '<div class="add-request-form__field-pair-control add-request-form__field-pair-control--' . htmlspecialchars($pairProperty["CODE"]) . '">';
+        $output .= $arResult["RENDER_PROPERTIES_FUNCTION"](
+          array($pairPropertyId),
+          array($pairPropertyId => $pairProperty),
+          $arResult,
+          $arParams,
+          true,
+          $pairPlaceholder
+        );
+        $output .= '</div>';
+      }
+
+      $output .= '</div></div>';
+
+      continue;
+    }
+
     $isPropertyId = intval($propertyID) > 0;
 
-    $output .= '<div class="add-request-form__field">';
+    if (!$hideTitle) {
+      $output .= '<div class="add-request-form__field">';
 
-    $output .= '<label class="add-request-form__field-title" for="' . $propertyID . '">';
+      $output .= '<label class="add-request-form__field-title" for="' . $propertyID . '">';
 
-    if ($isPropertyId):
-      $output .= htmlspecialchars($property["NAME"]) . ':';
-    else:
-      $customTitle = !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID);
-      $output .= htmlspecialchars($customTitle) . ':';
-    endif;
+      if ($isPropertyId):
+        $output .= htmlspecialchars($property["NAME"]) . ':';
+      else:
+        $customTitle = !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID);
+        $output .= htmlspecialchars($customTitle) . ':';
+      endif;
 
-    if (in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):
-      $output .= '<span class="starrequired">*</span>';
-    endif;
-    $output .= '</label>';
+      if (in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):
+        $output .= '<span class="starrequired">*</span>';
+      endif;
+      $output .= '</label>';
 
-    $output .= '<div class="add-request-form__field-control">';
+      $output .= '<div class="add-request-form__field-control">';
+    }
 
     // Обработка типа поля
     if ($isPropertyId) {
@@ -132,7 +298,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
             $value = "";
           }
 ?>
-          <textarea id="<?= $propertyID ?>" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]"><?= htmlspecialchars($value) ?></textarea>
+          <textarea id="<?= $propertyID ?>" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" <?= $placeholder !== "" ? ' placeholder="' . htmlspecialchars($placeholder) . '"' : "" ?>><?= htmlspecialchars($value) ?></textarea>
         <?php
         endfor;
         break;
@@ -140,6 +306,8 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
       case "S":
       case "N":
         for ($i = 0; $i < $inputNum; $i++):
+          $inputType = $property["PROPERTY_TYPE"] === "N" ? "number" : "text";
+
           if ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) {
             $value = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
           } elseif ($i == 0) {
@@ -148,7 +316,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
             $value = "";
           }
         ?>
-          <input id="<?= $propertyID ?>" type="text" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" size="<?= $property["COL_COUNT"]; ?>" value="<?= htmlspecialchars($value) ?>" />
+          <input id="<?= $propertyID ?>" type="<?= $inputType ?>" name="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" size="<?= $property["COL_COUNT"]; ?>" value="<?= htmlspecialchars($value) ?>" <?= $placeholder !== "" ? ' placeholder="' . htmlspecialchars($placeholder) . '"' : "" ?> />
           <? if ($property["USER_TYPE"] == "DateTime"):
             global $APPLICATION;
             $APPLICATION->IncludeComponent(
@@ -170,24 +338,55 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
         break;
 
       case "F":
-        for ($i = 0; $i < $inputNum; $i++):
-          $value = $isPropertyId ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
-          $valueId = isset($arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"]) ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i;
+        $isDynamicFileProperty = $property["MULTIPLE"] == "Y";
+        $existingFileCount = (
+          ($arParams["ID"] > 0 || count($arResult["ERRORS"] ?? []) > 0) &&
+          isset($arResult["ELEMENT_PROPERTIES"][$propertyID]) &&
+          is_array($arResult["ELEMENT_PROPERTIES"][$propertyID])
+        ) ? count($arResult["ELEMENT_PROPERTIES"][$propertyID]) : 0;
+
+        if ($isDynamicFileProperty) {
+          $inputNum = $existingFileCount + 1;
+        }
         ?>
-          <input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $valueId ?>]" value="<?= htmlspecialchars($value) ?>" />
-          <input id="<?= $propertyID ?>" type="file" size="<?= $property["COL_COUNT"] ?>" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $valueId ?>" />
-          <? if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])): ?>
-            <input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $valueId ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y" /><label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
-            <? if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]): ?>
-              <img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0" />
-            <? else: ?>
-              <?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?>
-              <?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b
-              [<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
-            <? endif; ?>
-          <? endif; ?>
+        <div
+          class="add-request-form__field-file-list"
+          <?php if ($isDynamicFileProperty): ?>
+          data-dynamic-file-list
+          data-property-id="<?= htmlspecialchars($propertyID) ?>"
+          data-col-count="<?= htmlspecialchars($property["COL_COUNT"]) ?>"
+          data-next-index="<?= $inputNum ?>"
+          <?php endif; ?>>
           <?php
-        endfor;
+          for ($i = 0; $i < $inputNum; $i++):
+            $elementProperty = $isPropertyId ? ($arResult["ELEMENT_PROPERTIES"][$propertyID][$i] ?? array()) : array();
+            $value = $isPropertyId ? ($elementProperty["VALUE"] ?? "") : ($arResult["ELEMENT"][$propertyID] ?? "");
+            $valueId = isset($elementProperty["VALUE_ID"]) ? $elementProperty["VALUE_ID"] : $i;
+          ?>
+
+            <input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $valueId ?>]" value="<?= htmlspecialchars($value) ?>" />
+            <input
+              id="<?= htmlspecialchars($propertyID . '_' . $valueId) ?>"
+              type="file"
+              size="<?= $property["COL_COUNT"] ?>"
+              name="PROPERTY_FILE_<?= $propertyID ?>_<?= $valueId ?>"
+              <?= $isDynamicFileProperty ? 'data-dynamic-file-input' : '' ?> />
+            <?php if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])): ?>
+              <input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $valueId ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y" /><label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
+              <?php if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]): ?>
+                <img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0" />
+              <?php else: ?>
+                <?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?>
+                <?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b
+                [<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
+              <?php endif; ?>
+            <?php endif; ?>
+
+          <?php
+          endfor;
+          ?>
+        </div>
+        <?php
         break;
 
       case "L":
@@ -213,7 +412,7 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
               } else {
                 if ($arEnum["DEF"] == "Y") $checked = true;
               }
-          ?>
+        ?>
               <input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?> /><label for="property_<?= $key ?>"><?= htmlspecialchars($arEnum["VALUE"]) ?></label>
             <?php
             }
@@ -254,7 +453,10 @@ $arResult["RENDER_PROPERTIES_FUNCTION"] = function ($arrIds, $arrFields, $arResu
         break;
     endswitch;
     $output .= ob_get_clean();
-    $output .= '</div></div>';
+
+    if (!$hideTitle) {
+      $output .= '</div></div>';
+    }
   endforeach;
 
   return $output;

@@ -30,8 +30,17 @@
       "template.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/_iblock.element.add/littleweb/_src/scss/index.scss": {
+    "file": "components/bitrix/_iblock.element.add/littleweb/style.tn0RQdqM.css",
+    "src": "local/templates/littleweb/components/bitrix/_iblock.element.add/littleweb/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix__iblock_element_add_littleweb_scss",
+    "names": [
+      "bitrix__iblock_element_add_littleweb_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/catalog.element/request-item/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.element/request-item/style.Dt7XIOEV.css",
+    "file": "components/bitrix/catalog.element/request-item/style.CMHGxOi7.css",
     "src": "local/templates/littleweb/components/bitrix/catalog.element/request-item/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_catalog_element_request-item_scss",
@@ -139,21 +148,12 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/iblock.element.add.form/littleweb/style.B_YzWgvn.css",
+    "file": "components/bitrix/iblock.element.add.form/littleweb/style.CPSR35VH.css",
     "src": "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_iblock_element_add_form_littleweb_scss",
     "names": [
       "bitrix_iblock_element_add_form_littleweb_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/iblock.element.add/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/iblock.element.add/littleweb/style.tn0RQdqM.css",
-    "src": "local/templates/littleweb/components/bitrix/iblock.element.add/littleweb/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_iblock_element_add_littleweb_scss",
-    "names": [
-      "bitrix_iblock_element_add_littleweb_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss": {

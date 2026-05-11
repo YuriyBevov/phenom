@@ -129,18 +129,35 @@ $itemIds = array(
 					<br>
 				<? endif; ?>
 
-				<? if (!empty($arResult['DISPLAY_PROPERTIES'])): ?>
+				<? if (!empty($arResult['DISPLAY_PROPERTIES_WITH_PAIRS'])): ?>
 					<span class="subtitle">Условия реализации:</span><br>
 					<ul class="prop-list">
-						<? foreach ($arResult['DISPLAY_PROPERTIES'] as $property): ?>
+						<? foreach ($arResult['DISPLAY_PROPERTIES_WITH_PAIRS'] as $property): ?>
 							<li class="prop-list-item">
 								<span class="prop-list-item-name"><?= $property['NAME'] ?></span>
 								<span class="prop-list-item-value">
-									<?= (
-										is_array($property['DISPLAY_VALUE'])
-										? implode(' / ', $property['DISPLAY_VALUE'])
-										: $property['DISPLAY_VALUE']
-									) ?>
+									<? if (!empty($property['IS_PAIR'])): ?>
+										<span class="prop-list-item-value__pair">
+											<? foreach ($property['PROPERTIES'] as $pairPropertyIndex => $pairProperty): ?>
+												<span class="prop-list-item-value__pair-item">
+													<span class="prop-list-item-value__pair-divider"><?= $pairPropertyIndex === 0 ? '' : ' / ' ?></span>
+													<span class="prop-list-item-value__pair-value">
+														<?= (
+															is_array($pairProperty['DISPLAY_VALUE'])
+															? implode(' / ', $pairProperty['DISPLAY_VALUE'])
+															: $pairProperty['DISPLAY_VALUE']
+														) ?>
+													</span>
+												</span>
+											<? endforeach; ?>
+										</span>
+									<? else: ?>
+										<?= (
+											is_array($property['DISPLAY_VALUE'])
+											? implode(' / ', $property['DISPLAY_VALUE'])
+											: $property['DISPLAY_VALUE']
+										) ?>
+									<? endif; ?>
 								</span>
 							</li>
 						<?
@@ -181,35 +198,38 @@ $itemIds = array(
 			<div class="grid-item grid-item--side">
 				<span class="subtitle">Информация о заказчике:</span>
 				<br>
-				<ul class="prop-list">
-					<? if ($arResult["PROPERTIES"]["COMPANY_NAME"]): ?>
-						<li class="prop-list-item">
-							<span class="prop-list-item-name">Название компании:</span>
-							<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_NAME"]["VALUE"] ?></span>
-						</li>
-					<? endif; ?>
+				<div class="company-row">
+					<img src="<?= $arResult["PREVIEW_PICTURE"]["SRC"] ?>" alt="">
+					<ul class="prop-list">
+						<? if ($arResult["PROPERTIES"]["COMPANY_NAME"]["VALUE"]): ?>
+							<li class="prop-list-item">
+								<span class="prop-list-item-name">Название компании:</span>
+								<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_NAME"]["VALUE"] ?></span>
+							</li>
+						<? endif; ?>
 
-					<? if ($arResult["PROPERTIES"]["COMPANY_CITY"]): ?>
-						<li class="prop-list-item">
-							<span class="prop-list-item-name">Город:</span>
-							<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_CITY"]["VALUE"] ?></span>
-						</li>
-					<? endif; ?>
+						<? if ($arResult["PROPERTIES"]["COMPANY_CITY"]["VALUE"]): ?>
+							<li class="prop-list-item">
+								<span class="prop-list-item-name">Город:</span>
+								<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_CITY"]["VALUE"] ?></span>
+							</li>
+						<? endif; ?>
 
-					<? if ($arResult["PROPERTIES"]["COMPANY_INN"]): ?>
-						<li class="prop-list-item">
-							<span class="prop-list-item-name">ИНН:</span>
-							<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_INN"]["VALUE"] ?></span>
-						</li>
-					<? endif; ?>
+						<? if ($arResult["PROPERTIES"]["COMPANY_INN"]["VALUE"]): ?>
+							<li class="prop-list-item">
+								<span class="prop-list-item-name">ИНН:</span>
+								<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_INN"]["VALUE"] ?></span>
+							</li>
+						<? endif; ?>
 
-					<? if ($arResult["PROPERTIES"]["COMPANY_ADDRESS"]): ?>
-						<li class="prop-list-item">
-							<span class="prop-list-item-name">Юридический адрес:</span>
-							<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_ADDRESS"]["VALUE"] ?></span>
-						</li>
-					<? endif; ?>
-				</ul>
+						<? if ($arResult["PROPERTIES"]["COMPANY_ADDRESS"]["VALUE"]): ?>
+							<li class="prop-list-item">
+								<span class="prop-list-item-name">Юридический адрес:</span>
+								<span class="prop-list-item-value"><?= $arResult["PROPERTIES"]["COMPANY_ADDRESS"]["VALUE"] ?></span>
+							</li>
+						<? endif; ?>
+					</ul>
+				</div>
 
 				<div class="bx-catalog-element-btn-row">
 					<button class="main-btn" data-form-id="3">Оставить заявку</button>

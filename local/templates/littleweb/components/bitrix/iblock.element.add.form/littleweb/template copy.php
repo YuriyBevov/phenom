@@ -43,12 +43,12 @@ $this->setFrameMode(false);
 
 					<fieldset class="fieldset fieldset--request-info">
 						<span class="subtitle">Информация о заказе</span>
-						<?= $arResult["RENDER_PROPERTIES_FUNCTION"]($arResult["GROUPED_PROPERTY_IDS_WITH_PAIRS"]["REQUEST_FIELDS"], $arResult["GROUPED_PROPERTIES_WITH_PAIRS"]["REQUEST_FIELDS"], $arResult, $arParams); ?>
+						<?= $arResult["RENDER_PROPERTIES_FUNCTION"]($arResult["GROUPED_PROPERTY_IDS"]["REQUEST_FIELDS"], $arResult["GROUPED_PROPERTIES"]["REQUEST_FIELDS"], $arResult, $arParams); ?>
 					</fieldset>
 
 					<fieldset class="fieldset fieldset--company-info">
 						<span class="subtitle">Информация о заказчике</span>
-						<?= $arResult["RENDER_PROPERTIES_FUNCTION"]($arResult["GROUPED_PROPERTY_IDS_WITH_PAIRS"]["COMPANY_FIELDS"], $arResult["GROUPED_PROPERTIES_WITH_PAIRS"]["COMPANY_FIELDS"], $arResult, $arParams); ?>
+						<?= $arResult["RENDER_PROPERTIES_FUNCTION"]($arResult["GROUPED_PROPERTY_IDS"]["COMPANY_FIELDS"], $arResult["GROUPED_PROPERTIES"]["COMPANY_FIELDS"], $arResult, $arParams); ?>
 
 						<? if ($arParams["USE_CAPTCHA"] == "Y" && $arParams["ID"] <= 0): ?>
 							<div class="add-request-form__field">
@@ -76,57 +76,3 @@ $this->setFrameMode(false);
 		</div>
 	</div>
 </section>
-
-<script>
-	document.addEventListener('change', function(event) {
-		var input = event.target;
-
-		if (!input.matches('[data-dynamic-file-input]') || !input.files.length) {
-			return;
-		}
-
-		var list = input.closest('[data-dynamic-file-list]');
-
-		if (!list) {
-			return;
-		}
-
-		var inputs = list.querySelectorAll('[data-dynamic-file-input]');
-
-		if (input !== inputs[inputs.length - 1]) {
-			return;
-		}
-
-		var index = parseInt(list.dataset.nextIndex, 10);
-		var propertyId = list.dataset.propertyId;
-		var colCount = list.dataset.colCount || '';
-
-		if (Number.isNaN(index) || !propertyId) {
-			return;
-		}
-
-		var item = document.createElement('div');
-		item.className = 'add-request-form__file-item';
-
-		var hidden = document.createElement('input');
-		hidden.type = 'hidden';
-		hidden.name = 'PROPERTY[' + propertyId + '][' + index + ']';
-		hidden.value = '';
-
-		var file = document.createElement('input');
-		file.id = propertyId + '_' + index;
-		file.type = 'file';
-		file.name = 'PROPERTY_FILE_' + propertyId + '_' + index;
-		file.setAttribute('data-dynamic-file-input', '');
-
-		if (colCount) {
-			file.size = colCount;
-		}
-
-		item.appendChild(hidden);
-		item.appendChild(file);
-
-		list.appendChild(item);
-		list.dataset.nextIndex = index + 1;
-	});
-</script>

@@ -15,7 +15,7 @@ $this->setFrameMode(false);
 
 ?>
 
-<section class="section request">
+<section class="section request test">
 	<div class="container">
 		<h2 class="title">Оставьте заявку на производство</h2>
 		<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam corrupti magnam distinctio, quisquam obcaecati exercitationem cum porro rem libero placeat nulla qui voluptatum in nisi delectus. Veniam vitae eos nisi?</p>
@@ -209,8 +209,8 @@ $this->setFrameMode(false);
 																																																																																																																																											array('HIDE_ICONS' => 'Y')
 																																																																																																																																										);
 																																																																																																																																										?><br /><small><?= GetMessage("IBLOCK_FORM_DATE_FORMAT") ?><?= FORMAT_DATETIME ?></small><?
-																																																																																																																																																																																			endif
-																																																																																																																																																																																				?><br /><?
+																																																																																																																																																																																						endif
+																																																																																																																																																																																							?><br /><?
 																																																																																																																																																																																							}
 																																																																																																																																																																																							break;
 

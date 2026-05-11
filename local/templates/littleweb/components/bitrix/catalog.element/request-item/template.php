@@ -87,6 +87,7 @@ $itemIds = array(
 <div class="bx-catalog-element" id="<?= $itemIds['ID'] ?>">
 	<div class="container">
 		<div class="grid">
+			<?/*
 			<div class="grid-item grid-item--gallery">
 
 				<div class="bx-catalog-element-slider-container">
@@ -111,7 +112,7 @@ $itemIds = array(
 				</div>
 				<!-- slider -->
 			</div>
-
+			*/ ?>
 			<div class="grid-item grid-item--main">
 
 				<h1 class="title"><?= $arResult["NAME"] ?></h1>
@@ -171,6 +172,13 @@ $itemIds = array(
 				<? endif; ?>
 
 
+
+
+
+
+			</div>
+
+			<div class="grid-item grid-item--side">
 				<span class="subtitle">Информация о заказчике:</span>
 				<br>
 				<ul class="prop-list">
@@ -203,16 +211,11 @@ $itemIds = array(
 					<? endif; ?>
 				</ul>
 
-
-
 				<div class="bx-catalog-element-btn-row">
 					<button class="main-btn" data-form-id="3">Оставить заявку</button>
 					<button class="main-btn outlined" data-form-id="2">Остались вопросы ?</button>
 				</div>
-
 			</div>
 		</div>
-
-
 	</div>
 </div>

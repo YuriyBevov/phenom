@@ -14,6 +14,7 @@
   <?
   includeGlobalAssets();
   initBitrixCore('popup');
+  $curPage = $APPLICATION->GetCurPage();
   ?>
 </head>
 
@@ -71,56 +72,54 @@
             </svg>
             <span>Каталог</span>
           </button>
-          <div class="search-title">
-            <?php
-            if ($curPage != SITE_DIR . "index.php"):
-              if (\Bitrix\Main\ModuleManager::isModuleInstalled('search')):
-            ?>
-                <? $APPLICATION->IncludeComponent(
-                  "bitrix:search.title",
-                  "bootstrap_v4",
-                  array(
-                    "NUM_CATEGORIES" => "1",
-                    "TOP_COUNT" => "5",
-                    "CHECK_DATES" => "N",
-                    "SHOW_OTHERS" => "N",
-                    "PAGE" => SITE_DIR . "catalog/",
-                    "CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS"),
-                    "CATEGORY_0" => array(
-                      0 => "iblock_catalog",
-                    ),
-                    "CATEGORY_0_iblock_catalog" => array(
-                      0 => "all",
-                    ),
-                    "CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
-                    "SHOW_INPUT" => "Y",
-                    "INPUT_ID" => "title-search-input",
-                    "CONTAINER_ID" => "search",
-                    "PRICE_CODE" => array(
-                      0 => "BASE",
-                    ),
-                    "SHOW_PREVIEW" => "Y",
-                    "PREVIEW_WIDTH" => "75",
-                    "PREVIEW_HEIGHT" => "75",
-                    "CONVERT_CURRENCY" => "Y"
-                  ),
-                  false
-                ); ?>
-            <?php
-              endif;
+          <?php
+          if ($curPage != SITE_DIR . "index.php"):
+            if (\Bitrix\Main\ModuleManager::isModuleInstalled('search')):
+          ?>
+              <? $APPLICATION->IncludeComponent(
+                "bitrix:search.title",
+                "kovry",
+                [
+                  "NUM_CATEGORIES" => "1",
+                  "TOP_COUNT" => "5",
+                  "CHECK_DATES" => "N",
+                  "SHOW_OTHERS" => "N",
+                  "PAGE" => SITE_DIR . "search/",
+                  "CATEGORY_0_TITLE" => GetMessage("SEARCH_GOODS"),
+                  "CATEGORY_0" => [
+                    0 => "iblock_products",
+                  ],
+                  "CATEGORY_0_iblock_catalog" => [
+                    0 => "all",
+                  ],
+                  "CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
+                  "SHOW_INPUT" => "Y",
+                  "INPUT_ID" => "title-search-input",
+                  "CONTAINER_ID" => "search",
+                  "PRICE_CODE" => [],
+                  "SHOW_PREVIEW" => "Y",
+                  "PREVIEW_WIDTH" => "75",
+                  "PREVIEW_HEIGHT" => "75",
+                  "CONVERT_CURRENCY" => "Y",
+                  "COMPONENT_TEMPLATE" => "search-title",
+                  "ORDER" => "date",
+                  "USE_LANGUAGE_GUESS" => "Y",
+                  "TEMPLATE_THEME" => "blue",
+                  "PRICE_VAT_INCLUDE" => "Y",
+                  "PREVIEW_TRUNCATE_LEN" => "",
+                  "CATEGORY_0_iblock_products" => [
+                    0 => "2",
+                    1 => "3",
+                    2 => "7",
+                  ]
+                ],
+                false
+              ); ?>
+          <?php
             endif;
-            ?>
-            <!-- <div class="main-input-wrapper">
-              <label>
-                <input type="text" class="main-input" placeholder="Поиск">
-              </label>
-            </div>
-            <button aria-label="Поиск">
-              <svg width='16' height='16' role='img' aria-hidden='true' focusable='false'>
-                <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
-              </svg>
-            </button> -->
-          </div>
+          endif;
+          ?>
+
         </div>
 
         <div class="header__btn-group">
@@ -177,3 +176,19 @@
     </div>
   </header>
   <main id="workarea">
+    <?
+
+    if ($curPage != '/' && !defined("ERROR_404")) {
+      $APPLICATION->IncludeComponent(
+        "bitrix:breadcrumb",
+        "lw-breadcrumb",
+        [
+          "PATH" => "",
+          "SITE_ID" => "s1",
+          "START_FROM" => "0",
+          "COMPONENT_TEMPLATE" => "lw-breadcrumb"
+        ],
+        false
+      );
+    }
+    ?>

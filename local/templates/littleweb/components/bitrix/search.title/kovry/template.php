@@ -38,15 +38,15 @@ if ($arParams['SHOW_INPUT'] !== 'N'): ?>
 				<label class="">
 					<input id="<?= $INPUT_ID ?>" type="text" name="q" value="<?= htmlspecialcharsbx($_REQUEST['q'] ?? '') ?>" autocomplete="off" placeholder="Поиск" />
 				</label>
-				<button class="search-title__btn" name="s" type="submit" aria-label="Поиск">
-					<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-search"></use>
+				<button aria-label="Поиск" type="submit" name="s">
+					<svg width='16' height='16' role='img' aria-hidden='true' focusable='false'>
+						<use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
 					</svg>
 				</button>
 			</div>
 			<button type="button" class="search-title-closer" aria-label="Закрыть поиск">
-				<svg width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#cross"></use>
+				<svg width="16" height="16" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+					<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-cross"></use>
 				</svg>
 			</button>
 		</form>

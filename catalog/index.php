@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Продукция");
 ?><? $APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
 	".default", 
-	array(
+	[
 		"IBLOCK_TYPE" => "news",
 		"IBLOCK_ID" => "2",
 		"BASKET_URL" => "",
@@ -28,9 +28,9 @@ $APPLICATION->SetTitle("Продукция");
 		"SET_STATUS_404" => "Y",
 		"USE_FILTER" => "N",
 		"USE_COMPARE" => "N",
-		"PRICE_CODE" => array(
+		"PRICE_CODE" => [
 			0 => "PRICE",
-		),
+		],
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "N",
@@ -40,22 +40,22 @@ $APPLICATION->SetTitle("Продукция");
 		"LINE_ELEMENT_COUNT" => "1",
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
-		"LIST_PROPERTY_CODE" => array(
+		"LIST_PROPERTY_CODE" => [
 			0 => "PRICECURRENCY",
 			1 => "",
-		),
+		],
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_META_DESCRIPTION" => "-",
 		"LIST_BROWSER_TITLE" => "-",
-		"DETAIL_PROPERTY_CODE" => array(
+		"DETAIL_PROPERTY_CODE" => [
 			0 => "SIZE",
 			1 => "S_SIZE",
 			2 => "ARTNUMBER",
 			3 => "MATERIAL",
 			4 => "MANUFACTURER",
 			5 => "",
-		),
+		],
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_BROWSER_TITLE" => "-",
@@ -76,8 +76,8 @@ $APPLICATION->SetTitle("Продукция");
 		"COMPONENT_TEMPLATE" => ".default",
 		"TEMPLATE_THEME" => "blue",
 		"ADD_PICT_PROP" => "-",
-		"LABEL_PROP" => array(
-		),
+		"LABEL_PROP" => [
+		],
 		"MESS_BTN_BUY" => "Купить",
 		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
 		"MESS_BTN_COMPARE" => "Сравнение",
@@ -137,10 +137,10 @@ $APPLICATION->SetTitle("Продукция");
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
 		"DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
 		"DETAIL_SHOW_SLIDER" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array(
+		"DETAIL_DETAIL_PICTURE_MODE" => [
 			0 => "POPUP",
 			1 => "MAGNIFIER",
-		),
+		],
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_SHOW_POPULAR" => "Y",
@@ -156,13 +156,17 @@ $APPLICATION->SetTitle("Продукция");
 		"COMPATIBLE_MODE" => "N",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"SEF_URL_TEMPLATES" => array(
+		"LIST_PROPERTY_CODE_MOBILE" => [
+		],
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => [
+		],
+		"SEF_URL_TEMPLATES" => [
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
 			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 			"compare" => "",
 			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
-		)
-	),
+		]
+	],
 	false
 ); ?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

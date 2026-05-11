@@ -2,6 +2,7 @@
 
 .header {
 	background-color: var(--white);
+	container: header / inline-size;
 
 	&__row {
 		display: flex;
@@ -69,39 +70,39 @@
 	}
 }
 // !
-.search-title {
-	position: relative;
-	padding-right: 50px;
+// .search-title {
+// 	position: relative;
+// 	padding-right: 50px;
 
-	button {
-		position: absolute;
-		top: 50%;
-		right: 6px;
-		transform: translateY(-50%);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: none;
-		width: 40px;
-		height: 40px;
-		background-color: transparent;
+// 	button {
+// 		position: absolute;
+// 		top: 50%;
+// 		right: 6px;
+// 		transform: translateY(-50%);
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		border: none;
+// 		width: 40px;
+// 		height: 40px;
+// 		background-color: transparent;
 
-		svg {
-			fill: var(--light);
-		}
-	}
+// 		svg {
+// 			fill: var(--light);
+// 		}
+// 	}
 
-	input {
-		font-size: 16px;
-		outline: none;
-		color: var(--dark);
+// 	input {
+// 		font-size: 16px;
+// 		outline: none;
+// 		color: var(--dark);
 
-		&::placeholder {
-			font-size: 16px;
-			color: var(--light);
-		}
-	}
-}
+// 		&::placeholder {
+// 			font-size: 16px;
+// 			color: var(--light);
+// 		}
+// 	}
+// }
 // !
 .row-menu {
 	ul {

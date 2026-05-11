@@ -10,11 +10,11 @@
 	.grid {
 		width: 100%;
 		display: grid;
-		gap: 24px;
+		gap: clamp(24px, 4vw, 72px);
 		margin-bottom: 24px;
 
 		@include container-up(bx-catalog-element, 850px) {
-			grid-template-columns: 2fr 3fr;
+			grid-template-columns: auto 440px;
 		}
 
 		&-item {
@@ -22,15 +22,24 @@
 			display: flex;
 			flex-direction: column;
 
-			&--gallery {
-				max-width: 640px;
-				height: fit-content;
+			// &--gallery {
+			// 	max-width: 640px;
+			// 	height: fit-content;
 
-				@include container-up(bx-catalog-element, 850px) {
-					position: sticky;
-					top: 80px;
-					max-width: 100%;
-				}
+			// 	@include container-up(bx-catalog-element, 850px) {
+			// 		position: sticky;
+			// 		top: 80px;
+			// 		max-width: 100%;
+			// 	}
+			// }
+
+			&--side {
+				position: sticky;
+				top: 60px;
+				padding: 24px;
+				border-radius: 4px;
+				border: 1px solid var(--lighter);
+				height: fit-content;
 			}
 		}
 	}

@@ -5,11 +5,11 @@ $APPLICATION->SetTitle("Поиск");
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:search.page", 
-	"clear", 
+	".default", 
 	[
-		"RESTART" => "N",
-		"CHECK_DATES" => "N",
-		"USE_TITLE_RANK" => "N",
+		"RESTART" => "Y",
+		"CHECK_DATES" => "Y",
+		"USE_TITLE_RANK" => "Y",
 		"DEFAULT_SORT" => "rank",
 		"arrFILTER" => [
 			0 => "iblock_products",
@@ -29,13 +29,13 @@ $APPLICATION->SetTitle("Поиск");
 		"PAGER_TITLE" => "Результаты поиска",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => "arrows",
-		"USE_SUGGEST" => "N",
+		"USE_SUGGEST" => "Y",
 		"SHOW_ITEM_TAGS" => "Y",
 		"SHOW_ITEM_DATE_CHANGE" => "N",
 		"SHOW_ORDER_BY" => "N",
 		"SHOW_TAGS_CLOUD" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"COMPONENT_TEMPLATE" => "clear",
+		"COMPONENT_TEMPLATE" => ".default",
 		"NO_WORD_LOGIC" => "N",
 		"FILTER_NAME" => "",
 		"arrWHERE" => [
@@ -48,7 +48,19 @@ $APPLICATION->SetTitle("Поиск");
 		"PATH_TO_USER_PROFILE" => "",
 		"arrFILTER_iblock_products" => [
 			0 => "all",
-		]
+		],
+		"TAGS_SORT" => "NAME",
+		"TAGS_PAGE_ELEMENTS" => "150",
+		"TAGS_PERIOD" => "",
+		"TAGS_URL_SEARCH" => "",
+		"FONT_MAX" => "50",
+		"FONT_MIN" => "10",
+		"COLOR_NEW" => "000000",
+		"COLOR_OLD" => "C8C8C8",
+		"PERIOD_NEW_TAGS" => "",
+		"SHOW_CHAIN" => "Y",
+		"COLOR_TYPE" => "Y",
+		"WIDTH" => "100%"
 	],
 	false
 );?>

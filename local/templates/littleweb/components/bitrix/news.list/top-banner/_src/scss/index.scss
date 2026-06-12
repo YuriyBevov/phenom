@@ -14,22 +14,25 @@
 			overflow: hidden;
 			background-color: rgba(0, 0, 0, 60%);
 
-			a {
+			a,
+			picture {
 				display: flex;
+				width: 100%;
+				height: 100%;
 			}
 
 			img {
 				width: 100%;
 				height: 100%;
-				object-fit: contain;
+				object-fit: cover;
 			}
 		}
 	}
 
 	&__navigation-row {
 		position: absolute;
-		bottom: 0;
-		padding: clamp(4px, 1.6cqw, 10px) 15px;
+		bottom: 48px;
+		padding: clamp(4px, 1.6cqw, 10px) 48px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

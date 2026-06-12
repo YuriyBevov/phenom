@@ -1,0 +1,32 @@
+.tizzers {
+	padding: 32px;
+
+	.container {
+		display: flex;
+	}
+
+	&__item {
+		background-color: var(--dark);
+		clip-path: var(--base-clip-path);
+		padding: 12px 48px;
+		height: auto;
+
+		display: flex;
+		align-items: center;
+		gap: 24px;
+
+		strong {
+			font-size: 56px;
+			font-weight: 600;
+			font-family: var(--secondary-font);
+			white-space: nowrap;
+			color: var(--white);
+		}
+
+		span {
+			font-size: 18px;
+			font-weight: 500;
+			color: var(--white);
+		}
+	}
+}

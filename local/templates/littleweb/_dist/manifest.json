@@ -56,13 +56,13 @@
     "src": "local/templates/littleweb/_src/fonts/Unbounded-SemiBold.woff2"
   },
   "local/templates/littleweb/_src/js/index.js": {
-    "file": "template_scripts.l0sNRNKZ.js",
+    "file": "template_scripts.DsHUk_6t.js",
     "name": "script",
     "src": "local/templates/littleweb/_src/js/index.js",
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.BCbQQj01.css",
+    "file": "template_styles.BdqENi7h.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -80,7 +80,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss": {
-    "file": "components/bitrix/menu/top-menu/style.CkZPAQSK.css",
+    "file": "components/bitrix/menu/top-menu/style.BnxouQks.css",
     "src": "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_menu_top-menu_scss",
@@ -88,8 +88,26 @@
       "bitrix_menu_top-menu_scss.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/news.list/_workflow/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/_workflow/style.B5_RLcg3.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/_workflow/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list__workflow_scss",
+    "names": [
+      "bitrix_news_list__workflow_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/services-list/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/services-list/style.tn0RQdqM.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/services-list/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_services-list_scss",
+    "names": [
+      "bitrix_news_list_services-list_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/social/style.P5Wbojp9.css",
+    "file": "components/bitrix/news.list/social/style.BRSbkl7r.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_social_scss",
@@ -97,8 +115,17 @@
       "bitrix_news_list_social_scss.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/tizzers/style.BWk7kua-.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_tizzers_scss",
+    "names": [
+      "bitrix_news_list_tizzers_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/top-banner/style.Iq1XyFYn.css",
+    "file": "components/bitrix/news.list/top-banner/style.DzqcEJTI.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_top-banner_scss",
@@ -106,13 +133,13 @@
       "bitrix_news_list_top-banner_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/news.list/workflow/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/workflow/style.B5_RLcg3.css",
-    "src": "local/templates/littleweb/components/bitrix/news.list/workflow/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss": {
+    "file": "components/bitrix/search.title/.default/style.BVioYO--.css",
+    "src": "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_news_list_workflow_scss",
+    "name": "bitrix_search_title__default_scss",
     "names": [
-      "bitrix_news_list_workflow_scss.css"
+      "bitrix_search_title__default_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss": {

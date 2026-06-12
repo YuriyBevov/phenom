@@ -16,9 +16,9 @@
 	--primary: #2b519d;
 	--secondary: #f8f8f8;
 	--warning: #f5c542;
-	--danger: #e63e3e;
+	--danger: #cc3300;
 	--success: #42c486;
-	--info: #fff8db;
+	--info: #675959;
 	--dark: #222222;
 	--light: #f4f4f4;
 
@@ -38,4 +38,6 @@
 	--site-bg-color: var(--white);
 
 	--main-transition: 0.25s ease;
+
+	--base-clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
 }

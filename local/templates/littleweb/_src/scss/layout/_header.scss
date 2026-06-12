@@ -2,27 +2,25 @@
 
 .header {
 	position: relative;
-	padding: 12px 0;
+	// padding: 12px 0;
 	// background-color: var(--dark);
 
 	.container {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		// gap: 16px;
 	}
 
 	.logo {
-		// margin-right: auto;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: var(--container-offset);
 		width: 100%;
-		max-width: 260px;
+		max-width: 200px;
 		height: auto;
+		margin-right: 44px;
 	}
 
 	&__contact-block {
+		position: relative;
+
 		display: flex;
 		flex-direction: column;
 		gap: 4px 16px;
@@ -39,14 +37,19 @@
 		svg {
 			position: absolute;
 			top: 50%;
+			transform: translateY(-50%);
 			left: 0;
 			width: 24px;
 			height: auto;
-			fill: var(--accent);
+			fill: var(--dark);
 		}
 
 		&--left {
 			margin-right: auto;
+
+			svg {
+				fill: var(--danger);
+			}
 		}
 	}
 
@@ -54,13 +57,15 @@
 		display: flex;
 		align-items: center;
 		gap: 12px 32px;
-
-		padding-left: 260px;
+		padding: 12px 0;
 
 		&--top {
 			display: flex;
 			align-items: center;
 			gap: 12px 32px;
+			// padding-bottom: 12px;
+
+			border-bottom: 1px solid var(--light);
 
 			&-section {
 				display: flex;
@@ -89,6 +94,10 @@
 			.social-block {
 				padding: 0 44px;
 			}
+		}
+
+		&--bottom {
+			background-color: var(--light);
 		}
 	}
 }

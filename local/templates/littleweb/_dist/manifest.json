@@ -1,28 +1,68 @@
 {
-  "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Bold.woff2": {
-    "file": "fonts/HelveticaNeueCyr-Bold.imno133L.woff2",
-    "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Bold.woff2"
+  "local/templates/littleweb/_src/fonts/Roboto-Bold.woff2": {
+    "file": "fonts/Roboto-Bold.Dt7zMN7z.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-Bold.woff2"
   },
-  "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Light.woff2": {
-    "file": "fonts/HelveticaNeueCyr-Light.CuIBELrY.woff2",
-    "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Light.woff2"
+  "local/templates/littleweb/_src/fonts/Roboto-Light.woff2": {
+    "file": "fonts/Roboto-Light.1x3amVl9.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-Light.woff2"
   },
-  "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Medium.woff2": {
-    "file": "fonts/HelveticaNeueCyr-Medium.BD0E0mnV.woff2",
-    "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Medium.woff2"
+  "local/templates/littleweb/_src/fonts/Roboto-Medium.woff2": {
+    "file": "fonts/Roboto-Medium.BCcnOS6E.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-Medium.woff2"
   },
-  "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Regular.woff2": {
-    "file": "fonts/HelveticaNeueCyr-Regular.CgvDTpYV.woff2",
-    "src": "local/templates/littleweb/_src/fonts/HelveticaNeueCyr-Regular.woff2"
+  "local/templates/littleweb/_src/fonts/Roboto-Regular.woff2": {
+    "file": "fonts/Roboto-Regular.BqAJAbgd.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-Regular.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Roboto-SemiBold.woff2": {
+    "file": "fonts/Roboto-SemiBold.DEeJADsj.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-SemiBold.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Roboto-Thin.woff2": {
+    "file": "fonts/Roboto-Thin.CaOVkNeg.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Roboto-Thin.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-Black.woff2": {
+    "file": "fonts/Unbounded-Black.B2la0Wpw.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-Black.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-Bold.woff2": {
+    "file": "fonts/Unbounded-Bold.D5uDhuja.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-Bold.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-ExtraBold.woff2": {
+    "file": "fonts/Unbounded-ExtraBold.Cl8Qtq88.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-ExtraBold.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-ExtraLight.woff2": {
+    "file": "fonts/Unbounded-ExtraLight.meNRYUdw.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-ExtraLight.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-Light.woff2": {
+    "file": "fonts/Unbounded-Light.BtNIBsUj.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-Light.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-Medium.woff2": {
+    "file": "fonts/Unbounded-Medium.CuI-tGOL.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-Medium.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-Regular.woff2": {
+    "file": "fonts/Unbounded-Regular.CLuhn8ed.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-Regular.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Unbounded-SemiBold.woff2": {
+    "file": "fonts/Unbounded-SemiBold.DQJzkOpr.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Unbounded-SemiBold.woff2"
   },
   "local/templates/littleweb/_src/js/index.js": {
-    "file": "template_scripts.nNwHWmme.js",
+    "file": "template_scripts.l0sNRNKZ.js",
     "name": "script",
     "src": "local/templates/littleweb/_src/js/index.js",
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.Jj6j_oNS.css",
+    "file": "template_styles.BCbQQj01.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -30,173 +70,35 @@
       "template.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/_iblock.element.add/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/_iblock.element.add/littleweb/style.tn0RQdqM.css",
-    "src": "local/templates/littleweb/components/bitrix/_iblock.element.add/littleweb/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/form.result.new/callback-form/_src/scss/index.scss": {
+    "file": "components/bitrix/form.result.new/callback-form/style.C59IU227.css",
+    "src": "local/templates/littleweb/components/bitrix/form.result.new/callback-form/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix__iblock_element_add_littleweb_scss",
+    "name": "bitrix_form_result_new_callback-form_scss",
     "names": [
-      "bitrix__iblock_element_add_littleweb_scss.css"
+      "bitrix_form_result_new_callback-form_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/catalog.element/request-item/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.element/request-item/style.CMHGxOi7.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.element/request-item/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss": {
+    "file": "components/bitrix/menu/top-menu/style.CkZPAQSK.css",
+    "src": "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_catalog_element_request-item_scss",
+    "name": "bitrix_menu_top-menu_scss",
     "names": [
-      "bitrix_catalog_element_request-item_scss.css"
+      "bitrix_menu_top-menu_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/catalog.section.list/category-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.section.list/category-list/style.D-OakIue.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.section.list/category-list/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/social/style.P5Wbojp9.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_catalog_section_list_category-list_scss",
+    "name": "bitrix_news_list_social_scss",
     "names": [
-      "bitrix_catalog_section_list_category-list_scss.css"
+      "bitrix_news_list_social_scss.css"
     ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.section.list/section-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.section.list/section-list/style.CD5ucNEx.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.section.list/section-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_section_list_section-list_scss",
-    "names": [
-      "bitrix_catalog_section_list_section-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.section.list/side-cathegory-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.section.list/side-cathegory-list/style.BAErVJGN.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.section.list/side-cathegory-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_section_list_side-cathegory-list_scss",
-    "names": [
-      "bitrix_catalog_section_list_side-cathegory-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.section/_request-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.section/_request-list/style.xUYDbLz-.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.section/_request-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_section__request-list_scss",
-    "names": [
-      "bitrix_catalog_section__request-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.section/request-catalog-section/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.section/request-catalog-section/style.DBiwFlml.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.section/request-catalog-section/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_section_request-catalog-section_scss",
-    "names": [
-      "bitrix_catalog_section_request-catalog-section_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.smart.filter/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.smart.filter/littleweb/style.BC7Lul11.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.smart.filter/littleweb/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_smart_filter_littleweb_scss",
-    "names": [
-      "bitrix_catalog_smart_filter_littleweb_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog.top/catalog-top/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog.top/catalog-top/style.DTCrrH8D.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog.top/catalog-top/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_top_catalog-top_scss",
-    "names": [
-      "bitrix_catalog_top_catalog-top_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog/_request-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog/_request-list/style.BXp-VJiB.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog/_request-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog__request-list_scss",
-    "names": [
-      "bitrix_catalog__request-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/catalog/request-list/_src/scss/index.scss": {
-    "file": "components/bitrix/catalog/request-list/style.DXCvOlf-.css",
-    "src": "local/templates/littleweb/components/bitrix/catalog/request-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_catalog_request-list_scss",
-    "names": [
-      "bitrix_catalog_request-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/form.result.list/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/form.result.list/littleweb/style.DdwLZBCW.css",
-    "src": "local/templates/littleweb/components/bitrix/form.result.list/littleweb/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_form_result_list_littleweb_scss",
-    "names": [
-      "bitrix_form_result_list_littleweb_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/form.result.new/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/form.result.new/littleweb/style.yQT1bfGO.css",
-    "src": "local/templates/littleweb/components/bitrix/form.result.new/littleweb/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_form_result_new_littleweb_scss",
-    "names": [
-      "bitrix_form_result_new_littleweb_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/iblock.element.add.form/littleweb/style.CPSR35VH.css",
-    "src": "local/templates/littleweb/components/bitrix/iblock.element.add.form/littleweb/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_iblock_element_add_form_littleweb_scss",
-    "names": [
-      "bitrix_iblock_element_add_form_littleweb_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss": {
-    "file": "components/bitrix/menu/bottom-menu/style._UBDLy8h.css",
-    "src": "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_menu_bottom-menu_scss",
-    "names": [
-      "bitrix_menu_bottom-menu_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news.list/brands/_src/js/index.js": {
-    "file": "components/bitrix/news.list/brands/script.l0sNRNKZ.js",
-    "name": "bitrix_news_list_brands_js",
-    "src": "local/templates/littleweb/components/bitrix/news.list/brands/_src/js/index.js",
-    "isEntry": true
-  },
-  "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/brands/style.BGUkEeBS.css",
-    "src": "local/templates/littleweb/components/bitrix/news.list/brands/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_news_list_brands_scss",
-    "names": [
-      "bitrix_news_list_brands_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news.list/request-list/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/request-list/style.BwE1TbZQ.css",
-    "src": "local/templates/littleweb/components/bitrix/news.list/request-list/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_news_list_request-list_scss",
-    "names": [
-      "bitrix_news_list_request-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js": {
-    "file": "components/bitrix/news.list/top-banner/script.l0sNRNKZ.js",
-    "name": "bitrix_news_list_top-banner_js",
-    "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/js/index.js",
-    "isEntry": true
   },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/top-banner/style.B-ECqOXf.css",
+    "file": "components/bitrix/news.list/top-banner/style.Iq1XyFYn.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_top-banner_scss",
@@ -204,22 +106,22 @@
       "bitrix_news_list_top-banner_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/search.title/_search-title/_src/scss/index.scss": {
-    "file": "components/bitrix/search.title/_search-title/style.CXlZSVan.css",
-    "src": "local/templates/littleweb/components/bitrix/search.title/_search-title/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/news.list/workflow/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/workflow/style.B5_RLcg3.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/workflow/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_search_title__search-title_scss",
+    "name": "bitrix_news_list_workflow_scss",
     "names": [
-      "bitrix_search_title__search-title_scss.css"
+      "bitrix_news_list_workflow_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/search.title/kovry/_src/scss/index.scss": {
-    "file": "components/bitrix/search.title/kovry/style.Bgq2hx1f.css",
-    "src": "local/templates/littleweb/components/bitrix/search.title/kovry/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss": {
+    "file": "components/bitrix/system.pagenavigation/lw-page-navigation/style.DkaxnA2A.css",
+    "src": "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_search_title_kovry_scss",
+    "name": "bitrix_system_pagenavigation_lw-page-navigation_scss",
     "names": [
-      "bitrix_search_title_kovry_scss.css"
+      "bitrix_system_pagenavigation_lw-page-navigation_scss.css"
     ]
   }
 }

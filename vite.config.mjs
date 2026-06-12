@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import path from "path";
 import fs from "fs";
 import svgSpritemap from "vite-plugin-svg-spritemap";
-import vue from "@vitejs/plugin-vue";
 
 // Базовые пути
 const TEMPLATE_NAME = "littleweb";
@@ -203,6 +202,9 @@ const detectedComponents = findComponentTemplateDirs(COMPONENTS_BASE_PATH);
 const componentConfigs = Object.fromEntries(
 	detectedComponents.map((comp) => [comp.name, comp.path]),
 );
+const globalStyleComponentEntries = new Set([
+	"bitrix_breadcrumb_lw-breadcrumb",
+]);
 
 // Логирование найденных компонентов
 if (detectedComponents.length === 0) {
@@ -231,8 +233,9 @@ Object.entries(componentConfigs).forEach(([key, componentDir]) => {
 
 	const hasScss = fileExists(scssPath);
 	const hasJs = fileExists(jsPath);
+	const shouldBuildScss = hasScss && !globalStyleComponentEntries.has(key);
 
-	if (!hasScss && !hasJs) {
+	if (!shouldBuildScss && !hasJs) {
 		console.log(`ℹ️  Шаблон "${key}" не содержит файлов для сборки.`);
 		return;
 	}
@@ -240,7 +243,7 @@ Object.entries(componentConfigs).forEach(([key, componentDir]) => {
 	validComponentEntries.push({
 		key,
 		paths: {
-			...(hasScss && { scss: scssPath }),
+			...(shouldBuildScss && { scss: scssPath }),
 			...(hasJs && { js: jsPath }),
 		},
 		basePath: componentDir,
@@ -267,9 +270,6 @@ validComponentEntries.forEach(({ key, paths }) => {
 	if (paths.scss) {
 		rollupInput[`${key}_scss`] = paths.scss;
 	}
-	if (paths.js) {
-		rollupInput[`${key}_js`] = paths.js;
-	}
 });
 
 // Маппинг для выходных путей CSS
@@ -295,10 +295,9 @@ const getCssOutputPath = (fileName) => {
 // Основная конфигурация
 export default defineConfig({
 	base: `${BASE_PATH}/_dist/`,
-	publicDir: path.resolve(__dirname, `${TEMPLATE_PATH}/_src/public`), // Файлы отсюда будут скопированы в _dist как есть
+	publicDir: path.resolve(__dirname, `${TEMPLATE_PATH}/_public`), // Файлы отсюда будут скопированы в _dist как есть
 
 	plugins: [
-		vue(),
 		svgSpritemap({
 			pattern: `${TEMPLATE_PATH}/_src/sprite/**/*.svg`,
 			filename: `sprite.svg`,
@@ -335,7 +334,6 @@ export default defineConfig({
 
 			output: {
 				// Обработка JS-файлов
-				// format: "es",
 				entryFileNames: (chunkInfo) => {
 					const name = chunkInfo.name;
 
@@ -393,7 +391,6 @@ export default defineConfig({
 		outDir: DIST_PATH,
 		emptyOutDir: true,
 		copyPublicDir: true,
-		// minify: "esbuild",
 	},
 
 	resolve: {
@@ -402,11 +399,6 @@ export default defineConfig({
 			"@scss": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/scss`),
 			"@img": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/images`),
 			"@fonts": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/fonts`),
-			"@public": path.resolve(__dirname, `${TEMPLATE_PATH}/_src/public`),
-			"@vue-components": path.resolve(
-				__dirname,
-				`${TEMPLATE_PATH}/_src/vue-components`,
-			),
 		},
 	},
 });

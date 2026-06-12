@@ -25,4 +25,3 @@ require_once $includesPath . 'debug.php';
 //     initBitrixCore('popup');
 //   }
 // );
-// require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/functions/transferFormDataToIblock.php");

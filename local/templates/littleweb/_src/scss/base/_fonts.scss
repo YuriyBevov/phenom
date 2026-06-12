@@ -8,7 +8,18 @@
 	}
 }
 
-@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Light", 300, normal);
-@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Regular", 400, normal);
-@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Medium", 500, normal);
-@include font-face("HelveticaNeueCyr", "HelveticaNeueCyr-Bold", 700, normal);
+@include font-face("Roboto", "Roboto-Thin", 100, normal);
+@include font-face("Roboto", "Roboto-Light", 300, normal);
+@include font-face("Roboto", "Roboto-Regular", 400, normal);
+@include font-face("Roboto", "Roboto-Medium", 500, normal);
+@include font-face("Roboto", "Roboto-SemiBold", 600, normal);
+@include font-face("Roboto", "Roboto-Bold", 700, normal);
+
+@include font-face("Unbounded", "Unbounded-ExtraLight", 200, normal);
+@include font-face("Unbounded", "Unbounded-Light", 300, normal);
+@include font-face("Unbounded", "Unbounded-Regular", 400, normal);
+@include font-face("Unbounded", "Unbounded-Medium", 500, normal);
+@include font-face("Unbounded", "Unbounded-SemiBold", 600, normal);
+@include font-face("Unbounded", "Unbounded-Bold", 700, normal);
+@include font-face("Unbounded", "Unbounded-ExtraBold", 800, normal);
+@include font-face("Unbounded", "Unbounded-Black", 900, normal);

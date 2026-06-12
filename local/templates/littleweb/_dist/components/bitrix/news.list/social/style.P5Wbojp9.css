@@ -1,0 +1,1 @@
+.social-block{display:flex;align-items:center;gap:12px}.social-block a{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid var(--white);border-radius:50%;background-color:var(--dark)}.social-block a img{width:24px;height:auto;aspect-ratio:1/1;object-fit:contain}

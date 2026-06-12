@@ -1,0 +1,20 @@
+.main-btn {
+	min-height: 54px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.045em;
+	text-transform: uppercase;
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+	clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+	border: 0;
+	padding: 8px 44px;
+
+	color: var(--white);
+	background-color: var(--dark);
+}

@@ -1,3 +1,26 @@
 .section {
 	padding: clamp(32px, 4.4vw, 64px) 0;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		gap: 24px;
+		margin-bottom: clamp(32px, 4vw, 72px);
+	}
+
+	h2 {
+		font-family: var(--secondary-font);
+		font-size: clamp(24px, 6vw, 64px);
+		color: var(--danger);
+		margin: 0;
+		text-align: center;
+	}
+
+	p {
+		font-size: clamp(16px, 2.4vw, 18px);
+		text-align: center;
+		margin: 0;
+	}
 }

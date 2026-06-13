@@ -62,7 +62,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.BdqENi7h.css",
+    "file": "template_styles.-yQrVbri.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -71,7 +71,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/form.result.new/callback-form/_src/scss/index.scss": {
-    "file": "components/bitrix/form.result.new/callback-form/style.C59IU227.css",
+    "file": "components/bitrix/form.result.new/callback-form/style.CWa4GKfs.css",
     "src": "local/templates/littleweb/components/bitrix/form.result.new/callback-form/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_form_result_new_callback-form_scss",
@@ -97,8 +97,17 @@
       "bitrix_news_list__workflow_scss.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/news.list/features-list/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/features-list/style.D6sTHKU-.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/features-list/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_features-list_scss",
+    "names": [
+      "bitrix_news_list_features-list_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/news.list/services-list/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/services-list/style.tn0RQdqM.css",
+    "file": "components/bitrix/news.list/services-list/style.B4dPhfM0.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/services-list/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_services-list_scss",
@@ -134,7 +143,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss": {
-    "file": "components/bitrix/search.title/.default/style.BVioYO--.css",
+    "file": "components/bitrix/search.title/.default/style.hRaW-brd.css",
     "src": "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_search_title__default_scss",

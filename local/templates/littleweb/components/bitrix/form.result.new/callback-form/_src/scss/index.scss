@@ -2,7 +2,7 @@
 .callback-form {
 	container: callback-form / inline-size;
 
-	background-color: var(--primary);
+	background-color: var(--dark);
 	padding: clamp(12px, 4.6vw, 60px);
 	border-radius: 20px;
 
@@ -39,13 +39,6 @@
 
 		.ctrl-wrapper:has(textarea) {
 			grid-column: -1/1;
-		}
-	}
-
-	.arrow-btn {
-		width: 100%;
-		.arrow-btn__text {
-			background-color: var(--dark);
 		}
 	}
 }

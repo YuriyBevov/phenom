@@ -1,0 +1,1 @@
+<img width="1024" alt="О нас" src="/upload/medialibrary/300/dpxicy727wfcwo9niwk80ssvlt0ly7fu.png" height="768"><br>

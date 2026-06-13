@@ -270,6 +270,10 @@ validComponentEntries.forEach(({ key, paths }) => {
 	if (paths.scss) {
 		rollupInput[`${key}_scss`] = paths.scss;
 	}
+
+	if (paths.js) {
+		rollupInput[`${key}_js`] = paths.js;
+	}
 });
 
 // Маппинг для выходных путей CSS

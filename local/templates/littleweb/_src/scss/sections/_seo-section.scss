@@ -4,6 +4,7 @@
 	position: relative;
 	isolation: isolate;
 	container: seo-section / inline-size;
+	min-height: 640px;
 
 	&::before {
 		position: absolute;

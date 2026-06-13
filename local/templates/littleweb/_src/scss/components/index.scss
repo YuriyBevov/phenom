@@ -1,3 +1,11 @@
 @use "./partials/logo";
 @use "./ui/main-btn";
 @use "./ui/burger-btn";
+@use "./ui/swiper";
+@use "./partials/breadcrumbs";
+
+@use "./ui/form-controls/ctrl-wrapper";
+@use "./ui/form-controls/input";
+@use "./ui/form-controls/textarea";
+@use "./ui/form-controls/checkbox";
+@use "./ui/scroll-up-btn";

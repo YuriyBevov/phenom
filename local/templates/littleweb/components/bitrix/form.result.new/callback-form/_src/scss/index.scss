@@ -2,43 +2,66 @@
 .callback-form {
 	container: callback-form / inline-size;
 
+	position: relative;
+	color: var(--white);
 	background-color: var(--dark);
-	padding: clamp(12px, 4.6vw, 60px);
-	border-radius: 20px;
+	padding: 72px;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		background-color: var(--white);
+		width: 40%;
+		max-width: 360px;
+		height: 60px;
+	}
+	&::before {
+		top: -20px;
+		left: 0;
+		clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+	}
+	&::after {
+		bottom: -20px;
+		right: 0;
+		clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+	}
 
 	form {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 24px clamp(24px, 7vw, 120px);
-
-		@include container-up(section, 768px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		gap: 16px;
+		max-width: 640px;
+		margin: 0 auto;
 	}
 
 	&__note {
 		grid-column: -1/1;
 	}
 
-	&__section {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
+	&__title {
+		font-family: var(--secondary-font);
+		font-size: clamp(24px, 4vw, 48px);
+		color: var(--white);
+	}
 
-		container: callback-form-section / inline-size;
+	&__text {
+		font-size: clamp(18px, 2.4vw, 22px);
+		color: var(--white);
 	}
 
 	&__content {
-		display: grid;
-		grid-template-columns: 1fr;
+		padding: 32px 0;
+		display: flex;
+		flex-direction: column;
 		gap: 16px;
+	}
 
-		@include container-up(callback-form-section, 440px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.ctrl-wrapper:has(textarea) {
-			grid-column: -1/1;
-		}
+	*[type="submit"] {
+		color: var(--dark);
+		background-color: var(--white);
+		clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+		max-width: 240px;
+		margin: 0 32px;
 	}
 }

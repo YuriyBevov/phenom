@@ -3,7 +3,7 @@
 
 <? if ($arParams["POPUP_VIEW"] !== "Y"): ?>
 	<section class="section">
-		<div class="container">
+		<div class="container-fluid">
 		<? else: ?>
 			<div class="section">
 				<div class="container">
@@ -14,78 +14,63 @@
 
 					<? if ($arResult["FORM_NOTE"]): ?>
 						<div class="callback-form__note">
-							<span class="title">Заявка отправлена успешно!</span>
+							<span class="callback-form__title">Заявка отправлена успешно!</span>
 							<p>Спасибо, мы скоро свяжемся с Вами!</p>
 						</div>
 					<? else: ?>
 
-						<div class="callback-form__section">
-							<span class="title"><?= $arResult["FORM_TITLE"] ?></span>
-							<span class="text"><?= $arResult["FORM_DESCRIPTION"] ?></span>
-						</div>
+						<span class="callback-form__title"><?= $arResult["FORM_TITLE"] ?></span>
+						<span class="callback-form__text"><?= $arResult["FORM_DESCRIPTION"] ?></span>
 
-						<div class="callback-form__section">
-							<div class="callback-form__content">
-								<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
-									<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "text"): ?>
-										<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
-											<label>
-												<?= $arQuestion["HTML_CODE"] ?>
-											</label>
-										</div>
-									<? endif; ?>
-
-									<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "checkbox"): ?>
-										<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
-											<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
-											<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>">
-												<span><?= $arQuestion["CAPTION"] ?><?= ($arQuestion["REQUIRED"] == "Y" ? '*' : '') ?></span>
-											</label>
-										</div>
-									<? endif; ?>
-
-									<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "textarea"): ?>
-										<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
-											<label>
-												<?= $arQuestion["HTML_CODE"] ?>
-											</label>
-										</div>
-									<? endif; ?>
-									<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "hidden"): ?>
-										<?= $arQuestion["HTML_CODE"] ?>
-									<? endif; ?>
-								<? endforeach; ?>
-							</div>
-
-							<? if ($arResult["isUseCaptcha"] == "Y"): ?>
-								<div class="captcha-block-container">
-									<input type="hidden" name="captcha_sid" value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" />
-
-									<div class="captcha-block <?= ($arResult["FORM_ERRORS"][0] ? 'invalid-fld' : '') ?>">
-										<img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" width="180" height="40" alt="" />
-										<input type="text" placeholder="Введите символы" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" />
+						<div class="callback-form__content">
+							<? foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
+								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "text"): ?>
+									<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+										<label>
+											<?= $arQuestion["HTML_CODE"] ?>
+										</label>
 									</div>
-								</div>
-							<? endif; ?>
+								<? endif; ?>
 
-							<label class="arrow-btn" <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?>>
-								<span class="arrow-btn__text">
-									<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"] ?? 'Отправить')) ?>
-								</span>
-								<span class="arrow-btn__icon">
-									<svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
-										<use xlink:href="/local/templates/littleweb/_dist/sprite.svg#arrow"></use>
-									</svg>
-								</span>
+								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "checkbox"): ?>
+									<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+										<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+										<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] . ($arParams["IS_MODAL"] ? '_modal' : null) ?>">
+											<span><?= $arQuestion["CAPTION"] ?><?= ($arQuestion["REQUIRED"] == "Y" ? '*' : '') ?></span>
+										</label>
+									</div>
+								<? endif; ?>
 
-								<input
-									style="display:none;"
-									<?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?>
-									type="submit" name="web_form_submit"
-									value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? 'Отправить' : $arResult["arForm"]["BUTTON"]); ?>" />
-							</label>
-
+								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "textarea"): ?>
+									<div class="ctrl-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+										<label>
+											<?= $arQuestion["HTML_CODE"] ?>
+										</label>
+									</div>
+								<? endif; ?>
+								<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "hidden"): ?>
+									<?= $arQuestion["HTML_CODE"] ?>
+								<? endif; ?>
+							<? endforeach; ?>
 						</div>
+
+						<? if ($arResult["isUseCaptcha"] == "Y"): ?>
+							<div class="captcha-block-container">
+								<input type="hidden" name="captcha_sid" value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" />
+
+								<div class="captcha-block <?= ($arResult["FORM_ERRORS"][0] ? 'invalid-fld' : '') ?>">
+									<img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" width="180" height="40" alt="" />
+									<input type="text" placeholder="Введите символы" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" />
+								</div>
+							</div>
+						<? endif; ?>
+
+						<input
+							class="main-btn"
+							<?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?>
+							type="submit" name="web_form_submit"
+							value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? 'Отправить' : $arResult["arForm"]["BUTTON"]); ?>" />
+
 					<? endif; ?>
 					<?= $arResult["FORM_FOOTER"] ?>
 				</div>

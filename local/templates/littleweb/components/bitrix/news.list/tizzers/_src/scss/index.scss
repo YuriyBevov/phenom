@@ -1,22 +1,43 @@
+@use "@scss/base/container-queries" as *;
+
 .tizzers {
-	padding: 32px;
+	padding: clamp(32px, 6vw, 64px) 0;
+	container: tizzers / inline-size;
 
 	.container {
-		display: flex;
+		display: grid;
+		gap: 16px 0;
+
+		@include container-up("tizzers", 534px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include container-up("tizzers", 1240px) {
+			display: flex;
+		}
 	}
 
 	&__item {
 		background-color: var(--dark);
 		clip-path: var(--base-clip-path);
-		padding: 12px 48px;
+		padding: 12px clamp(32px, 5vw, 48px);
 		height: auto;
 
 		display: flex;
-		align-items: center;
-		gap: 24px;
+		flex-direction: column;
+		gap: 12px 24px;
+
+		@include container-up("tizzers", 768px) {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		&:last-child {
+			grid-column: -1/1;
+		}
 
 		strong {
-			font-size: 56px;
+			font-size: clamp(32px, 6vw, 56px);
 			font-weight: 600;
 			font-family: var(--secondary-font);
 			white-space: nowrap;
@@ -24,6 +45,7 @@
 		}
 
 		span {
+			min-width: 0;
 			font-size: 18px;
 			font-weight: 500;
 			color: var(--white);

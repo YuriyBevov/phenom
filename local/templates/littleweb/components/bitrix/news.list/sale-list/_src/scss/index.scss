@@ -1,0 +1,33 @@
+@use "@scss/base/container-queries" as *;
+
+@include container-up("services-list", 768px) {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.sale-list {
+	container: sale-list / inline-size;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+		gap: 12px;
+		margin-bottom: 32px;
+		width: 100%;
+
+		&-item {
+			aspect-ratio: 2/1;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+}

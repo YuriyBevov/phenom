@@ -38,42 +38,43 @@ if ($pageCount <= 5) {
 }
 ?>
 <? if (!$arResult["NavShowAll"]): ?>
-	<div class="pagination">
+	<div class="pagination-container">
+		<div class="pagination">
 
-		<? if ($arResult["NavPageNomer"] > 1): ?>
-			<? if ($arResult["bSavePage"]): ?>
-				<a
-					href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"
-					class="pagination__btn pagination__btn--prev">
-
-					<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-						<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
-					</svg>
-				</a>
-			<? else: ?>
-				<? if ($arResult["NavPageNomer"] > 2): ?>
+			<? if ($arResult["NavPageNomer"] > 1): ?>
+				<? if ($arResult["bSavePage"]): ?>
 					<a
 						href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"
 						class="pagination__btn pagination__btn--prev">
+
 						<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-							<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
+							<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
 						</svg>
 					</a>
 				<? else: ?>
-					<a href="<?= $arResult["sUrlPath"] ?><?= $strNavQueryStringFull ?>" class="pagination__btn pagination__btn--prev">
-						<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-							<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
-						</svg>
-					</a>
+					<? if ($arResult["NavPageNomer"] > 2): ?>
+						<a
+							href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] - 1) ?>"
+							class="pagination__btn pagination__btn--prev">
+							<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
+								<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
+							</svg>
+						</a>
+					<? else: ?>
+						<a href="<?= $arResult["sUrlPath"] ?><?= $strNavQueryStringFull ?>" class="pagination__btn pagination__btn--prev">
+							<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
+								<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
+							</svg>
+						</a>
+					<? endif ?>
 				<? endif ?>
+			<? else: ?>
+				<span class="pagination__btn pagination__btn--prev pagination__btn--disabled">
+					<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
+					</svg>
+				</span>
 			<? endif ?>
-		<? else: ?>
-			<span class="pagination__btn pagination__btn--prev pagination__btn--disabled">
-				<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
-				</svg>
-			</span>
-		<? endif ?>
 
 			<? foreach ($paginationPages as $paginationPage): ?>
 				<? if (!is_numeric($paginationPage)): ?>
@@ -87,30 +88,31 @@ if ($pageCount <= 5) {
 				<? endif ?>
 			<? endforeach ?>
 
-		<? if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]): ?>
-			<a
-				href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] + 1) ?>"
-				class="pagination__btn pagination__btn--next">
-				<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
-				</svg>
-			</a>
-		<? else: ?>
-			<span class="pagination__btn pagination__btn--next pagination__btn--disabled">
-				<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
-					<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#long-arrow' ?>"></use>
-				</svg>
-			</span>
-		<? endif ?>
+			<? if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]): ?>
+				<a
+					href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] + 1) ?>"
+					class="pagination__btn pagination__btn--next">
+					<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
+					</svg>
+				</a>
+			<? else: ?>
+				<span class="pagination__btn pagination__btn--next pagination__btn--disabled">
+					<svg width="72" height="24" role="img" aria-hidden="true" focusable="false">
+						<use xlink:href="<?= SITE_TEMPLATE_PATH . '/_dist/sprite.svg#icon-arrow' ?>"></use>
+					</svg>
+				</span>
+			<? endif ?>
 
-		<? if ($arResult["bShowAll"]): ?>
-			<noindex>
-				<? if (!$arResult["NavShowAll"]): ?>
-					<a class="pagination-show-all-btn" href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=1" rel="nofollow">
-						Показать все
-					</a>
-				<? endif ?>
-			</noindex>
-		<? endif ?>
+			<? if ($arResult["bShowAll"]): ?>
+				<noindex>
+					<? if (!$arResult["NavShowAll"]): ?>
+						<a class="pagination-show-all-btn" href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=1" rel="nofollow">
+							Показать все
+						</a>
+					<? endif ?>
+				</noindex>
+			<? endif ?>
+		</div>
 	</div>
 <? endif ?>

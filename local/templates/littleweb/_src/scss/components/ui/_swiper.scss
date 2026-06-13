@@ -1,0 +1,45 @@
+.swiper-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 6px;
+
+	.swiper-button-lock {
+		display: none;
+	}
+	.swiper-button-disabled {
+		opacity: 0.5;
+	}
+
+	.swiper-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		height: 40px;
+		padding: 8px 32px;
+		height: 40px;
+		border: none;
+		background-color: rgba(248, 248, 248, 0.3);
+		clip-path: var(--base-clip-path);
+
+		svg {
+			width: 17px;
+			height: 13px;
+			object-fit: contain;
+			fill: var(--white);
+		}
+
+		&--prev {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.swiper-pagination {
+	&-bullet {
+		border-radius: 0;
+		margin: 0 2px !important;
+		background-color: var(--white);
+	}
+}

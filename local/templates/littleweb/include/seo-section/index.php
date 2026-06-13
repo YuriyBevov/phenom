@@ -1,14 +1,16 @@
-<section class="section seo-section">
+<div class="section seo-section">
   <div class="container">
     <div class="seo-section__grid">
       <div class="seo-section__grid-item">
-        <?
-        $APPLICATION->IncludeFile(
-          SITE_TEMPLATE_PATH . '/include/seo-section/description.php',
-          array(),
-          array('MODE' => 'html', 'NAME' => 'описание блока', 'SHOW_BORDER' => true)
-        );
-        ?>
+        <p>
+          <?
+          $APPLICATION->IncludeFile(
+            SITE_TEMPLATE_PATH . '/include/seo-section/description.php',
+            array(),
+            array('MODE' => 'html', 'NAME' => 'описание блока', 'SHOW_BORDER' => true)
+          );
+          ?>
+        </p>
       </div>
       <div class="seo-section__grid-item">
         <? $APPLICATION->IncludeFile(
@@ -19,4 +21,4 @@
       </div>
     </div>
   </div>
-</section>
+</div>

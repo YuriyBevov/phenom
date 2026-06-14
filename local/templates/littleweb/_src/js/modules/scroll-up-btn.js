@@ -1,5 +1,8 @@
 import { gsap } from "gsap";
 
+window.gsap = gsap;
+window.dispatchEvent(new CustomEvent("gsap:ready"));
+
 let isInitialized = false;
 
 export const initScrollUpBtn = () => {

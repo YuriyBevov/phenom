@@ -4,9 +4,10 @@
 	justify-content: space-between;
 	gap: 6px;
 
-	.swiper-button-lock {
-		display: none;
-	}
+	// .swiper-button-lock {
+	// 	display: none;
+	// }
+
 	.swiper-button-disabled {
 		opacity: 0.5;
 	}
@@ -33,6 +34,10 @@
 		&--prev {
 			transform: rotate(180deg);
 		}
+	}
+
+	&:has(.swiper-button-lock) {
+		display: none;
 	}
 }
 

@@ -9,7 +9,7 @@
 				<div class="container">
 				<? endif; ?>
 
-				<div class="callback-form">
+				<div class="callback-form" style="<?= $arResult["FORM_IMAGE"]["URL"] ? 'background-image: url(' . $arResult["FORM_IMAGE"]["URL"] . ')' : '' ?>">
 					<?= $arResult["FORM_HEADER"] ?>
 
 					<? if ($arResult["FORM_NOTE"]): ?>

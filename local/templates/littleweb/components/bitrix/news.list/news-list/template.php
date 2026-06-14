@@ -1,13 +1,10 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
-?>
 
 
-<? if ($arResult["ITEMS"]):
-	$itemsCount = count($arResult["ITEMS"]);
-?>
-	<section class="section services-list">
+if ($arResult["ITEMS"]): ?>
+	<section class="section news-list">
 		<div class="container">
 
 			<div class="section__header">
@@ -19,13 +16,8 @@ $this->setFrameMode(true);
 				<? endif; ?>
 			</div>
 
-			<div class="services-list__grid">
+			<div class="news-list__grid">
 				<? foreach ($arResult["ITEMS"] as $index => $arItem):
-					$cardContainerClass = "services-list-card-container";
-					if ($itemsCount % 2 !== 0 && $index === $itemsCount - 1) {
-						$cardContainerClass .= " services-list-card-container--odd";
-					}
-
 					$this->AddEditAction(
 						$arItem['ID'],
 						$arItem['EDIT_LINK'],
@@ -38,15 +30,16 @@ $this->setFrameMode(true);
 						["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
 					);
 				?>
-					<div class="<?= $cardContainerClass ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-						<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="400">
-							<span><?= $arItem["NAME"] ?></span>
-						</a>
-					</div>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
 				<? endforeach; ?>
 			</div>
 
+			<a href="/news/" class="main-btn">Все новости</a>
 		</div>
 	</section>
 <? endif; ?>

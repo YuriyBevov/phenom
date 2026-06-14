@@ -30,7 +30,7 @@ if ($arResult["ITEMS"]): ?>
 						["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
 					);
 				?>
-					<div class="features-list__grid-item">
+					<div class="features-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 						<strong><?= $arItem["NAME"] ?></strong>
 						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
 					</div>

@@ -6,6 +6,7 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
+		gap: 12px;
 
 		@include container-up("services-list", 768px) {
 			grid-template-columns: repeat(2, 1fr);

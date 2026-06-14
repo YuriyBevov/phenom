@@ -1,38 +1,46 @@
 @use "@scss/base/container-queries" as *;
+
 .callback-form {
 	container: callback-form / inline-size;
+	--callback-form-edge-cut: 12px;
+	--callback-form-edge-width: min(40%, 360px);
+	--callback-form-edge-height: 40px;
 
 	position: relative;
 	color: var(--white);
 	background-color: var(--dark);
 	padding: 72px;
-
-	&::before,
-	&::after {
-		position: absolute;
-		content: "";
-		background-color: var(--white);
-		width: 40%;
-		max-width: 360px;
-		height: 60px;
-	}
-	&::before {
-		top: -20px;
-		left: 0;
-		clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
-	}
-	&::after {
-		bottom: -20px;
-		right: 0;
-		clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
-	}
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(
+		var(--callback-form-edge-width) 0,
+		100% 0,
+		100% calc(100% - var(--callback-form-edge-height)),
+		calc(100% - var(--callback-form-edge-width))
+			calc(100% - var(--callback-form-edge-height)),
+		calc(100% - var(--callback-form-edge-width) - var(--callback-form-edge-cut))
+			100%,
+		0 100%,
+		0 var(--callback-form-edge-height),
+		calc(var(--callback-form-edge-width) - var(--callback-form-edge-cut))
+			var(--callback-form-edge-height)
+	);
 
 	form {
+		position: relative;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 16px;
-		max-width: 640px;
+		width: 98%;
+		max-width: 960px;
 		margin: 0 auto;
+		padding: 32px clamp(16px, 6vw, 144px);
+		background-color: rgb(255 255 255 / 12%);
+		border: 1px solid rgb(255 255 255 / 18%);
+		backdrop-filter: blur(18px);
+		box-shadow: 0 24px 80px rgb(0 0 0 / 18%);
+		z-index: 11;
+		-webkit-backdrop-filter: blur(18px);
 	}
 
 	&__note {
@@ -42,12 +50,12 @@
 	&__title {
 		font-family: var(--secondary-font);
 		font-size: clamp(24px, 4vw, 48px);
-		color: var(--white);
+		color: var(--dark);
 	}
 
 	&__text {
 		font-size: clamp(18px, 2.4vw, 22px);
-		color: var(--white);
+		color: var(--dark);
 	}
 
 	&__content {

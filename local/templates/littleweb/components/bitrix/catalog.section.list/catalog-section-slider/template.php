@@ -16,6 +16,11 @@ if ($arResult["SECTIONS"]):
 ?>
 	<div class="catalog-section-slider">
 		<div class="container">
+
+			<!-- <div class="section__header">
+				<h2>Популярные разделы</h2>
+			</div> -->
+
 			<div class="swiper autofill-slider">
 				<div class="swiper-wrapper">
 					<? foreach ($arResult['SECTIONS'] as &$arSection):
@@ -33,6 +38,10 @@ if ($arResult["SECTIONS"]):
 
 				<div class="swiper-pagination"></div>
 			</div>
+
+			<a href="/catalog/" class="catalog-section-slider__link main-btn">
+				Перейти в каталог
+			</a>
 		</div>
 	</div>
 <? endif; ?>

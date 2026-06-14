@@ -8,7 +8,7 @@ if ($arResult["ITEMS"]): ?>
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
 				<? if ($arItem["PROPERTIES"]["VALUE"]["VALUE"] && $arItem["PROPERTIES"]["NAME"]["VALUE"]): ?>
-					<div class="tizzers__item">
+					<div class="tizzers__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 						<strong><?= $arItem["PROPERTIES"]["VALUE"]["VALUE"] ?></strong>
 						<span><?= $arItem["PROPERTIES"]["NAME"]["VALUE"] ?></span>
 					</div>

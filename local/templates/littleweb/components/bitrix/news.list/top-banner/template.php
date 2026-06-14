@@ -3,8 +3,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 
 $bannerSizes = [
-	"mobile" => ["width" => 640, "height" => 360],
-	"tablet" => ["width" => 1200, "height" => 600],
+	"mobile" => ["width" => 760, "height" => 540],
+	"tablet" => ["width" => 960, "height" => 480],
 	"desktop" => ["width" => 1920, "height" => 720],
 ];
 
@@ -54,8 +54,8 @@ if ($arResult["ITEMS"]): ?>
 									<a href="<?= htmlspecialcharsbx($arItem["PROPERTIES"]["LINK"]["VALUE"]) ?>">
 									<? endif; ?>
 									<picture>
-										<source srcset="<?= htmlspecialcharsbx($desktopImage["src"]) ?>" media="(min-width: 1200px)" width="<?= $desktopImage["width"] ?>" height="<?= $desktopImage["height"] ?>">
-										<source srcset="<?= htmlspecialcharsbx($tabletImage["src"]) ?>" media="(min-width: 768px)" width="<?= $tabletImage["width"] ?>" height="<?= $tabletImage["height"] ?>">
+										<source srcset="<?= htmlspecialcharsbx($desktopImage["src"]) ?>" media="(min-width: 960px)" width="<?= $desktopImage["width"] ?>" height="<?= $desktopImage["height"] ?>">
+										<source srcset="<?= htmlspecialcharsbx($tabletImage["src"]) ?>" media="(min-width: 760px)" width="<?= $tabletImage["width"] ?>" height="<?= $tabletImage["height"] ?>">
 										<img src="<?= htmlspecialcharsbx($mobileImage["src"]) ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $mobileImage["width"] ?>" height="<?= $mobileImage["height"] ?>">
 									</picture>
 									<? if ($arItem["PROPERTIES"]["LINK"]["VALUE"]): ?>

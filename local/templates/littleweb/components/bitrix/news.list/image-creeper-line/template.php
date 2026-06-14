@@ -32,6 +32,12 @@ if ($arResult["ITEMS"]): ?>
             <div class="crawl-line__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
               <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" draggable="false">
             </div>
+            <div class="crawl-line__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+              <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" draggable="false">
+            </div>
+            <div class="crawl-line__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+              <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" draggable="false">
+            </div>
 
           <? endforeach; ?>
         </div>

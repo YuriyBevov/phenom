@@ -36,6 +36,36 @@ if ($arResult["ITEMS"]): ?>
 						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
 						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
 					</a>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news-list__grid-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+						<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="300">
+						<strong><?= $arItem["NAME"] ?></strong>
+						<span><?= $arItem["PREVIEW_TEXT"] ?></span>
+						<small><?= $arItem["DISPLAY_ACTIVE_FROM"] ?></small>
+					</a>
 				<? endforeach; ?>
 			</div>
 

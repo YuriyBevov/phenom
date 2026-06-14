@@ -1,0 +1,47 @@
+@use "@scss/base/container-queries" as *;
+
+.accordeon-list {
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+
+		@include container-up("section", 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@include container-up("section", 768px) {
+		&-wrapper {
+			position: relative;
+
+			&::before {
+				position: absolute;
+
+				top: 40px;
+				left: -100px;
+				content: "";
+				width: 600px;
+				height: 600px;
+				// background-image: url("@img/faq-bg.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: left;
+				z-index: -1;
+			}
+
+			width: 100%;
+			max-width: 1680px;
+			margin: 0 auto;
+		}
+	}
+
+	.section-header {
+		position: relative;
+		margin-bottom: 0;
+	}
+
+	.accordeon-list-btn {
+		margin-top: clamp(32px, 3.2vw, 60px);
+	}
+}

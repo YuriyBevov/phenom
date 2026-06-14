@@ -4,6 +4,7 @@
 @use "./ui/swiper";
 @use "./partials/breadcrumbs";
 
+@use "./ui/accordeon";
 @use "./ui/form-controls/ctrl-wrapper";
 @use "./ui/form-controls/input";
 @use "./ui/form-controls/textarea";
@@ -11,3 +12,4 @@
 @use "./ui/scroll-up-btn";
 
 @use "./ui/bx-popup";
+@use "./ui/map";

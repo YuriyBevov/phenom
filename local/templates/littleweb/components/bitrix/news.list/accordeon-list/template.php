@@ -7,16 +7,15 @@ $this->setFrameMode(true);
 
 		<div class="accordeon-list-wrapper">
 			<div class="container">
-				<?
-				$APPLICATION->IncludeFile(
-					SITE_TEMPLATE_PATH . '/include/section-header.php',
-					array(
-						'TITLE' => $arResult["NAME"],
-						'DESCRIPTION' => $arResult["DESCRIPTION"],
-					),
-					array('MODE' => 'html', 'NAME' => 'шапку раздела', 'SHOW_BORDER' => false)
-				);
-				?>
+				<div class="section__header">
+					<h2><?= $arResult["NAME"] ?></h2>
+					<? if ($arResult["DESCRIPTION"]): ?>
+						<p>
+							<?= $arResult["DESCRIPTION"] ?>
+						</p>
+					<? endif; ?>
+					<button class="main-btn">Задать вопрос</button>
+				</div>
 
 				<div class="accordeon --first-item-expanded">
 					<? foreach ($arResult["ITEMS"] as $arItem):
@@ -39,18 +38,6 @@ $this->setFrameMode(true);
 							</div>
 						</div>
 					<? endforeach; ?>
-
-					<? if ($arParams["FORM_BTN"]["ACTIVE"] === "Y"): ?>
-						<? $APPLICATION->IncludeFile(
-							SITE_TEMPLATE_PATH . '/include/arrow-btn.php',
-							array(
-								'TEXT' => $arParams["FORM_BTN"]["TEXT"] ?? 'Оставить заявку',
-								'CLASS' => 'accordeon-list-btn',
-								'FORM_ID' => $arParams["FORM_BTN"]["FORM_ID"] ?? '1'
-							),
-							array('MODE' => 'html', 'NAME' => 'кнопку', 'SHOW_BORDER' => false)
-						); ?>
-					<? endif; ?>
 				</div>
 			</div>
 		</div>

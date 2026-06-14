@@ -1,5 +1,9 @@
 @use "@scss/base/container-queries" as *;
 
+section.section:has(.callback-form) {
+	// padding: clamp(32px, 4.4vw, 64px) 0;
+	padding-bottom: 0;
+}
 .callback-form {
 	container: callback-form / inline-size;
 	--callback-form-edge-cut: 12px;
@@ -9,7 +13,7 @@
 	position: relative;
 	color: var(--white);
 	background-color: var(--dark);
-	padding: 72px;
+	padding: 96px clamp(12px, 6vw, 72px);
 	background-position: center;
 	background-size: cover;
 	clip-path: polygon(
@@ -25,6 +29,7 @@
 		calc(var(--callback-form-edge-width) - var(--callback-form-edge-cut))
 			var(--callback-form-edge-height)
 	);
+	z-index: 3;
 
 	form {
 		position: relative;
@@ -54,7 +59,7 @@
 	}
 
 	&__text {
-		font-size: clamp(18px, 2.4vw, 22px);
+		font-size: 18px;
 		color: var(--dark);
 	}
 
@@ -70,6 +75,9 @@
 		background-color: var(--white);
 		clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 		max-width: 240px;
-		margin: 0 32px;
+
+		@include container-up("callback-form", 768px) {
+			margin: 0 32px;
+		}
 	}
 }

@@ -29,6 +29,16 @@
   false
 ); ?>
 
+<div class="front-map">
+  <?
+  $APPLICATION->IncludeFile(
+    SITE_DIR . 'include/map.php',
+    array(),
+    array('MODE' => 'html', 'NAME' => 'карту', 'SHOW_BORDER' => true)
+  );
+  ?>
+</div>
+
 <footer class="footer">
   <div class="container">
     site-footer

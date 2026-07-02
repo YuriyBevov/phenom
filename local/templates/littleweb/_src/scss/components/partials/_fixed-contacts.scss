@@ -1,0 +1,21 @@
+@use "@scss/extends/index" as *;
+
+.fixed-contacts {
+	position: fixed;
+	bottom: 50px;
+	right: 100px;
+
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	z-index: 89;
+	padding: 8px 32px;
+
+	.main-btn {
+		@extend %glass-dark;
+		min-height: 48px;
+		// border-radius: 20px;
+		color: var(--white);
+	}
+}

@@ -1,103 +1,194 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .header {
-	position: relative;
-	// padding: 12px 0;
-	// background-color: var(--dark);
+	@extend %glass-dark;
 
-	.container {
-		display: flex;
-		flex-direction: column;
-		// gap: 16px;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	z-index: 79;
 
 	.logo {
 		width: 100%;
-		max-width: 140px;
+		max-width: 180px;
 		height: auto;
-		margin-right: 44px;
+		margin: 0 auto;
+		padding-top: 6px;
 	}
 
-	&__contact-block {
-		position: relative;
+	& &__callback-btn {
+		background-color: transparent;
+		padding: 4px 0 2px;
+		min-height: initial;
+		border: none;
+	}
 
-		display: flex;
-		flex-direction: column;
-		gap: 4px 16px;
-		padding-left: 40px;
-
-		address,
-		a,
-		span {
-			color: var(--dark);
-			font-size: 16px;
-			font-weight: 600;
-		}
-
+	&__search-opener-btn {
 		svg {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 0;
-			width: 24px;
-			height: auto;
-			fill: var(--dark);
+			fill: var(--white);
 		}
+	}
 
-		&--left {
-			margin-right: auto;
-
-			svg {
-				fill: var(--danger);
-			}
+	&__contact-link {
+		display: flex;
+		svg {
+			fill: var(--white);
 		}
 	}
 
 	&__row {
-		display: flex;
-		align-items: center;
-		gap: 12px 32px;
 		padding: 12px 0;
 
-		&--top {
+		&-col {
 			display: flex;
 			align-items: center;
-			gap: 12px 32px;
-			// padding-bottom: 12px;
+			gap: 16px;
 
-			border-bottom: 1px solid var(--light);
+			&:first-child {
+				justify-content: flex-start;
+			}
 
-			&-section {
-				display: flex;
-				flex-direction: column;
-				gap: 6px;
-
-				&--left {
-				}
-
-				&--middle {
-				}
-
-				&--right {
-				}
+			&:last-child {
+				justify-content: flex-end;
 			}
 		}
 
-		&--middle {
-			gap: 0;
-			justify-content: end;
+		&:first-child {
+			position: relative;
 
-			.catalog-opener {
-				margin-right: auto;
-			}
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			align-items: center;
 
-			.social-block {
-				padding: 0 44px;
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 1px;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					var(--light),
+					transparent
+				);
 			}
 		}
+	}
 
-		&--bottom {
-			background-color: var(--light);
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		a {
+			color: var(--white);
+			text-align: right;
 		}
 	}
 }
+
+// .header {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	background-color: transparent;
+// 	backdrop-filter: blur(7px);
+// 	z-index: 79;
+
+// 	.container {
+// 		display: flex;
+// 		flex-direction: column;
+// 	}
+
+// 	.logo {
+// 		width: 100%;
+// 		max-width: 140px;
+// 		height: auto;
+// 		margin-right: 44px;
+// 	}
+
+// 	&__contact-block {
+// 		position: relative;
+
+// 		display: flex;
+// 		flex-direction: column;
+// 		gap: 4px 16px;
+// 		padding-left: 40px;
+
+// 		address,
+// 		a,
+// 		span {
+// 			color: var(--dark);
+// 			font-size: 16px;
+// 			font-weight: 600;
+// 		}
+
+// 		svg {
+// 			position: absolute;
+// 			top: 50%;
+// 			transform: translateY(-50%);
+// 			left: 0;
+// 			width: 24px;
+// 			height: auto;
+// 			fill: var(--dark);
+// 		}
+
+// 		&--left {
+// 			margin-right: auto;
+
+// 			svg {
+// 				fill: var(--danger);
+// 			}
+// 		}
+// 	}
+
+// 	&__row {
+// 		display: flex;
+// 		align-items: center;
+// 		gap: 12px 32px;
+// 		padding: 12px 0;
+
+// 		&--top {
+//
+// 			}
+
+// 			&-section {
+// 				display: flex;
+// 				flex-direction: column;
+// 				gap: 6px;
+
+// 				&--left {
+// 				}
+
+// 				&--middle {
+// 				}
+
+// 				&--right {
+// 				}
+// 			}
+// 		}
+
+// 		&--middle {
+// 			gap: 0;
+// 			justify-content: end;
+
+// 			.catalog-opener {
+// 				margin-right: auto;
+// 			}
+
+// 			.social-block {
+// 				padding: 0 44px;
+// 			}
+// 		}
+
+// 		&--bottom {
+// 			// background-color: var(--light);
+// 		}
+// 	}
+// }

@@ -1,6 +1,6 @@
 :root {
 	--primary-font: "Roboto", Arial, sans-serif;
-	--secondary-font: "Unbounded", Arial, sans-serif;
+	--secondary-font: "Raleway", Arial, sans-serif;
 
 	--content-width: 1680px;
 	--container-offset: clamp(10px, 2vw, 60px);
@@ -34,8 +34,8 @@
 	--site-base-font-size: 16px;
 	--site-base-line-height: 1.2;
 	--site-base-letter-spacing: 0.015em;
-	--site-base-text-color: var(--dark);
-	--site-bg-color: var(--white);
+	--site-base-text-color: var(--white);
+	--site-bg-color: var(--dark);
 
 	--main-transition: 0.25s ease;
 

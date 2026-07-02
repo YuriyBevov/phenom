@@ -1,4 +1,20 @@
 {
+  "local/templates/littleweb/_src/fonts/Raleway-Bold.woff2": {
+    "file": "fonts/Raleway-Bold.VODcmeRE.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Raleway-Bold.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Raleway-Medium.woff2": {
+    "file": "fonts/Raleway-Medium.spkxRujc.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Raleway-Medium.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Raleway-Regular.woff2": {
+    "file": "fonts/Raleway-Regular.DZFSzngv.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Raleway-Regular.woff2"
+  },
+  "local/templates/littleweb/_src/fonts/Raleway-SemiBold.woff2": {
+    "file": "fonts/Raleway-SemiBold.BLfyzo6c.woff2",
+    "src": "local/templates/littleweb/_src/fonts/Raleway-SemiBold.woff2"
+  },
   "local/templates/littleweb/_src/fonts/Roboto-Bold.woff2": {
     "file": "fonts/Roboto-Bold.Dt7zMN7z.woff2",
     "src": "local/templates/littleweb/_src/fonts/Roboto-Bold.woff2"
@@ -23,46 +39,14 @@
     "file": "fonts/Roboto-Thin.CaOVkNeg.woff2",
     "src": "local/templates/littleweb/_src/fonts/Roboto-Thin.woff2"
   },
-  "local/templates/littleweb/_src/fonts/Unbounded-Black.woff2": {
-    "file": "fonts/Unbounded-Black.B2la0Wpw.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-Black.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-Bold.woff2": {
-    "file": "fonts/Unbounded-Bold.D5uDhuja.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-Bold.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-ExtraBold.woff2": {
-    "file": "fonts/Unbounded-ExtraBold.Cl8Qtq88.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-ExtraBold.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-ExtraLight.woff2": {
-    "file": "fonts/Unbounded-ExtraLight.meNRYUdw.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-ExtraLight.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-Light.woff2": {
-    "file": "fonts/Unbounded-Light.BtNIBsUj.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-Light.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-Medium.woff2": {
-    "file": "fonts/Unbounded-Medium.CuI-tGOL.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-Medium.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-Regular.woff2": {
-    "file": "fonts/Unbounded-Regular.CLuhn8ed.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-Regular.woff2"
-  },
-  "local/templates/littleweb/_src/fonts/Unbounded-SemiBold.woff2": {
-    "file": "fonts/Unbounded-SemiBold.DQJzkOpr.woff2",
-    "src": "local/templates/littleweb/_src/fonts/Unbounded-SemiBold.woff2"
-  },
   "local/templates/littleweb/_src/js/index.js": {
-    "file": "template_scripts.b_PPEa71.js",
+    "file": "template_scripts.B0E8tlQd.js",
     "name": "script",
     "src": "local/templates/littleweb/_src/js/index.js",
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.CNANBbxh.css",
+    "file": "template_styles.Dn50Pc67.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -89,7 +73,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss": {
-    "file": "components/bitrix/menu/top-menu/style.BnxouQks.css",
+    "file": "components/bitrix/menu/top-menu/style.Cq-iwPVZ.css",
     "src": "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_menu_top-menu_scss",
@@ -104,21 +88,6 @@
     "name": "bitrix_news_list__portfolio-list_scss",
     "names": [
       "bitrix_news_list__portfolio-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news.list/_portfolio-preview/_src/js/index.js": {
-    "file": "components/bitrix/news.list/_portfolio-preview/script.l0sNRNKZ.js",
-    "name": "bitrix_news_list__portfolio-preview_js",
-    "src": "local/templates/littleweb/components/bitrix/news.list/_portfolio-preview/_src/js/index.js",
-    "isEntry": true
-  },
-  "local/templates/littleweb/components/bitrix/news.list/_portfolio-preview/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/_portfolio-preview/style.BW2YpVSC.css",
-    "src": "local/templates/littleweb/components/bitrix/news.list/_portfolio-preview/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_news_list__portfolio-preview_scss",
-    "names": [
-      "bitrix_news_list__portfolio-preview_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/_workflow/_src/scss/index.scss": {
@@ -163,6 +132,15 @@
       "bitrix_news_list_image-creeper-line_scss.css"
     ]
   },
+  "local/templates/littleweb/components/bitrix/news.list/image-slider/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/image-slider/style.IJYa2RId.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/image-slider/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_image-slider_scss",
+    "names": [
+      "bitrix_news_list_image-slider_scss.css"
+    ]
+  },
   "local/templates/littleweb/components/bitrix/news.list/news-list/_src/scss/index.scss": {
     "file": "components/bitrix/news.list/news-list/style.B2di3Lum.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/news-list/_src/scss/index.scss",
@@ -170,6 +148,21 @@
     "name": "bitrix_news_list_news-list_scss",
     "names": [
       "bitrix_news_list_news-list_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/news.list/portfolio-preview/_src/js/index.js": {
+    "file": "components/bitrix/news.list/portfolio-preview/script.l0sNRNKZ.js",
+    "name": "bitrix_news_list_portfolio-preview_js",
+    "src": "local/templates/littleweb/components/bitrix/news.list/portfolio-preview/_src/js/index.js",
+    "isEntry": true
+  },
+  "local/templates/littleweb/components/bitrix/news.list/portfolio-preview/_src/scss/index.scss": {
+    "file": "components/bitrix/news.list/portfolio-preview/style.C0u3YEWW.css",
+    "src": "local/templates/littleweb/components/bitrix/news.list/portfolio-preview/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_news_list_portfolio-preview_scss",
+    "names": [
+      "bitrix_news_list_portfolio-preview_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/reviews-preview/_src/js/index.js": {
@@ -206,7 +199,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/social/style.BRSbkl7r.css",
+    "file": "components/bitrix/news.list/social/style.MAZWIdaV.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/social/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_social_scss",
@@ -215,7 +208,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/tizzers/style.lv96Tv39.css",
+    "file": "components/bitrix/news.list/tizzers/style.DcJelXtl.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_tizzers_scss",
@@ -230,7 +223,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/top-banner/style.CZ8F8jyX.css",
+    "file": "components/bitrix/news.list/top-banner/style.Crjgvuuo.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/top-banner/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_top-banner_scss",

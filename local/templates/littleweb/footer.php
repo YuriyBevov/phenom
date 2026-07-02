@@ -39,6 +39,12 @@
   ?>
 </div>
 
+<div class="fixed-contacts">
+  <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php");  ?>
+  <a href="/catalog/" class="main-btn">Смотреть каталог</a>
+</div>
+
+
 <footer class="footer">
   <div class="container">
     site-footer

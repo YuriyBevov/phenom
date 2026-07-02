@@ -1,20 +1,32 @@
 .main-btn {
-	min-height: 54px;
+	min-height: 48px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
 
+	font-family: var(--primary-font);
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 400;
 	letter-spacing: 0.045em;
 	text-transform: uppercase;
-	backdrop-filter: blur(18px);
-	-webkit-backdrop-filter: blur(18px);
-	clip-path: var(--base-clip-path);
-	border: 0;
-	padding: 8px 44px 4px;
+	// backdrop-filter: blur(18px);
+	// -webkit-backdrop-filter: blur(18px);
+	// clip-path: var(--base-clip-path);
+	border: 1px solid transparent;
+	padding: 8px 32px 6px;
 
 	color: var(--white);
 	background-color: var(--dark);
+	border-radius: 30px;
+
+	&:has(svg) {
+		aspect-ratio: 1/1;
+		padding: 12px;
+
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+	}
 }

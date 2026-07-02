@@ -1,7 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 if ($arResult["ITEMS"]): ?>
-	<div class="tizzers">
+	<div class="section tizzers">
 		<div class="container">
 			<? foreach ($arResult["ITEMS"] as $arItem):
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));

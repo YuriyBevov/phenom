@@ -20,22 +20,91 @@
 
 <body>
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
+
+  <header class="header" style="margin-top:40px;">
+    <div class="container">
+      <div class="header__row">
+
+        <div class="header__row-col">
+          <a href="/contacts/" class="header__contact-link" aria-label="Контакты">
+            <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
+              <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-pin'></use>
+            </svg>
+          </a>
+          <button class="main-btn header__callback-btn" data-form-id="1">
+            Написать нам
+          </button>
+        </div>
+
+        <div class="header__row-col">
+          <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/logo.php");  ?>
+        </div>
+
+        <div class="header__row-col">
+          <div class="header__contacts">
+            <?
+            $APPLICATION->IncludeFile(
+              SITE_DIR . 'include/phone.php',
+              array(),
+              array('MODE' => 'html', 'NAME' => 'телефоны', 'SHOW_BORDER' => true)
+            );
+            ?>
+            <?
+            $APPLICATION->IncludeFile(
+              SITE_DIR . 'include/mail.php',
+              array(),
+              array('MODE' => 'html', 'NAME' => 'почту', 'SHOW_BORDER' => true)
+            );
+            ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__row">
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:menu",
+          "top-menu",
+          array(
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "left",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "2",
+            "MENU_CACHE_GET_VARS" => array(),
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_THEME" => "site",
+            "ROOT_MENU_TYPE" => "top",
+            "USE_EXT" => "Y",
+            "COMPONENT_TEMPLATE" => "top-menu"
+          ),
+          false
+        ); ?>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- <button type="button" class="main-btn header__search-opener-btn" aria-label="Поиск по сайту">
+            <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
+              <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
+            </svg>
+          </button> -->
+
+  <?/*
   <header class="header">
     <div class="container">
       <div class="header__row header__row--top">
         <div class="header__contact-block header__contact-block--left">
-          <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-pin'></use>
-          </svg>
-          <?
-          $APPLICATION->IncludeFile(
-            SITE_DIR . 'include/address.php',
-            array(),
-            array('MODE' => 'html', 'NAME' => 'адрес', 'SHOW_BORDER' => true)
-          );
-          ?>
-        </div>
-        <div class="header__contact-block">
+
+        
+          
+         
+  </div>
+
+
+
+  <!-- <div class="header__contact-block">
           <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
             <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-phone'></use>
           </svg>
@@ -62,11 +131,12 @@
         </div>
         <div class="header__contact-block ">
           <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php");  ?>
-        </div>
-      </div>
+        </div> -->
 
-      <div class="header__row header__row--middle">
-        <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/logo.php");  ?>
+  </div>
+
+  <!-- <div class="header__row header__row--middle">
+
 
 
         <a href="/catalog/" class="main-btn catalog-opener">
@@ -116,33 +186,16 @@
             <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-burger'></use>
           </svg>
         </button>
-      </div>
-    </div>
+      </div> -->
+  </div>
 
-    <div class="header__row header__row--bottom">
-      <div class="container">
-        <? $APPLICATION->IncludeComponent(
-          "bitrix:menu",
-          "top-menu",
-          array(
-            "ALLOW_MULTI_SELECT" => "N",
-            "CHILD_MENU_TYPE" => "left",
-            "DELAY" => "N",
-            "MAX_LEVEL" => "2",
-            "MENU_CACHE_GET_VARS" => array(),
-            "MENU_CACHE_TIME" => "3600",
-            "MENU_CACHE_TYPE" => "N",
-            "MENU_CACHE_USE_GROUPS" => "Y",
-            "MENU_THEME" => "site",
-            "ROOT_MENU_TYPE" => "top",
-            "USE_EXT" => "Y",
-            "COMPONENT_TEMPLATE" => "top-menu"
-          ),
-          false
-        ); ?>
-      </div>
+  <div class="header__row header__row--bottom">
+    <div class="container">
+
     </div>
+  </div>
   </header>
+  */ ?>
 
   <main id="workarea">
     <? if ($curPage != '/' && !defined("ERROR_404")) {

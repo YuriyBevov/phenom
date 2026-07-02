@@ -1,7 +1,9 @@
+@use "@scss/extends/index" as *;
+
 .scroll-up-btn {
 	position: fixed;
 	right: 40px;
-	bottom: 40px;
+	bottom: 58px;
 
 	// display: flex;
 	// align-items: center;
@@ -16,7 +18,13 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 12px;
+	// mix-blend-mode: difference;
 	transform: translateY(150px) rotate(-45deg);
-	mix-blend-mode: difference;
+	background-color: transparent;
+
+	padding: 16px;
 	z-index: 89;
+	aspect-ratio: 1/1;
+
+	@extend %glass-dark;
 }

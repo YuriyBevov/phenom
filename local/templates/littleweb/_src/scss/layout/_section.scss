@@ -12,9 +12,10 @@
 		h2 {
 			font-family: var(--secondary-font);
 			font-size: clamp(24px, 6vw, 64px);
-			color: var(--danger);
+			color: var(--white);
 			margin: 0;
 			text-align: center;
+			font-weight: 400;
 		}
 
 		p {

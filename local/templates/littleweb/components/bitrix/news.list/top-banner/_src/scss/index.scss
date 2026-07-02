@@ -4,10 +4,27 @@
 // @use "swiper/css/pagination";
 
 .top-banner {
+	position: relative;
 	container: top-banner / inline-size;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 180px;
+		pointer-events: none;
+		background: linear-gradient(180deg, transparent, var(--dark));
+		z-index: 10;
+	}
 
 	.swiper {
 		position: relative;
+
+		&-wrapper {
+			min-height: 760px;
+		}
 
 		&-slide {
 			height: auto;

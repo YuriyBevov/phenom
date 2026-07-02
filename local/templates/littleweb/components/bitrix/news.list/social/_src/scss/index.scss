@@ -1,18 +1,19 @@
+@use "@scss/extends/index" as *;
+
 .social-block {
 	display: flex;
 	align-items: center;
 	gap: 6px;
 
 	a {
+		@extend %glass-dark;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		width: 48px;
 		height: 48px;
-		border: 2px solid var(--white);
 		border-radius: 50%;
-		background-color: var(--dark);
 
 		img {
 			width: 24px;

@@ -9,7 +9,7 @@
 		display: grid;
 		gap: 24px;
 
-		@include container-up("tizzers", 534px) {
+		@include container-up("tizzers", 640px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
@@ -23,15 +23,14 @@
 		flex-direction: column;
 		gap: 24px;
 		background-color: var(--dark);
-		border-radius: 30px;
-		box-shadow: 0 24px 80px rgba(211, 130, 9, 0.1);
+		border-radius: var(--base-border-radius);
+		box-shadow: var(--base-box-shadow);
 		padding: 48px 32px;
-		// min-height: 360px;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 
 		strong {
 			font-weight: 400;
-			font-size: 20px;
+			font-size: var(--base-subtitle);
 			font-family: var(--secondary-font);
 			color: var(--secondary);
 		}
@@ -41,67 +40,5 @@
 			font-weight: 300;
 			font-family: var(--primary-font);
 		}
-
-		// strong {
-		// 	display: flex;
-		// 	flex-direction: column;
-		// 	align-items: center;
-		// 	gap: 12px;
-		// 	// font-size: clamp(32px, 9vw, 64px);
-		// 	font-weight: 600;
-		// 	font-family: var(--secondary-font);
-		// 	white-space: nowrap;
-		// 	color: var(--white);
-
-		// 	&::after {
-		// 		content: "";
-		// 		width: 30px;
-		// 		height: 2px;
-		// 		background-color: var(--danger);
-		// 	}
-		// }
-
-		// span {
-		// 	min-width: 0;
-		// 	font-size: 24px;
-		// 	font-weight: 500;
-		// 	color: var(--white);
-		// }
 	}
-
-	// &__item {
-	// 	background-color: var(--dark);
-	// 	clip-path: var(--base-clip-path);
-	// 	padding: 12px clamp(32px, 5vw, 48px);
-	// 	height: auto;
-	// 	border-top: 2px solid var(--danger);
-
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	gap: 2px 24px;
-
-	// 	@include container-up("tizzers", 768px) {
-	// 		flex-direction: row;
-	// 		align-items: center;
-	// 	}
-
-	// 	&:last-child {
-	// 		grid-column: -1/1;
-	// 	}
-
-	// 	strong {
-	// 		font-size: clamp(32px, 6vw, 56px);
-	// 		font-weight: 600;
-	// 		font-family: var(--secondary-font);
-	// 		white-space: nowrap;
-	// 		color: var(--white);
-	// 	}
-
-	// 	span {
-	// 		min-width: 0;
-	// 		font-size: 18px;
-	// 		font-weight: 500;
-	// 		color: var(--white);
-	// 	}
-	// }
 }

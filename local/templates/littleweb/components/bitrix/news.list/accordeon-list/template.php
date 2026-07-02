@@ -27,7 +27,7 @@ $this->setFrameMode(true);
 								<span class="subtitle" itemprop="name"><?= $arItem["NAME"] ?></span>
 								<div class="accordeon-opener">
 									<svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
-										<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-plus"></use>
+										<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-arrow"></use>
 									</svg>
 								</div>
 							</div>

@@ -41,7 +41,7 @@
 
 		strong {
 			font-family: var(--secondary-font);
-			font-size: clamp(18px, 3vw, 22px);
+			font-size: var(--base-subtitle);
 		}
 
 		small {

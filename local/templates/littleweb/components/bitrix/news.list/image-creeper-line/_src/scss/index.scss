@@ -1,18 +1,6 @@
+@use "@scss/extends/index" as *;
+
 .crawl-line {
-	// position: relative;
-
-	// &::after {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 50%;
-	// 	transform: translateX(-50%);
-
-	// 	width: 50%;
-	// 	max-width: 120px;
-	// 	height: 3px;
-	// 	content: "";
-	// 	background-color: var(--danger);
-	// }
 	.container {
 		gap: 0 !important;
 	}
@@ -40,9 +28,12 @@
 		min-width: 240px;
 		height: auto;
 		padding: 16px;
-		background-color: transparent;
-		border: 1px solid var(--light);
+
+		border: 1px solid rgba(255, 255, 255, 0.24);
 		user-select: none;
+		border-radius: var(--base-border-radius);
+		overflow: hidden;
+		@extend %glass-dark;
 
 		img {
 			width: 100%;

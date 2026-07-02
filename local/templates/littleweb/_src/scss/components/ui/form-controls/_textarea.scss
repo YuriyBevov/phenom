@@ -4,6 +4,7 @@ textarea {
 	@extend %ctrl-common;
 	resize: none;
 	min-height: 100px;
+	padding-top: 24px;
 
 	&.invalid-fld {
 		border-color: var(--danger);

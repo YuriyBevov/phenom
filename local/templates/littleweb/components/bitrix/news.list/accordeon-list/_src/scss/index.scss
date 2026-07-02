@@ -1,12 +1,19 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .accordeon-list {
 	container: accordeon-list / inline-size;
 
 	.section__header {
 		.main-btn {
+			@extend %glass-dark;
+
 			max-width: 240px;
 			margin: 0 auto;
+		}
+
+		h2 {
+			color: var(--secondary);
 		}
 		@include container-up("accordeon-list", 1140px) {
 			align-items: flex-start;

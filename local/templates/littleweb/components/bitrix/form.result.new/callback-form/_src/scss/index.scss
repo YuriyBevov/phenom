@@ -1,14 +1,13 @@
 @use "@scss/base/container-queries" as *;
 
 section.section:has(.callback-form) {
-	// padding: clamp(32px, 4.4vw, 64px) 0;
 	padding-bottom: 0;
 }
 .callback-form {
 	container: callback-form / inline-size;
-	--callback-form-edge-cut: 12px;
 	--callback-form-edge-width: min(40%, 360px);
-	--callback-form-edge-height: 40px;
+	--callback-form-edge-height: 60px;
+	--callback-form-radius: var(--base-border-radius);
 
 	position: relative;
 	color: var(--white);
@@ -16,19 +15,6 @@ section.section:has(.callback-form) {
 	padding: 96px clamp(12px, 6vw, 72px);
 	background-position: center;
 	background-size: cover;
-	clip-path: polygon(
-		var(--callback-form-edge-width) 0,
-		100% 0,
-		100% calc(100% - var(--callback-form-edge-height)),
-		calc(100% - var(--callback-form-edge-width))
-			calc(100% - var(--callback-form-edge-height)),
-		calc(100% - var(--callback-form-edge-width) - var(--callback-form-edge-cut))
-			100%,
-		0 100%,
-		0 var(--callback-form-edge-height),
-		calc(var(--callback-form-edge-width) - var(--callback-form-edge-cut))
-			var(--callback-form-edge-height)
-	);
 	z-index: 3;
 
 	form {
@@ -46,6 +32,7 @@ section.section:has(.callback-form) {
 		box-shadow: 0 24px 80px rgb(0 0 0 / 18%);
 		z-index: 11;
 		-webkit-backdrop-filter: blur(18px);
+		border-radius: var(--callback-form-radius);
 	}
 
 	&__note {
@@ -60,6 +47,7 @@ section.section:has(.callback-form) {
 
 	&__text {
 		font-size: 18px;
+		font-family: var(--secondary-font);
 		color: var(--dark);
 	}
 
@@ -73,11 +61,7 @@ section.section:has(.callback-form) {
 	*[type="submit"] {
 		color: var(--dark);
 		background-color: var(--white);
-		clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 		max-width: 240px;
-
-		@include container-up("callback-form", 768px) {
-			margin: 0 32px;
-		}
+		padding-top: 10px;
 	}
 }

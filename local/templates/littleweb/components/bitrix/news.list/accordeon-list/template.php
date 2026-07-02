@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 							<?= $arResult["DESCRIPTION"] ?>
 						</p>
 					<? endif; ?>
-					<button class="main-btn">Задать вопрос</button>
+					<button data-form-id="1" class="main-btn">Задать вопрос</button>
 				</div>
 
 				<div class="accordeon --first-item-expanded">

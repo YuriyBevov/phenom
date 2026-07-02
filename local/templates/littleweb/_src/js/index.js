@@ -3,3 +3,4 @@ import "./modules/scroll-up-btn";
 import "./modules/autofill-slider";
 import "./modules/accordeon";
 import "./modules/fancybox-instance";
+import "./modules/bx-popup";

@@ -41,7 +41,7 @@
 	--base-subtitle: clamp(18px, 3vw, 22px);
 	--base-border-radius: 30px;
 	--base-box-shadow: 0 24px 80px rgba(211, 130, 9, 0.1);
-	--secondary-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
-
+	// --secondary-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+	--secondary-box-shadow: 10px 10px 10px rgba(211, 130, 9, 0.1);
 	--base-clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
 }

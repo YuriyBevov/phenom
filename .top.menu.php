@@ -8,36 +8,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Портфолио", 
+		"Для коммерчесских помещений", 
+		"/catalog/commerce/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Для домашнего интерьера", 
+		"/catalog/home/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Примеры проектов", 
 		"/portfolio/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Производство", 
-		"/manufacture/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Новости", 
-		"/news/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Отзывы", 
-		"/reviews/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Стоимость", 
-		"/pricelist/", 
 		Array(), 
 		Array(), 
 		"" 

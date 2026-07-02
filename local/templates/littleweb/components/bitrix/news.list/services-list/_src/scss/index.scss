@@ -1,7 +1,33 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .services-list {
 	container: services-list / inline-size;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(48px, 5vw, 72px);
+	}
+
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(44px, 6vw, 84px);
+
+		& > .main-btn {
+			max-width: fit-content;
+		}
+	}
+
+	.section__header {
+		margin-bottom: 0;
+		h2,
+		p {
+			margin: 0;
+			text-align: left;
+		}
+	}
 
 	&__grid {
 		display: grid;
@@ -11,54 +37,82 @@
 		@include container-up("services-list", 768px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
+
+		@include container-up("services-list", 1240px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 
 	&-card {
+		@extend %glass-dark;
+
 		position: relative;
 		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		height: 100%;
 		overflow: hidden;
+		box-shadow: var(--base-box-shadow);
+		padding: 32px 24px;
+		border: none;
+		border-radius: var(--base-border-radius);
+		transition: opacity var(--main-transition);
 
 		&-container {
 			container: service-card / inline-size;
-			&--odd {
-				grid-column: -1/1;
+		}
+
+		&__header {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+
+			small {
+				font-family: var(--secondary-font);
+				font-style: 16px;
+				color: var(--secondary);
+			}
+
+			span {
+				z-index: 2;
+				font-family: var(--secondary-font);
+
+				width: 100%;
+				font-size: var(--base-subtitle);
+				color: var(--white);
+				text-wrap: balance;
 			}
 		}
 
-		&::before {
-			position: absolute;
-			inset: 0;
-			z-index: 1;
-			content: "";
-			background: linear-gradient(
-				180deg,
-				rgba(0, 0, 0, 0.3) 0%,
-				rgba(0, 0, 0, 0.62) 100%
-			);
-			pointer-events: none;
+		&__content {
+			padding-right: 48px;
+			margin-top: auto;
+
+			p {
+				font-size: 16px;
+				color: var(--white);
+				margin-bottom: 0;
+			}
 		}
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			max-height: 400px;
+		svg {
+			position: absolute;
+			width: 16px;
+			height: auto;
+			bottom: 32px;
+			right: 24px;
+			fill: var(--white);
+			will-change: transform;
+			transition: transform var(--main-transition);
 		}
 
-		span {
-			z-index: 2;
-			font-family: var(--secondary-font);
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100%;
-			font-size: clamp(18px, 4.2cqw, 32px);
-			font-weight: 600;
-			text-align: center;
-			padding: 24px 10%;
-			color: var(--white);
-			text-wrap: balance;
+		@media (hover: hover) {
+			&:hover {
+				opacity: 0.6;
+				svg {
+					transform: rotate(45deg);
+				}
+			}
 		}
 	}
 }

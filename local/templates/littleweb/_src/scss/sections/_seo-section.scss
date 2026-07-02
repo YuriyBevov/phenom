@@ -56,50 +56,6 @@
 
 		strong {
 			font-size: var(--base-subtitle);
-			// color: var(--primary);
 		}
 	}
-
-	// &__content {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	gap: 6px;
-
-	// 	font-size: clamp(18px, 3.2vw, 24px);
-	// 	padding: clamp(32px, 4vw, 56px) 16px;
-	// 	max-width: 960px;
-
-	// 	@include container-up("seo-section", 768px) {
-	// 		padding: clamp(32px, 4vw, 56px) 0;
-	// 	}
-
-	// 	strong {
-	// 		color: var(--danger);
-	// 	}
-
-	// 	p {
-	// 		text-align: center;
-	// 		font-size: clamp(18px, 3.2vw, 22px);
-
-	// 		@include container-up("seo-section", 768px) {
-	// 			text-align: left;
-	// 		}
-	// 	}
-	// }
-
-	// &__grid {
-	// 	position: relative;
-	// 	display: grid;
-	// 	grid-template-columns: 1fr;
-	// 	// gap: 24px;
-	// 	// min-height: 520px;
-
-	// 	@include container-up("seo-section", 768px) {
-	// 		grid-template-columns: 3fr 1fr;
-	// 		align-items: center;
-	// 	}
-
-	// 	&-item {
-	// 	}
-	// }
 }

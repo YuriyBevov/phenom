@@ -18,7 +18,7 @@ if ($arResult["SECTIONS"]):
 		<div class="container-fluid">
 
 			<div class="section__header">
-				<h2>Популярные разделы каталога</h2>
+				<h2>Популярные разделы каталога готовой продукции</h2>
 			</div>
 
 			<div class="swiper autofill-slider">

@@ -4,48 +4,66 @@ $this->setFrameMode(true);
 ?>
 
 
-<? if ($arResult["ITEMS"]):
-	$itemsCount = count($arResult["ITEMS"]);
-?>
+<? if ($arResult["SERVICE_SECTIONS"]): ?>
 	<section class="section services-list">
 		<div class="container">
 
-			<div class="section__header">
-				<h2><?= $arResult["NAME"] ?></h2>
-				<? if ($arResult["DESCRIPTION"]): ?>
-					<p>
-						<?= $arResult["DESCRIPTION"] ?>
-					</p>
-				<? endif; ?>
-			</div>
-
-			<div class="services-list__grid">
-				<? foreach ($arResult["ITEMS"] as $index => $arItem):
-					$cardContainerClass = "services-list-card-container";
-					if ($itemsCount % 2 !== 0 && $index === $itemsCount - 1) {
-						$cardContainerClass .= " services-list-card-container--odd";
-					}
-
-					$this->AddEditAction(
-						$arItem['ID'],
-						$arItem['EDIT_LINK'],
-						CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
-					);
-					$this->AddDeleteAction(
-						$arItem['ID'],
-						$arItem['DELETE_LINK'],
-						CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
-						["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
-					);
-				?>
-					<div class="<?= $cardContainerClass ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-						<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="400">
-							<span><?= $arItem["NAME"] ?></span>
-						</a>
+			<? foreach ($arResult["SERVICE_SECTIONS"] as $arSection): ?>
+				<div class="services-list__section">
+					<div class="section__header">
+						<h2><?= $arSection["NAME"] ?></h2>
+						<? if ($arSection["DESCRIPTION"]): ?>
+							<div>
+								<? if ($arSection["DESCRIPTION_TYPE"] === "html"): ?>
+									<?= $arSection["DESCRIPTION"] ?>
+								<? else: ?>
+									<p><?= nl2br(htmlspecialcharsbx($arSection["DESCRIPTION"])) ?></p>
+								<? endif; ?>
+							</div>
+						<? endif; ?>
 					</div>
-				<? endforeach; ?>
-			</div>
+
+					<div class="services-list__grid">
+						<? foreach ($arSection["ITEMS"] as $arItem):
+							$this->AddEditAction(
+								$arItem['ID'],
+								$arItem['EDIT_LINK'],
+								CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
+							);
+							$this->AddDeleteAction(
+								$arItem['ID'],
+								$arItem['DELETE_LINK'],
+								CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
+								["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
+							);
+						?>
+							<? if ($arItem["PREVIEW_TEXT"] && $arItem["DETAIL_PAGE_URL"]): ?>
+								<div class="services-list-card-container">
+									<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+										<div class="services-list-card__header">
+											<? if (!empty($arItem["PROPERTIES"]["THEME"]["VALUE"])): ?>
+												<small><?= $arItem["PROPERTIES"]["THEME"]["VALUE"] ?></small>
+											<? endif; ?>
+											<!-- <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="400"> -->
+											<span><?= $arItem["NAME"] ?></span>
+										</div>
+
+										<div class="services-list-card__content">
+											<p><?= $arItem["PREVIEW_TEXT"] ?></p>
+										</div>
+
+										<svg width='16' height='16' role='img' aria-hidden='true' focusable='false'>
+											<use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-arrow'></use>
+										</svg>
+									</a>
+								</div>
+							<? endif; ?>
+						<? endforeach; ?>
+					</div>
+
+					<a class="main-btn" href="<?= $arSection["SECTION_PAGE_URL"] ?>">Перейти в раздел</a>
+				</div>
+			<? endforeach; ?>
 
 		</div>
 	</section>

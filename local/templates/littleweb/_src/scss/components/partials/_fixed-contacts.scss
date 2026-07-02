@@ -1,5 +1,3 @@
-@use "@scss/extends/index" as *;
-
 .fixed-contacts {
 	position: fixed;
 	bottom: 50px;
@@ -13,7 +11,6 @@
 	padding: 8px 32px;
 
 	.main-btn {
-		@extend %glass-dark;
 		min-height: 48px;
 		color: var(--white);
 	}

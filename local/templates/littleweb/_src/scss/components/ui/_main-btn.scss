@@ -1,4 +1,8 @@
+@use "@scss/extends/index" as *;
+
 .main-btn {
+	@extend %glass-dark;
+
 	min-height: 48px;
 	display: inline-flex;
 	align-items: center;
@@ -11,12 +15,10 @@
 	letter-spacing: 0.045em;
 	text-transform: uppercase;
 
-	border: 1px solid transparent;
 	border-radius: var(--base-border-radius);
 	padding: 6px 32px;
 
 	color: var(--white);
-	background-color: var(--dark);
 
 	&:has(svg) {
 		aspect-ratio: 1/1;

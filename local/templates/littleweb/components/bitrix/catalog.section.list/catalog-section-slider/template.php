@@ -14,12 +14,12 @@ $this->setFrameMode(true);
 
 if ($arResult["SECTIONS"]):
 ?>
-	<div class="catalog-section-slider">
-		<div class="container">
+	<section class="section catalog-section-slider">
+		<div class="container-fluid">
 
-			<!-- <div class="section__header">
-				<h2>Популярные разделы</h2>
-			</div> -->
+			<div class="section__header">
+				<h2>Популярные разделы каталога</h2>
+			</div>
 
 			<div class="swiper autofill-slider">
 				<div class="swiper-wrapper">
@@ -28,7 +28,7 @@ if ($arResult["SECTIONS"]):
 						$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 					?>
 						<div class="swiper-slide" id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-							<a href=" <?= $arSection["SECTION_PAGE_URL"] ?>">
+							<a href="<?= $arSection["SECTION_PAGE_URL"] ?>">
 								<img src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="<?= $arSection["NAME"] ?>" width="160" height="160">
 								<span><?= $arSection["NAME"] ?></span>
 							</a>
@@ -43,5 +43,5 @@ if ($arResult["SECTIONS"]):
 				Перейти в каталог
 			</a>
 		</div>
-	</div>
+	</section>
 <? endif; ?>

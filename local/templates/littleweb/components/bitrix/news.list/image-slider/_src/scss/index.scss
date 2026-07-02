@@ -1,19 +1,27 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .image-slider {
+	.swiper {
+		padding: 32px 24px;
+		padding-bottom: 60px;
+	}
 	.swiper-slide {
+		@extend %glass-dark;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		width: 100%;
 		height: auto;
+		max-height: 320px;
 
 		max-width: 280px;
-		height: 100%;
 
-		padding: 16px;
-		border: 1px solid var(--light);
+		padding: 24px;
+		border-radius: var(--base-border-radius);
+		box-shadow: var(--secondary-box-shadow);
 
 		img {
 			display: flex;

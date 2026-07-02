@@ -1,16 +1,12 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .news-list {
 	container: news-list / inline-size;
 
-	// @include container-up("news-list", 768px) {
-	// 	grid-template-columns: repeat(2, 1fr);
-	// }
-
 	.container {
 		display: flex;
 		flex-direction: column;
-		// gap: clamp(32px, 4.4vw, 64px);
 		align-items: center;
 	}
 
@@ -27,66 +23,49 @@
 		@include container-up("news-list", 1240px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
+	}
 
-		&-item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			gap: 16px;
-			padding: 12px;
-			border: 1px solid var(--light);
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 16px;
+		padding: 12px 18px;
+		padding-bottom: 18px;
+		color: var(--white);
+		@extend %glass-dark;
+		box-shadow: var(--base-box-shadow);
+		border-radius: var(--base-border-radius);
+		overflow: hidden;
+		border: none;
 
-			@include container-up("news-list", 768px) {
-				align-items: revert;
-				text-align: revert;
-			}
+		@include container-up("news-list", 768px) {
+			align-items: revert;
+			text-align: revert;
+		}
 
-			img {
-				width: 100%;
-				height: auto;
-				object-fit: contain;
-			}
+		img {
+			width: calc(100% + 36px);
+			height: auto;
+			object-fit: contain;
+			margin: -12px -18px;
+			margin-bottom: 0px;
+		}
 
-			strong {
-				position: relative;
+		&-title {
+			font-size: var(--base-subtitle);
+		}
 
-				font-size: clamp(22px, 1.8vw, 28px);
-				font-family: var(--secondary-font);
-				font-weight: 600;
-				padding-bottom: 12px;
+		&-preview-text {
+			font-size: 16px;
+			font-family: var(--primary-font);
+		}
 
-				color: var(--dark);
-
-				&::after {
-					position: absolute;
-					bottom: 0;
-					left: 50%;
-					transform: translateX(-50%);
-					content: "";
-					width: 30%;
-					max-width: 120px;
-					height: 2px;
-					background-color: var(--danger);
-
-					@include container-up("news-list", 768px) {
-						left: 0;
-						transform: none;
-					}
-				}
-			}
-
-			span {
-				font-size: clamp(18px, 3.6vw, 22px);
-				padding: 12px 0;
-				color: var(--dark);
-			}
-
-			small {
-				font-size: 14px;
-				opacity: 0.5;
-				color: var(--dark);
-			}
+		&-date {
+			font-size: 14px;
+			opacity: 0.5;
+			color: var(--light);
 		}
 	}
 }

@@ -9,7 +9,7 @@ $reviewTextLimit = 100;
 
 
 	<section class="section image-slider">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="section__header">
 				<h2><?= $arResult["NAME"] ?></h2>
 				<? if ($arResult["DESCRIPTION"]): ?>

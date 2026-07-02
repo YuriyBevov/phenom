@@ -3,7 +3,7 @@
 .fixed-contacts {
 	position: fixed;
 	bottom: 50px;
-	right: 100px;
+	right: calc(var(--container-offset) + 54px);
 
 	display: flex;
 	align-items: center;
@@ -15,7 +15,6 @@
 	.main-btn {
 		@extend %glass-dark;
 		min-height: 48px;
-		// border-radius: 20px;
 		color: var(--white);
 	}
 }

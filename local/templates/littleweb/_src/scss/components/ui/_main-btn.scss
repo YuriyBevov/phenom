@@ -10,15 +10,13 @@
 	font-weight: 400;
 	letter-spacing: 0.045em;
 	text-transform: uppercase;
-	// backdrop-filter: blur(18px);
-	// -webkit-backdrop-filter: blur(18px);
-	// clip-path: var(--base-clip-path);
+
 	border: 1px solid transparent;
+	border-radius: 30px;
 	padding: 8px 32px 6px;
 
 	color: var(--white);
 	background-color: var(--dark);
-	border-radius: 30px;
 
 	&:has(svg) {
 		aspect-ratio: 1/1;

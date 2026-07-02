@@ -49,7 +49,10 @@
 	&__navigation-row {
 		position: absolute;
 		bottom: 8px;
-		padding: clamp(4px, 1.6cqw, 10px) 48px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: clamp(4px, 1.6cqw, 10px) var(--container-offset);
+		max-width: var(--container-width);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

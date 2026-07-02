@@ -2,7 +2,7 @@
 
 .scroll-up-btn {
 	position: fixed;
-	right: 40px;
+	right: var(--container-offset);
 	bottom: 58px;
 
 	// display: flex;
@@ -14,13 +14,15 @@
 	// border: 2px solid #fff;
 	// border-radius: 50%;
 	// background-color: rgb(83 44 249 / 10%);
+	// mix-blend-mode: difference;
+
 	background-image: url("/local/templates/littleweb/_dist/images/arrow-white.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 12px;
-	// mix-blend-mode: difference;
 	transform: translateY(150px) rotate(-45deg);
 	background-color: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.24);
 
 	padding: 16px;
 	z-index: 89;

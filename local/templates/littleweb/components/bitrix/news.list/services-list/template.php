@@ -6,10 +6,16 @@ $this->setFrameMode(true);
 
 <? if ($arResult["SERVICE_SECTIONS"]): ?>
 	<section class="section services-list">
-		<div class="container">
+		<? $index = 0;
+		foreach ($arResult["SERVICE_SECTIONS"] as $arSection): ?>
+			<? if ($index === 0 && $arResult["PICTURE"]): ?>
+				<div class="services-list__bg-image-wrapper" aria-hidden="true">
+					<img src="<?= CFile::GetPath($arResult["PICTURE"]) ?>" alt="" width="960" height="480">
+				</div>
+			<? endif; ?>
+			<div class="services-list__section">
+				<div class="container">
 
-			<? foreach ($arResult["SERVICE_SECTIONS"] as $arSection): ?>
-				<div class="services-list__section">
 					<div class="section__header">
 						<h2><?= $arSection["NAME"] ?></h2>
 						<? if ($arSection["DESCRIPTION"]): ?>
@@ -39,7 +45,7 @@ $this->setFrameMode(true);
 						?>
 							<? if ($arItem["PREVIEW_TEXT"] && $arItem["DETAIL_PAGE_URL"]): ?>
 								<div class="services-list-card-container">
-									<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+									<a <?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? 'style="background-image:url(' . $arItem["PREVIEW_PICTURE"]["SRC"] . ')" ' : '') ?> href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 										<div class="services-list-card__header">
 											<? if (!empty($arItem["PROPERTIES"]["THEME"]["VALUE"])): ?>
 												<small><?= $arItem["PROPERTIES"]["THEME"]["VALUE"] ?></small>
@@ -63,8 +69,8 @@ $this->setFrameMode(true);
 
 					<a class="main-btn" href="<?= $arSection["SECTION_PAGE_URL"] ?>">Перейти в раздел</a>
 				</div>
-			<? endforeach; ?>
-
-		</div>
+			</div>
+		<? $index++;
+		endforeach; ?>
 	</section>
 <? endif; ?>

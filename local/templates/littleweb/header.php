@@ -41,21 +41,31 @@
         </div>
 
         <div class="header__row-col">
+          <button class="search-opener-btn main-btn">
+            <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
+              <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
+            </svg>
+          </button>
+
           <div class="header__contacts">
-            <?
-            $APPLICATION->IncludeFile(
-              SITE_DIR . 'include/phone.php',
-              array(),
-              array('MODE' => 'html', 'NAME' => 'телефоны', 'SHOW_BORDER' => true)
-            );
-            ?>
-            <?
-            $APPLICATION->IncludeFile(
-              SITE_DIR . 'include/mail.php',
-              array(),
-              array('MODE' => 'html', 'NAME' => 'почту', 'SHOW_BORDER' => true)
-            );
-            ?>
+            <div class="header__contacts-row">
+              <?
+              $APPLICATION->IncludeFile(
+                SITE_DIR . 'include/phone.php',
+                array(),
+                array('MODE' => 'html', 'NAME' => 'телефоны', 'SHOW_BORDER' => true)
+              );
+              ?>
+            </div>
+            <div class="header__contacts-row">
+              <?
+              $APPLICATION->IncludeFile(
+                SITE_DIR . 'include/mail.php',
+                array(),
+                array('MODE' => 'html', 'NAME' => 'почту', 'SHOW_BORDER' => true)
+              );
+              ?>
+            </div>
           </div>
         </div>
       </div>
@@ -80,6 +90,11 @@
           ),
           false
         ); ?>
+        <!-- <button class="search-opener-btn">
+          <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
+            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
+          </svg>
+        </button> -->
       </div>
     </div>
   </header>

@@ -47,14 +47,13 @@
 
 		span {
 			z-index: 2;
-			font-family: var(--secondary-font);
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
 			font-size: clamp(18px, 4.2cqw, 32px);
-			font-weight: 600;
+			font-weight: 400;
 			text-align: center;
 			padding: 24px 10%;
 			color: var(--white);

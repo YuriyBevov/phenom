@@ -3,6 +3,9 @@
 
 .services-list {
 	container: services-list / inline-size;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(48px, 5vw, 72px);
 
 	.container {
 		display: flex;
@@ -11,17 +14,70 @@
 	}
 
 	&__section {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(44px, 6vw, 84px);
 
-		& > .main-btn {
-			max-width: fit-content;
+		.container {
+			display: flex;
+			flex-direction: column;
+
+			& > .main-btn {
+				max-width: fit-content;
+			}
+		}
+	}
+
+	&__bg-image-wrapper {
+		position: relative;
+		z-index: 0;
+		isolation: isolate;
+		width: 100%;
+		height: clamp(260px, 42vw, 620px);
+		margin: clamp(-96px, -6vw, -48px) 0;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			pointer-events: none;
+			background:
+				linear-gradient(
+					180deg,
+					var(--site-bg-color) 0%,
+					rgb(34 34 34 / 72%) 18%,
+					rgb(34 34 34 / 42%) 50%,
+					rgb(34 34 34 / 72%) 82%,
+					var(--site-bg-color) 100%
+				),
+				linear-gradient(
+					90deg,
+					var(--site-bg-color) 0%,
+					rgb(34 34 34 / 84%) 18%,
+					rgb(34 34 34 / 38%) 50%,
+					rgb(34 34 34 / 84%) 82%,
+					var(--site-bg-color) 100%
+				);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
 		}
 	}
 
 	.section__header {
+		position: relative;
+		z-index: 1;
 		margin-bottom: 0;
+
 		h2,
 		p {
 			margin: 0;
@@ -30,9 +86,11 @@
 	}
 
 	&__grid {
+		position: relative;
+		z-index: 1;
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 12px;
+		gap: 24px;
 
 		@include container-up("services-list", 768px) {
 			grid-template-columns: repeat(2, 1fr);
@@ -41,6 +99,11 @@
 		@include container-up("services-list", 1240px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
+	}
+
+	.main-btn {
+		position: relative;
+		z-index: 1;
 	}
 
 	&-card {
@@ -56,7 +119,11 @@
 		padding: 32px 24px;
 		border: none;
 		border-radius: var(--base-border-radius);
-		transition: opacity var(--main-transition);
+		transition: background-size var(--image-scale-transition);
+
+		background-position: center;
+		background-size: 100%;
+		aspect-ratio: 1/1;
 
 		&-container {
 			container: service-card / inline-size;
@@ -68,19 +135,18 @@
 			gap: 6px;
 
 			small {
-				font-family: var(--secondary-font);
 				font-style: 16px;
 				color: var(--secondary);
 			}
 
 			span {
 				z-index: 2;
-				font-family: var(--secondary-font);
 
 				width: 100%;
 				font-size: var(--base-subtitle);
 				color: var(--white);
 				text-wrap: balance;
+				text-transform: uppercase;
 			}
 		}
 
@@ -108,7 +174,8 @@
 
 		@media (hover: hover) {
 			&:hover {
-				opacity: 0.6;
+				// opacity: 0.6;
+				background-size: 105%;
 				svg {
 					transform: rotate(45deg);
 				}

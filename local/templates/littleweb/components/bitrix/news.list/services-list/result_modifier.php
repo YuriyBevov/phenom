@@ -25,6 +25,7 @@ $rsSections = CIBlockSection::GetList(
 		"DESCRIPTION",
 		"DESCRIPTION_TYPE",
 		"SECTION_PAGE_URL",
+		"PICTURE"
 	]
 );
 

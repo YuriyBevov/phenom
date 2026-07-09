@@ -1,5 +1,5 @@
 :root {
-	--primary-font: "Roboto", Arial, sans-serif;
+	--primary-font: "Arteks", Arial, sans-serif;
 	--secondary-font: "Raleway", Arial, sans-serif;
 
 	--content-width: 1680px;
@@ -13,7 +13,7 @@
 
 	--black: #000000;
 	--white: #ffffff;
-	--primary: #cc3300;
+	--primary: #ac51512e;
 	--secondary: #d3ad75;
 	--warning: #f3cb5e;
 	--danger: #cc3300;
@@ -22,23 +22,25 @@
 	--dark: #222222;
 	--light: #f4f4f4;
 
-	--scrollbar-color: var(--secondary);
+	--scrollbar-color: var(--dark);
 	--scrollbar-width: 10px;
 	--scrollbar-height: 6px;
 	--scrollbar-border-radius: 0;
-	--scrollbar-thumb-color: var(--primary);
+	--scrollbar-thumb-color: var(--danger);
 	--scrollbar-thumb-border-radius: 0;
 
 	--site-base-font-family: var(--primary-font);
 	--site-base-font-weight: 400;
 	--site-base-font-size: 16px;
+
 	--site-base-line-height: 1.2;
 	--site-base-letter-spacing: 0.015em;
 	--site-base-text-color: var(--white);
 	--site-bg-color: var(--dark);
 
 	--main-transition: 0.25s ease;
-	--base-subtitle: clamp(18px, 3vw, 22px);
+	--image-scale-transition: 2.4s linear;
+	--base-subtitle: clamp(16px, 3vw, 18px);
 	--base-border-radius: 30px;
 	--base-box-shadow: 0 24px 80px rgba(211, 130, 9, 0.1);
 	// --secondary-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);

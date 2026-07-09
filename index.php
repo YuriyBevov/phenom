@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Phenom.su");
-?>
+$APPLICATION->SetTitle("RLABGroup.ru");
+?> 
 
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -93,7 +93,7 @@ $APPLICATION->SetTitle("Phenom.su");
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => [
-			0 => "",
+			0 => "CODE",
 			1 => "",
 		],
 		"FILTER_NAME" => "",
@@ -115,10 +115,11 @@ $APPLICATION->SetTitle("Phenom.su");
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => [
-			0 => "VALUE",
-			1 => "NAME",
-			2 => "LINK",
-			3 => "",
+			0 => "",
+			1 => "VALUE",
+			2 => "NAME",
+			3 => "LINK",
+			4 => "",
 		],
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -138,8 +139,8 @@ $APPLICATION->SetTitle("Phenom.su");
 ); ?>
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"services-list", 
+	"bitrix:news.list",
+	"services-list",
 	[
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -281,7 +282,7 @@ $APPLICATION->SetTitle("Phenom.su");
 	false
 );  ?>
 
-<? $APPLICATION->IncludeComponent(
+<?/* $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"catalog-section-slider",
 	[
@@ -314,7 +315,7 @@ $APPLICATION->SetTitle("Phenom.su");
 		"COMPONENT_TEMPLATE" => "catalog-section-slider"
 	],
 	false
-); ?>
+); */ ?>
 
 <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/seo-section/index.php");  ?>
 
@@ -389,9 +390,6 @@ $APPLICATION->SetTitle("Phenom.su");
 	false
 ); ?>
 
-
-
-<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/seo-section/index.php");  ?>
 
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",

@@ -9,7 +9,6 @@
 	justify-content: center;
 	gap: 10px;
 
-	font-family: var(--primary-font);
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.045em;
@@ -20,6 +19,8 @@
 
 	color: var(--white);
 
+	transition: background var(--main-transition);
+
 	&:has(svg) {
 		aspect-ratio: 1/1;
 		padding: 12px;
@@ -28,5 +29,15 @@
 			width: 16px;
 			height: 16px;
 		}
+	}
+
+	@media (hover: hover) {
+		&:not(.header__callback-btn):hover {
+			background-color: var(--primary);
+		}
+	}
+
+	&:not(.header__callback-btn):focus {
+		background-color: var(--primary);
 	}
 }

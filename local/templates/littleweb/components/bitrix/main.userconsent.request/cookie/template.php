@@ -69,7 +69,7 @@ $config = \Bitrix\Main\Web\Json::encode($arResult['CONFIG']);
 
 		span {
 			font-size: 16px;
-			font-weight: 600;
+			font-weight: 400;
 		}
 	}
 </style>

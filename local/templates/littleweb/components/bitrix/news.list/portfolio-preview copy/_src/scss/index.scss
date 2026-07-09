@@ -50,7 +50,7 @@
 				color: var(--white);
 
 				transform: translateY(150%);
-				transition: transform var(--main-transition);
+				transition: transform var(--image-scale-transition);
 			}
 
 			@media (hover: hover) {

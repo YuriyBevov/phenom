@@ -58,7 +58,7 @@ if ($arResult["ITEMS"]): ?>
 				<? endforeach; ?>
 			</div>
 
-			<a href="/news/" class="main-btn">Все новости</a>
+			<a href="/news/" class="main-btn">Все статьи</a>
 		</div>
 	</section>
 <? endif; ?>

@@ -1,4 +1,82 @@
+@use "@scss/base/container-queries" as *;
 
-	@use "@scss/base/container-queries" as *;
+.footer {
+	position: relative;
 
-	.footer {}
+	padding: clamp(32px, 5.4vw, 72px) 0;
+	z-index: 91;
+	background-color: var(--dark);
+
+	a {
+		color: var(--white);
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		// outline: 1px solid red;
+	}
+
+	.logo {
+		margin-bottom: 24px;
+	}
+
+	&__contacts-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		margin-bottom: 32px;
+
+		address {
+			margin-top: 12px;
+			font-size: 14px;
+			font-weight: 300;
+		}
+	}
+
+	&__row {
+		// display: flex;
+
+		gap: 12px 24px;
+
+		&--top {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: clamp(32px, 5.4vw, 72px);
+			// outline: 1px solid red;
+		}
+
+		&-col {
+			display: flex;
+			flex-direction: column;
+			// gap: 32px;
+			// outline: 1px solid white;
+
+			// &:not(:first-child) {
+			// 	margin-top: 64px;
+			// }
+
+			&-title {
+				font-size: clamp(18px, 4vw, 24px);
+				font-weight: 400;
+				margin-bottom: 24px;
+			}
+		}
+	}
+}
+
+.bottom-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		a {
+			display: flex;
+
+			font-size: 16px;
+			padding: 6px 0;
+		}
+	}
+}

@@ -106,7 +106,7 @@
 			object-fit: cover;
 			object-position: center;
 			will-change: transform;
-			transition: transform 1s linear;
+			transition: transform var(--image-scale-transition);
 			transform: scale(1.01);
 
 			@media (hover: hover) {
@@ -123,7 +123,7 @@
 		color: var(--danger);
 		background-color: var(--white);
 		border-radius: var(--base-border-radius);
-		font-weight: 600;
+		font-weight: 400;
 		text-align: center;
 	}
 }

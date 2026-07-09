@@ -47,7 +47,65 @@
 
 <footer class="footer">
   <div class="container">
-    site-footer
+    <div class="footer__row footer__row--top">
+      <div class="footer__row-col">
+        <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/logo.php");  ?>
+        <small><?= date("Y") ?> © RlabGroup</small>
+        <a href="/policy/"><small>Политика конфиденциальности</small></a>
+      </div>
+      <div class="footer__row-col">
+        <span class="footer__row-col-title">Каталог</span>
+        <ul class="bottom-menu">
+          <li>
+            <a href="/">Раздел каталога</a>
+          </li>
+          <li>
+            <a href="/">Раздел каталога</a>
+          </li>
+          <li>
+            <a href="/">Раздел каталога</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__row-col">
+        <span class="footer__row-col-title">Информация</span>
+        <ul class="bottom-menu">
+          <li>
+            <a href="/">О компании</a>
+          </li>
+          <li>
+            <a href="/">Статьи</a>
+          </li>
+          <li>
+            <a href="/">Контакты</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__row-col">
+        <span class="footer__row-col-title">Контакты</span>
+        <div class="footer__contacts-wrapper">
+          <?
+          $APPLICATION->IncludeFile(
+            SITE_DIR . 'include/phone.php',
+            array(),
+            array('MODE' => 'html', 'NAME' => 'телефоны', 'SHOW_BORDER' => true)
+          );
+
+          $APPLICATION->IncludeFile(
+            SITE_DIR . 'include/mail.php',
+            array(),
+            array('MODE' => 'html', 'NAME' => 'почту', 'SHOW_BORDER' => true)
+          );
+
+          $APPLICATION->IncludeFile(
+            SITE_DIR . 'include/address.php',
+            array(),
+            array('MODE' => 'html', 'NAME' => 'адрес', 'SHOW_BORDER' => true)
+          ); ?>
+        </div>
+        <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php"); ?>
+      </div>
+    </div>
   </div>
 </footer>
 

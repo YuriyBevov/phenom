@@ -40,15 +40,13 @@ section.section:has(.callback-form) {
 	}
 
 	&__title {
-		font-family: var(--secondary-font);
 		font-size: clamp(24px, 4vw, 48px);
-		font-weight: 500;
+		font-weight: 400;
 		color: var(--dark);
 	}
 
 	&__text {
 		font-size: 18px;
-		font-family: var(--secondary-font);
 		color: var(--dark);
 	}
 
@@ -61,7 +59,7 @@ section.section:has(.callback-form) {
 
 	*[type="submit"] {
 		color: var(--dark);
-		font-weight: 500;
+		font-weight: 400;
 		// background-color: var(--white);
 		max-width: 240px;
 		padding-top: 8px;

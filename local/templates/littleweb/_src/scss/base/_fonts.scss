@@ -8,6 +8,11 @@
 	}
 }
 
+@include font-face("Arteks", "Arteks-Light", 300, normal);
+@include font-face("Arteks", "Arteks-Regular", 400, normal);
+@include font-face("Arteks", "Arteks-Medium", 500, normal);
+@include font-face("Arteks", "Arteks-Bold", 700, normal);
+
 @include font-face("Raleway", "Raleway-Regular", 400, normal);
 @include font-face("Raleway", "Raleway-Medium", 500, normal);
 @include font-face("Raleway", "Raleway-SemiBold", 600, normal);

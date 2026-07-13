@@ -12,7 +12,7 @@ $APPLICATION->SetTitle("Поиск");
 		"USE_TITLE_RANK" => "Y",
 		"DEFAULT_SORT" => "rank",
 		"arrFILTER" => [
-			0 => "iblock_products",
+			0 => "iblock_site_content",
 		],
 		"SHOW_WHERE" => "N",
 		"SHOW_WHEN" => "N",
@@ -60,7 +60,10 @@ $APPLICATION->SetTitle("Поиск");
 		"PERIOD_NEW_TAGS" => "",
 		"SHOW_CHAIN" => "Y",
 		"COLOR_TYPE" => "Y",
-		"WIDTH" => "100%"
+		"WIDTH" => "100%",
+		"arrFILTER_iblock_site_content" => [
+			0 => "11",
+		]
 	],
 	false
 );?>

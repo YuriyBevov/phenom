@@ -51,7 +51,7 @@
       <div class="footer__row-col">
         <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/logo.php");  ?>
         <small><?= date("Y") ?> © RlabGroup</small>
-        <a href="/policy/"><small>Политика конфиденциальности</small></a>
+        <a href="/policy/" class="policy-link"><small>Политика конфиденциальности</small></a>
       </div>
       <div class="footer__row-col">
         <span class="footer__row-col-title">Каталог</span>
@@ -106,8 +106,16 @@
         <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php"); ?>
       </div>
     </div>
+    <div class="footer__row footer__row--bottom">
+      <a href="mailto:yuriybevov@gmail.com" class="dev-link">
+        <span>Сделано в</span>
+        <img data-v-12762536="" src="<?= SITE_TEMPLATE_PATH ?>/_dist/images/littleweb-logo.svg" alt="Littleweb" class="footer-logo">
+      </a>
+    </div>
   </div>
 </footer>
+
+
 
 </body>
 

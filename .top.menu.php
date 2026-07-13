@@ -9,14 +9,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Для коммерчесских помещений", 
-		"/catalog/commerce/", 
+		"/services/commerce/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Для домашнего интерьера", 
-		"/catalog/home/", 
+		"/services/home/", 
 		Array(), 
 		Array(), 
 		"" 

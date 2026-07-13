@@ -21,5 +21,7 @@
 			aspect-ratio: 1/1;
 			object-fit: contain;
 		}
+
+		@extend %hover-opacity;
 	}
 }

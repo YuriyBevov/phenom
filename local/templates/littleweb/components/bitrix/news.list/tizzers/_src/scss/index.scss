@@ -1,4 +1,5 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .tizzers {
 	container: tizzers / inline-size;
@@ -18,6 +19,10 @@
 		@include container-up("tizzers", 1240px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
+	}
+
+	a.tizzers__item {
+		@extend %hover-opacity;
 	}
 
 	&__item {

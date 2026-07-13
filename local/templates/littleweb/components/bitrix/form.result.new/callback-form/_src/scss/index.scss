@@ -10,12 +10,30 @@ section.section:has(.callback-form) {
 	--callback-form-radius: var(--base-border-radius);
 
 	position: relative;
+	isolation: isolate;
 	color: var(--white);
 	background-color: var(--dark);
 	padding: 96px clamp(12px, 6vw, 72px);
 	background-position: center;
 	background-size: cover;
 	z-index: 3;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		height: clamp(96px, 14vw, 240px);
+		pointer-events: none;
+		background: linear-gradient(
+			180deg,
+			var(--site-bg-color) 0%,
+			rgb(34 34 34 / 86%) 34%,
+			rgb(34 34 34 / 0%) 100%
+		);
+	}
 
 	form {
 		position: relative;
@@ -40,9 +58,10 @@ section.section:has(.callback-form) {
 	}
 
 	&__title {
-		font-size: clamp(24px, 4vw, 48px);
+		font-size: clamp(24px, 3.2vw, 36px);
 		font-weight: 400;
 		color: var(--dark);
+		text-transform: uppercase;
 	}
 
 	&__text {

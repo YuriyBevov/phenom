@@ -1,0 +1,21 @@
+@use "@scss/extends/index" as *;
+
+.dev-link {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	align-items: center;
+
+	span {
+		font-size: 14px;
+		line-height: 1;
+		font-weight: 300;
+		margin-top: 3px;
+	}
+
+	img {
+		max-width: 120px;
+	}
+
+	@extend %hover-opacity;
+}

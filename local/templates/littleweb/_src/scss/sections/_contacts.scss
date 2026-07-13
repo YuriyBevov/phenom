@@ -1,0 +1,24 @@
+@use "@scss/extends/index" as *;
+
+.contacts {
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	a,
+	address {
+		font-size: clamp(24px, 3.6vw, 32px);
+		font-weight: 300;
+		color: var(--white);
+	}
+
+	a {
+		@extend %hover-opacity;
+	}
+
+	.social-block {
+		margin-top: 44px;
+	}
+}

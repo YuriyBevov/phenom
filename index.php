@@ -154,7 +154,7 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
+		"DETAIL_URL" => "/services/#SECTION_CODE#/#ELEMENT_CODE#/",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
@@ -320,8 +320,6 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/seo-section/index.php");  ?>
 
 <?/*
-
-
 
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",

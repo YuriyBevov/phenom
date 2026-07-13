@@ -1,18 +1,48 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
-?>
 
+if ($arResult["SERVICE_SECTIONS"]): ?>
 
-<? if ($arResult["SERVICE_SECTIONS"]): ?>
 	<section class="section services-list">
-		<? $index = 0;
+		<? if ($arParams["IS_INNER"] !== "Y"): ?>
+			<? if ($arSection["PICTURE"]): ?>
+				<div class="services-list__bg-image-wrapper" aria-hidden="true">
+					<img src="<?= CFile::GetPath($arSection["PICTURE"]) ?>" alt="" width="960" height="480">
+				</div>
+			<? endif; ?>
+		<? else: ?>
+			<div class="page-head" <?= (CFile::GetPath($arResult["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["PICTURE"]) . ')" ' : '') ?>>
+				<div class="container">
+					<h1 class="page-head-title"><?= $arResult["NAME"] ?></h1>
+					<? if ($arResult["DESCRIPTION"]): ?>
+						<p class="page-head-description">
+							<?= $arResult['DESCRIPTION'] ?>
+						</p>
+					<? endif ?>
+					<button class="main-btn" data-form-id="1">Оставить заявку</button>
+				</div>
+			</div>
+		<? endif; ?>
+
+		<?
+		//$index = 0;
 		foreach ($arResult["SERVICE_SECTIONS"] as $arSection): ?>
-			<? if ($index === 0 && $arResult["PICTURE"]): ?>
+			<?/* if ($index === 0 && $arResult["PICTURE"] && $arParams["IS_INNER"] != "N"): ?>
 				<div class="services-list__bg-image-wrapper" aria-hidden="true">
 					<img src="<?= CFile::GetPath($arResult["PICTURE"]) ?>" alt="" width="960" height="480">
 				</div>
-			<? endif; ?>
+			<? endif; */ ?>
+
+			<?/* Если мы находимся на разводной странице услуг */ ?>
+			<?/* if ($arSection["PICTURE"] && $arParams["IS_INNER"] === "N"): ?>
+				<div class="services-list__bg-image-wrapper" aria-hidden="true">
+					<img src="<?= CFile::GetPath($arSection["PICTURE"]) ?>" alt="" width="960" height="480">
+				</div>
+			<? endif; */ ?>
+
+
+
 			<div class="services-list__section">
 				<div class="container">
 
@@ -50,7 +80,6 @@ $this->setFrameMode(true);
 											<? if (!empty($arItem["PROPERTIES"]["THEME"]["VALUE"])): ?>
 												<small><?= $arItem["PROPERTIES"]["THEME"]["VALUE"] ?></small>
 											<? endif; ?>
-											<!-- <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["NAME"] ?>" width="400" height="400"> -->
 											<span><?= $arItem["NAME"] ?></span>
 										</div>
 
@@ -70,7 +99,8 @@ $this->setFrameMode(true);
 					<a class="main-btn" href="<?= $arSection["SECTION_PAGE_URL"] ?>">Перейти в раздел</a>
 				</div>
 			</div>
-		<? $index++;
+		<? //$index++;
 		endforeach; ?>
 	</section>
+
 <? endif; ?>

@@ -21,7 +21,8 @@
 <body>
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 
-  <header class="header" style="margin-top:40px;">
+
+  <header class="header">
     <div class="container">
       <div class="header__row">
 
@@ -100,121 +101,66 @@
   </header>
 
 
-  <!-- <button type="button" class="main-btn header__search-opener-btn" aria-label="Поиск по сайту">
-            <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-              <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
-            </svg>
-          </button> -->
-
   <?/*
-  <header class="header">
-    <div class="container">
-      <div class="header__row header__row--top">
-        <div class="header__contact-block header__contact-block--left">
+  <div class="" style="margin-top:140px;">
 
-        
-          
-         
+    <? $APPLICATION->IncludeComponent(
+	"bitrix:search.title", 
+	"littleweb", 
+	[
+		"NUM_CATEGORIES" => "1",
+		"TOP_COUNT" => "20",
+		"CHECK_DATES" => "N",
+		"SHOW_OTHERS" => "N",
+		"PAGE" => SITE_DIR."search/",
+		"CATEGORY_0_TITLE" => "Результаты поиска",
+		"CATEGORY_0" => [
+			0 => "iblock_site_content",
+		],
+		"CATEGORY_0_iblock_catalog" => [
+			0 => "all",
+		],
+		"CATEGORY_OTHERS_TITLE" => "Прочее",
+		"SHOW_INPUT" => "Y",
+		"INPUT_ID" => "title-search-input",
+		"CONTAINER_ID" => "search",
+		"PRICE_CODE" => [
+			0 => "BASE",
+		],
+		"SHOW_PREVIEW" => "Y",
+		"PREVIEW_WIDTH" => "75",
+		"PREVIEW_HEIGHT" => "75",
+		"CONVERT_CURRENCY" => "Y",
+		"COMPONENT_TEMPLATE" => "littleweb",
+		"ORDER" => "date",
+		"USE_LANGUAGE_GUESS" => "Y",
+		"CATEGORY_0_iblock_1c_catalog" => [
+			0 => "all",
+		],
+		"PRICE_VAT_INCLUDE" => "Y",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"CURRENCY_ID" => "RUB",
+		"CATEGORY_0_iblock_news" => [
+			0 => "all",
+		],
+		"TEMPLATE_THEME" => "blue",
+		"CATEGORY_0_iblock_site_content" => [
+			0 => "11",
+		]
+	],
+	false
+); ?>
   </div>
-
-
-
-  <!-- <div class="header__contact-block">
-          <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-phone'></use>
-          </svg>
-          <?
-          $APPLICATION->IncludeFile(
-            SITE_DIR . 'include/phone.php',
-            array(),
-            array('MODE' => 'html', 'NAME' => 'телефоны', 'SHOW_BORDER' => true)
-          );
-          ?>
-        </div>
-        <div class="header__contact-block ">
-
-          <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-mail'></use>
-          </svg>
-          <?
-          $APPLICATION->IncludeFile(
-            SITE_DIR . 'include/mail.php',
-            array(),
-            array('MODE' => 'html', 'NAME' => 'почту', 'SHOW_BORDER' => true)
-          );
-          ?>
-        </div>
-        <div class="header__contact-block ">
-          <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php");  ?>
-        </div> -->
-
-  </div>
-
-  <!-- <div class="header__row header__row--middle">
-
-
-
-        <a href="/catalog/" class="main-btn catalog-opener">
-          Каталог
-        </a>
-
-        <? $APPLICATION->IncludeComponent(
-          "bitrix:search.title",
-          "",
-          [
-            "NUM_CATEGORIES" => "1",
-            "TOP_COUNT" => "5",
-            "CHECK_DATES" => "Y",
-            "SHOW_OTHERS" => "N",
-            "PAGE" => SITE_DIR . "catalog/",
-            "CATEGORY_0_TITLE" => "",
-            "CATEGORY_0" => [
-              0 => "iblock_catalog",
-            ],
-            "CATEGORY_0_iblock_catalog" => [
-              0 => "2",
-            ],
-            "CATEGORY_OTHERS_TITLE" => GetMessage("SEARCH_OTHER"),
-            "SHOW_INPUT" => "Y",
-            "INPUT_ID" => "title-search-input",
-            "CONTAINER_ID" => "title-search",
-            "PRICE_CODE" => [
-              0 => "BASE",
-            ],
-            "SHOW_PREVIEW" => "Y",
-            "PREVIEW_WIDTH" => "75",
-            "PREVIEW_HEIGHT" => "75",
-            "CONVERT_CURRENCY" => "Y",
-            "COMPONENT_TEMPLATE" => "search-title",
-            "ORDER" => "date",
-            "USE_LANGUAGE_GUESS" => "Y"
-          ],
-          false
-        ); ?>
-
-        <button class="main-btn" data-form-id="1">
-          Сделать заказ
-        </button>
-
-        <button type="button" class="main-btn burger-btn burger-btn--opener" aria-label="Открыть меню">
-          <svg width='24' height='24' role='img' aria-hidden='true' focusable='false'>
-            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-burger'></use>
-          </svg>
-        </button>
-      </div> -->
-  </div>
-
-  <div class="header__row header__row--bottom">
-    <div class="container">
-
-    </div>
-  </div>
-  </header>
   */ ?>
 
+
   <main id="workarea">
-    <? if ($curPage != '/' && !defined("ERROR_404")) {
-      $APPLICATION->IncludeComponent(
+    <?
+    $curPage = $APPLICATION->GetCurPage();
+    $is404 = defined("ERROR_404") && ERROR_404 === "Y";
+
+    if ($curPage != "/" && !$is404): ?>
+      <? $APPLICATION->IncludeComponent(
         "bitrix:breadcrumb",
         "lw-breadcrumb",
         [
@@ -224,5 +170,5 @@
           "COMPONENT_TEMPLATE" => "lw-breadcrumb"
         ],
         false
-      );
-    } ?>
+      ); ?>
+    <? endif; ?>

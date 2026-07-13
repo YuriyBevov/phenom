@@ -1,4 +1,5 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .footer {
 	position: relative;
@@ -15,7 +16,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
-		// outline: 1px solid red;
 	}
 
 	.logo {
@@ -28,6 +28,10 @@
 		gap: 6px;
 		margin-bottom: 32px;
 
+		a {
+			@extend %hover-opacity;
+		}
+
 		address {
 			margin-top: 12px;
 			font-size: 14px;
@@ -36,26 +40,25 @@
 	}
 
 	&__row {
-		// display: flex;
-
 		gap: 12px 24px;
 
 		&--top {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: clamp(32px, 5.4vw, 72px);
-			// outline: 1px solid red;
+		}
+
+		&--bottom {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-top: 1px solid rgb(255 255 255 / 18%);
+			padding-top: clamp(32px, 4vw, 48px);
 		}
 
 		&-col {
 			display: flex;
 			flex-direction: column;
-			// gap: 32px;
-			// outline: 1px solid white;
-
-			// &:not(:first-child) {
-			// 	margin-top: 64px;
-			// }
 
 			&-title {
 				font-size: clamp(18px, 4vw, 24px);
@@ -77,6 +80,8 @@
 
 			font-size: 16px;
 			padding: 6px 0;
+
+			@extend %hover-opacity;
 		}
 	}
 }

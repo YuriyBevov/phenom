@@ -1,0 +1,5 @@
+@use "@scss/extends/index" as *;
+
+.policy-link {
+	@extend %hover-opacity;
+}

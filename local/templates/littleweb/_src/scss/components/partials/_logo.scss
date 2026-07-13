@@ -1,3 +1,5 @@
+@use "@scss/extends/index" as *;
+
 .logo {
 	display: flex;
 	align-items: center;
@@ -11,4 +13,6 @@
 		height: auto;
 		object-fit: contain;
 	}
+
+	@extend %hover-opacity;
 }

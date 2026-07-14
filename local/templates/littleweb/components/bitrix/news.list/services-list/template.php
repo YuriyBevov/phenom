@@ -5,13 +5,7 @@ $this->setFrameMode(true);
 if ($arResult["SERVICE_SECTIONS"]): ?>
 
 	<section class="section services-list">
-		<? if ($arParams["IS_INNER"] !== "Y"): ?>
-			<? if ($arSection["PICTURE"]): ?>
-				<div class="services-list__bg-image-wrapper" aria-hidden="true">
-					<img src="<?= CFile::GetPath($arSection["PICTURE"]) ?>" alt="" width="960" height="480">
-				</div>
-			<? endif; ?>
-		<? else: ?>
+		<? if ($arParams["IS_INNER"] === "Y"): ?>
 			<div class="page-head" <?= (CFile::GetPath($arResult["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["PICTURE"]) . ')" ' : '') ?>>
 				<div class="container">
 					<h1 class="page-head-title"><?= $arResult["NAME"] ?></h1>
@@ -41,6 +35,12 @@ if ($arResult["SERVICE_SECTIONS"]): ?>
 				</div>
 			<? endif; */ ?>
 
+			<? if ($arParams["IS_INNER"] !== "Y" && $arSection["PICTURE"]): ?>
+				<div class="services-list__bg-image-wrapper" aria-hidden="true">
+					<img src="<?= CFile::GetPath($arSection["PICTURE"]) ?>" alt="" width="960" height="480">
+				</div>
+			<? endif; ?>
+
 
 
 			<div class="services-list__section">
@@ -53,7 +53,7 @@ if ($arResult["SERVICE_SECTIONS"]): ?>
 								<? if ($arSection["DESCRIPTION_TYPE"] === "html"): ?>
 									<?= $arSection["DESCRIPTION"] ?>
 								<? else: ?>
-									<p><?= nl2br(htmlspecialcharsbx($arSection["DESCRIPTION"])) ?></p>
+									<p><?= htmlspecialcharsbx($arSection["DESCRIPTION"]) ?></p>
 								<? endif; ?>
 							</div>
 						<? endif; ?>

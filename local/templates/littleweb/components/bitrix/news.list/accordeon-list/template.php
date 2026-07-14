@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 					?>
 						<div class="accordeon-item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
 							<div class="accordeon-header">
-								<span class="subtitle" itemprop="name"><?= $arItem["NAME"] ?></span>
+								<span itemprop="name"><?= $arItem["NAME"] ?></span>
 								<div class="accordeon-opener">
 									<svg width="16" height="16" role="img" aria-hidden="true" focusable="false">
 										<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-arrow"></use>

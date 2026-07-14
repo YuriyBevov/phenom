@@ -6,3 +6,4 @@ import "./modules/accordeon";
 import "./modules/fancybox-instance";
 import "./modules/bx-popup";
 import "./modules/search";
+import "./modules/table-wrapper";

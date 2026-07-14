@@ -3,7 +3,7 @@
 	position: relative;
 	background-size: cover;
 	background-position: center;
-	min-height: 35svw;
+	// min-height: 35svw;
 
 	&::before {
 		width: 100%;
@@ -44,8 +44,8 @@
 		font-size: clamp(18px, 3.6vw, 32px);
 		font-weight: 300;
 		text-transform: uppercase;
-		text-wrap: balance;
-		max-width: 840px;
+		// text-wrap: balance;
+		max-width: 90svw;
 	}
 
 	.container {

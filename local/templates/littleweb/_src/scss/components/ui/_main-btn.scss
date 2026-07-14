@@ -40,4 +40,8 @@
 	&:not(.header__callback-btn):focus {
 		background-color: var(--primary);
 	}
+
+	&--accent {
+		background-color: var(--primary);
+	}
 }

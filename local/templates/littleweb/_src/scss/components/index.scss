@@ -7,6 +7,9 @@
 @use "./partials/policy-link";
 @use "./partials/dev-link";
 @use "./partials/page-head";
+@use "./partials/content-block";
+@use "./ui/blockquote";
+@use "./ui/table";
 
 @use "./ui/accordeon";
 @use "./ui/form-controls/ctrl-wrapper";

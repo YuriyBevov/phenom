@@ -4,8 +4,8 @@ $APPLICATION->SetTitle("Наши услуги");
 // $APPLICATION->AddChainItem("Наши услуги");
 
 $APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"services",
+	"bitrix:news", 
+	"services", 
 	[
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -25,8 +25,11 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => [
-			0 => "",
-			1 => "",
+			0 => "PREVIEW_TEXT",
+			1 => "PREVIEW_PICTURE",
+			2 => "DETAIL_TEXT",
+			3 => "DETAIL_PICTURE",
+			4 => "",
 		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
@@ -49,8 +52,10 @@ $APPLICATION->IncludeComponent(
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => [
 			0 => "PREVIEW_TEXT",
-			1 => "DETAIL_TEXT",
-			2 => "",
+			1 => "PREVIEW_PICTURE",
+			2 => "DETAIL_TEXT",
+			3 => "DETAIL_PICTURE",
+			4 => "",
 		],
 		"LIST_PROPERTY_CODE" => [
 			0 => "THEME",

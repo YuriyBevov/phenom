@@ -5,6 +5,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 0 clamp(24px, 4.4vw, 64px);
+		padding: clamp(24px, 4.4vw, 64px) 0;
 
 		&-item:nth-child(even) {
 			.service-item img {

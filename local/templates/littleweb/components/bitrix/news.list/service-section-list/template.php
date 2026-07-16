@@ -6,7 +6,7 @@ if ($arResult["ITEMS"]): ?>
 	<section class="section service-section-list">
 
 
-		<div class="page-head" <?= (CFile::GetPath($arResult["CURRENT_SECTION"]["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["CURRENT_SECTION"]["PICTURE"]) . ')" ' : '') ?>>
+		<div class="page-head<?= (CFile::GetPath($arResult["PICTURE"]) ? ' page-head--bg' : '') ?>" <?= (CFile::GetPath($arResult["CURRENT_SECTION"]["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["CURRENT_SECTION"]["PICTURE"]) . ')" ' : '') ?>>
 			<div class="container">
 				<h1 class="page-head-title"><?= $arResult["CURRENT_SECTION"]["NAME"] ?></h1>
 				<? if ($arResult["CURRENT_SECTION"]["DESCRIPTION"]): ?>
@@ -27,7 +27,9 @@ if ($arResult["ITEMS"]): ?>
 
 							<div class="service-item__content">
 								<h2 class="subtitle"><?= $arItem["NAME"] ?></h2>
-								<span class="label">от 20 000 000 рублей</span>
+								<? if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]): ?>
+									<span class="label"><?= $arItem["PROPERTIES"]["PRICE"]["VALUE"] ?></span>
+								<? endif; ?>
 								<p class="text"><?= $arItem["PREVIEW_TEXT"] ?></p>
 
 								<div class="service-item__btn-wrapper">

@@ -6,7 +6,7 @@ if ($arResult["SERVICE_SECTIONS"]): ?>
 
 	<section class="section services-list">
 		<? if ($arParams["IS_INNER"] === "Y"): ?>
-			<div class="page-head" <?= (CFile::GetPath($arResult["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["PICTURE"]) . ')" ' : '') ?>>
+			<div class="page-head<?= (CFile::GetPath($arResult["PICTURE"]) ? ' page-head--bg' : '') ?>" <?= (CFile::GetPath($arResult["PICTURE"]) ? 'style="background-image:url(' . CFile::GetPath($arResult["PICTURE"]) . ')" ' : '') ?>>
 				<div class="container">
 					<h1 class="page-head-title"><?= $arResult["NAME"] ?></h1>
 					<? if ($arResult["DESCRIPTION"]): ?>

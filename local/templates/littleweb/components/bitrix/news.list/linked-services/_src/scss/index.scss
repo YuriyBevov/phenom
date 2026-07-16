@@ -1,0 +1,125 @@
+@use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
+
+.linked-services-list {
+	container: linked-services-list / inline-size;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(48px, 5vw, 72px);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(48px, 5vw, 72px);
+	}
+
+	.section__header {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 0;
+
+		h2,
+		p {
+			margin: 0;
+			text-align: left;
+		}
+	}
+
+	&__grid {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+
+		@include container-up("linked-services-list", 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include container-up("linked-services-list", 1240px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	.main-btn {
+		position: relative;
+		z-index: 1;
+	}
+
+	&-card {
+		@extend %glass-dark;
+
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		height: 100%;
+		overflow: hidden;
+		box-shadow: var(--base-box-shadow);
+		padding: 32px 24px;
+		border: none;
+		border-radius: var(--base-border-radius);
+		transition: background-size var(--image-scale-transition);
+
+		background-position: center;
+		background-size: 100%;
+		aspect-ratio: 1/1;
+
+		&-container {
+			container: service-card / inline-size;
+		}
+
+		&__header {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+
+			small {
+				font-style: 16px;
+				color: var(--secondary);
+			}
+
+			span {
+				z-index: 2;
+
+				width: 100%;
+				font-size: var(--base-subtitle);
+				color: var(--white);
+				text-wrap: balance;
+				text-transform: uppercase;
+			}
+		}
+
+		&__content {
+			padding-right: 48px;
+			margin-top: auto;
+
+			p {
+				font-size: 16px;
+				color: var(--white);
+				margin-bottom: 0;
+			}
+		}
+
+		svg {
+			position: absolute;
+			width: 16px;
+			height: auto;
+			bottom: 32px;
+			right: 24px;
+			fill: var(--white);
+			will-change: transform;
+			transition: transform var(--main-transition);
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				// opacity: 0.6;
+				background-size: 105%;
+				svg {
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+}

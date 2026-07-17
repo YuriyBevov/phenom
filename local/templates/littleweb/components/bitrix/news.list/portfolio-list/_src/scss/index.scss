@@ -25,6 +25,40 @@
 		margin-bottom: clamp(48px, 5vw, 72px);
 	}
 
+	&__filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		align-items: center;
+		width: min(100% - (var(--container-offset) * 2), var(--content-width));
+		margin: 0 auto clamp(48px, 5vw, 72px);
+
+		&-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
+			visibility: hidden;
+
+			&:has(.customSelect) {
+				visibility: visible;
+			}
+		}
+
+		&-select {
+			min-width: 180px;
+		}
+
+		& &-reset-btn {
+			aspect-ratio: initial;
+			text-transform: initial;
+			padding: 12px 24px;
+
+			svg {
+				fill: var(--white);
+			}
+		}
+	}
+
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -53,5 +87,11 @@
 			object-position: center;
 			border-radius: var(--base-border-radius);
 		}
+	}
+
+	&__empty {
+		margin: 0;
+		font-size: var(--base-subtitle);
+		text-align: center;
 	}
 }

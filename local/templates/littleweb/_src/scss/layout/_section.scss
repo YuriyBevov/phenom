@@ -31,4 +31,8 @@
 			margin: 0;
 		}
 	}
+
+	&:has(.page-head) {
+		padding-top: 172px;
+	}
 }

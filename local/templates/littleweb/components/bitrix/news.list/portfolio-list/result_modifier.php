@@ -3,18 +3,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 	die();
 }
 
-if (!defined("PORTFOLIO_FILTER_TYPE")) {
-	define("PORTFOLIO_FILTER_TYPE", "portfolio_type");
-}
-
-if (!defined("PORTFOLIO_FILTER_CAT")) {
-	define("PORTFOLIO_FILTER_CAT", "portfolio_cat");
-}
-
-if (!defined("PORTFOLIO_FILTER_YEAR")) {
-	define("PORTFOLIO_FILTER_YEAR", "portfolio_year");
-}
-
 if (!function_exists("portfolio_list_get_request_value")) {
 	function portfolio_list_get_request_value($key)
 	{
@@ -25,6 +13,13 @@ if (!function_exists("portfolio_list_get_request_value")) {
 		}
 
 		return trim((string)$value);
+	}
+}
+
+if (!function_exists("portfolio_list_get_filter_param_name")) {
+	function portfolio_list_get_filter_param_name($propertyCode)
+	{
+		return "portfolio_" . strtolower(preg_replace("/[^a-zA-Z0-9_]+/", "_", $propertyCode));
 	}
 }
 
@@ -88,75 +83,95 @@ if (!function_exists("portfolio_list_item_has_value")) {
 	}
 }
 
-$selectedType = portfolio_list_get_request_value(PORTFOLIO_FILTER_TYPE);
-$selectedCat = portfolio_list_get_request_value(PORTFOLIO_FILTER_CAT);
-$selectedYear = portfolio_list_get_request_value(PORTFOLIO_FILTER_YEAR);
-
-$filterOptions = [
-	"TYPE" => [],
-	"CAT" => [],
-	"YEAR" => [],
-];
-
+$filterFields = [];
+$filterOptions = [];
 $sourceItems = [];
+$yearFilterCode = "ACTIVE_YEAR";
+$filterOptions[$yearFilterCode] = [];
 
 foreach ($arResult["ITEMS"] as $item) {
 	if (isset($item["ACTIVE"]) && $item["ACTIVE"] !== "Y") {
 		continue;
 	}
 
-	$typeValues = portfolio_list_normalize_property_values($item["PROPERTIES"]["TYPE"] ?? []);
-	$catValues = portfolio_list_normalize_property_values($item["PROPERTIES"]["CAT"] ?? []);
-	$year = portfolio_list_get_item_year($item);
+	$itemFilterValues = [];
+	$itemYear = portfolio_list_get_item_year($item);
 
-	foreach ($typeValues as $value) {
-		$filterOptions["TYPE"][$value] = $value;
+	if ($itemYear !== "") {
+		$itemFilterValues[$yearFilterCode] = [$itemYear];
+		$filterOptions[$yearFilterCode][$itemYear] = $itemYear;
 	}
 
-	foreach ($catValues as $value) {
-		$filterOptions["CAT"][$value] = $value;
+	foreach (($item["PROPERTIES"] ?? []) as $propertyCode => $property) {
+		if (strpos((string)$propertyCode, "SORT_PROP") !== 0) {
+			continue;
+		}
+
+		if (!isset($filterFields[$propertyCode])) {
+			$filterFields[$propertyCode] = [
+				"CODE" => $propertyCode,
+				"NAME" => trim((string)($property["NAME"] ?? $propertyCode)),
+				"PARAM" => portfolio_list_get_filter_param_name($propertyCode),
+				"SELECTED" => portfolio_list_get_request_value(portfolio_list_get_filter_param_name($propertyCode)),
+			];
+			$filterOptions[$propertyCode] = [];
+		}
+
+		$values = portfolio_list_normalize_property_values($property);
+		$itemFilterValues[$propertyCode] = $values;
+
+		foreach ($values as $value) {
+			$filterOptions[$propertyCode][$value] = $value;
+		}
 	}
 
-	if ($year !== "") {
-		$filterOptions["YEAR"][$year] = $year;
-	}
-
-	$item["PORTFOLIO_FILTER_VALUES"] = [
-		"TYPE" => $typeValues,
-		"CAT" => $catValues,
-		"YEAR" => $year,
-	];
-
+	$item["PORTFOLIO_FILTER_VALUES"] = $itemFilterValues;
 	$sourceItems[] = $item;
 }
 
-natcasesort($filterOptions["TYPE"]);
-natcasesort($filterOptions["CAT"]);
-krsort($filterOptions["YEAR"], SORT_NATURAL);
+if ($filterOptions[$yearFilterCode]) {
+	$filterFields[$yearFilterCode] = [
+		"CODE" => $yearFilterCode,
+		"NAME" => "Год",
+		"PARAM" => "portfolio_year",
+		"SELECTED" => portfolio_list_get_request_value("portfolio_year"),
+	];
+} else {
+	unset($filterOptions[$yearFilterCode]);
+}
+
+foreach ($filterOptions as $propertyCode => $options) {
+	if ($propertyCode === $yearFilterCode) {
+		krsort($options, SORT_NATURAL);
+	} else {
+		natcasesort($options);
+	}
+
+	$filterOptions[$propertyCode] = array_values($options);
+}
+
+$filterFields = array_filter($filterFields, static function ($field) use ($filterOptions) {
+	return !empty($filterOptions[$field["CODE"]] ?? []);
+});
 
 $arResult["PORTFOLIO_FILTER"] = [
-	"PARAMS" => [
-		"TYPE" => PORTFOLIO_FILTER_TYPE,
-		"CAT" => PORTFOLIO_FILTER_CAT,
-		"YEAR" => PORTFOLIO_FILTER_YEAR,
-	],
-	"SELECTED" => [
-		"TYPE" => $selectedType,
-		"CAT" => $selectedCat,
-		"YEAR" => $selectedYear,
-	],
-	"OPTIONS" => [
-		"TYPE" => array_values($filterOptions["TYPE"]),
-		"CAT" => array_values($filterOptions["CAT"]),
-		"YEAR" => array_values($filterOptions["YEAR"]),
-	],
+	"FIELDS" => array_values(array_map(static function ($field) use ($filterOptions) {
+		$field["OPTIONS"] = $filterOptions[$field["CODE"]] ?? [];
+
+		return $field;
+	}, $filterFields)),
+	"PARAMS" => array_column($filterFields, "PARAM"),
 	"SOURCE_ITEMS_COUNT" => count($sourceItems),
 ];
 
-$arResult["ITEMS"] = array_values(array_filter($sourceItems, static function ($item) use ($selectedType, $selectedCat, $selectedYear) {
+$arResult["ITEMS"] = array_values(array_filter($sourceItems, static function ($item) use ($filterFields) {
 	$values = $item["PORTFOLIO_FILTER_VALUES"];
 
-	return portfolio_list_item_has_value($values["TYPE"], $selectedType)
-		&& portfolio_list_item_has_value($values["CAT"], $selectedCat)
-		&& ($selectedYear === "" || $values["YEAR"] === $selectedYear);
+	foreach ($filterFields as $propertyCode => $field) {
+		if (!portfolio_list_item_has_value($values[$propertyCode] ?? [], $field["SELECTED"])) {
+			return false;
+		}
+	}
+
+	return true;
 }));

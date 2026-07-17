@@ -7,3 +7,5 @@ import "./modules/fancybox-instance";
 import "./modules/bx-popup";
 import "./modules/search";
 import "./modules/table-wrapper";
+import "./modules/custom-select";
+import "./modules/portfolioListBatch";

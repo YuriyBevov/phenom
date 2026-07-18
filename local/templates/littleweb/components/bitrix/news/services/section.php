@@ -59,10 +59,12 @@ $APPLICATION->IncludeComponent(
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
+		"INCLUDE_SUBSECTIONS" => "N",
 		"STRICT_SECTION_CHECK" => $arParams["STRICT_SECTION_CHECK"],
 
 		"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
 		"PARENT_SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+		"PARENT_SECTION_CODE_PATH" => $arResult["VARIABLES"]["SECTION_CODE_PATH"],
 		"DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
 		"SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
 		"IBLOCK_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"],

@@ -34,7 +34,7 @@ if ($arResult["ITEMS"]): ?>
 
 								<div class="service-item__btn-wrapper">
 									<button class="main-btn main-btn--accent" data-form-id="1">Заказать</button>
-									<a class="main-btn" href="<?= $arItem["DETAIL_PAGE_URL"] ?>"><?= $arItem["LINK_TEXT"] ?: "Подробнее об услуге" ?></a>
+									<a class="main-btn" href="<?= $arItem["DETAIL_PAGE_URL"] ?>">Подробнее об услуге</a>
 								</div>
 							</div>
 						</div>
@@ -109,5 +109,5 @@ if ($arResult["ITEMS"]): ?>
 		"STRICT_SECTION_CHECK" => "N",
 		"COMPONENT_TEMPLATE" => "accordeon-list"
 	],
-	$component
+	false
 ); ?>

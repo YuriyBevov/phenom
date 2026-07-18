@@ -200,7 +200,8 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "services-list"
+		"COMPONENT_TEMPLATE" => "services-list",
+		"SECTION_URL" => "/services/#SECTION_CODE_PATH#/",
 	],
 	false
 ); ?>

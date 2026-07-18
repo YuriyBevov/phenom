@@ -1,0 +1,93 @@
+@use "@scss/base/container-queries" as *;
+
+.service-section-list {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0 clamp(24px, 4.4vw, 64px);
+		padding: clamp(24px, 4.4vw, 64px) 0;
+
+		&-item:nth-child(even) {
+			.service-item img {
+				order: 2;
+			}
+		}
+	}
+}
+
+.service-item {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	// gap: clamp(24px, 4.4vw, 64px);
+
+	&-container {
+		container: service-item / inline-size;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		border-radius: var(--base-border-radius);
+		order: 1;
+		box-shadow: var(--base-box-shadow);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+		padding: clamp(24px, 4.4vw, 64px);
+		order: 1;
+		flex-grow: 1;
+		height: 100%;
+		justify-content: center;
+
+		*:first-child {
+			margin-top: auto;
+		}
+	}
+
+	&__btn-wrapper {
+		display: flex;
+		gap: 8px 16px;
+		margin-top: auto;
+
+		flex-direction: column;
+
+		a,
+		button {
+			flex-grow: 1;
+		}
+
+		@include container-up("service-item", 1140px) {
+			flex-direction: row;
+
+			a,
+			button {
+				width: fit-content;
+				flex-grow: revert;
+			}
+		}
+	}
+}
+
+.label {
+	position: relative;
+	font-weight: 300;
+	font-size: clamp(24px, 2.8vw, 54px);
+	color: var(--white);
+	margin: 32px 0;
+
+	&::before {
+		position: absolute;
+		bottom: -20px;
+		left: -20px;
+		width: 120px;
+		height: 1px;
+		content: "";
+		background-color: var(--white);
+	}
+}

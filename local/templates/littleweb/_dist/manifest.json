@@ -107,12 +107,11 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.detail/service-detail/_src/scss/index.scss": {
-    "file": "components/bitrix/news/services/style.tn0RQdqM.css",
-    "src": "local/templates/littleweb/components/bitrix/news/services/_src/scss/index.scss",
+    "file": "components/bitrix/news.detail/service-detail/style.tn0RQdqM.css",
+    "src": "local/templates/littleweb/components/bitrix/news.detail/service-detail/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_detail_service-detail_scss",
     "names": [
-      "bitrix_news_services_scss.css",
       "bitrix_news_detail_service-detail_scss.css"
     ]
   },
@@ -261,7 +260,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/tizzers/style.k1U2nyME.css",
+    "file": "components/bitrix/news.list/tizzers/style.CKxWL008.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/tizzers/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_tizzers_scss",
@@ -291,16 +290,6 @@
     "name": "bitrix_news_list_workflow_scss",
     "names": [
       "bitrix_news_list_workflow_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news/services/_src/scss/index.scss": {
-    "file": "components/bitrix/news/services/style.tn0RQdqM.css",
-    "src": "local/templates/littleweb/components/bitrix/news/services/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_news_detail_service-detail_scss",
-    "names": [
-      "bitrix_news_services_scss.css",
-      "bitrix_news_detail_service-detail_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss": {

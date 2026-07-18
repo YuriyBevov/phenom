@@ -61,21 +61,19 @@ if ($arResult["SERVICE_SECTIONS"]): ?>
 
 					<div class="services-list__grid">
 						<? foreach ($arSection["ITEMS"] as $arItem):
-							if (empty($arItem["TYPE"]) || $arItem["TYPE"] !== "SECTION") {
-								$this->AddEditAction(
-									$arItem['ID'],
-									$arItem['EDIT_LINK'],
-									CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
-								);
-								$this->AddDeleteAction(
-									$arItem['ID'],
-									$arItem['DELETE_LINK'],
-									CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
-									["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
-								);
-							}
+							$this->AddEditAction(
+								$arItem['ID'],
+								$arItem['EDIT_LINK'],
+								CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT")
+							);
+							$this->AddDeleteAction(
+								$arItem['ID'],
+								$arItem['DELETE_LINK'],
+								CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"),
+								["CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')]
+							);
 						?>
-							<? if ($arItem["DETAIL_PAGE_URL"]): ?>
+							<? if ($arItem["PREVIEW_TEXT"] && $arItem["DETAIL_PAGE_URL"]): ?>
 								<div class="services-list-card-container">
 									<a <?= ($arItem["PREVIEW_PICTURE"]["SRC"] ? 'style="background-image:url(' . $arItem["PREVIEW_PICTURE"]["SRC"] . ')" ' : '') ?> href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="services-list-card" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 										<div class="services-list-card__header">
@@ -86,9 +84,7 @@ if ($arResult["SERVICE_SECTIONS"]): ?>
 										</div>
 
 										<div class="services-list-card__content">
-											<? if ($arItem["PREVIEW_TEXT"]): ?>
-												<p><?= $arItem["PREVIEW_TEXT"] ?></p>
-											<? endif; ?>
+											<p><?= $arItem["PREVIEW_TEXT"] ?></p>
 										</div>
 
 										<svg width='16' height='16' role='img' aria-hidden='true' focusable='false'>

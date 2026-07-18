@@ -75,6 +75,10 @@ $APPLICATION->IncludeComponent(
 	false
 );
 
+?>NEWS
+
+<?
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"image-creeper-line",

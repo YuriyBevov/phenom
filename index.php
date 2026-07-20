@@ -593,8 +593,8 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 ); ?>
 
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"news-list",
+	"bitrix:news.list", 
+	"news-list", 
 	[
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -608,7 +608,7 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "/news/#ELEMENT_CODE#/",
+		"DETAIL_URL" => "/blog/#ELEMENT_CODE#/",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",
@@ -857,6 +857,5 @@ $APPLICATION->SetTitle("RLABGroup.ru");
 	],
 	false
 ); ?>
-
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

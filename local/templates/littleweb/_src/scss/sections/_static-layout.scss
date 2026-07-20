@@ -1,0 +1,16 @@
+.static-layout {
+	.page-head {
+		margin-bottom: clamp(24px, 4.4vw, 64px);
+	}
+	&__grid {
+		// display: grid;
+		// grid-template-columns: repeat(2, 1fr);
+		// gap: 24px;
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
+	}
+}

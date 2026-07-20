@@ -62,7 +62,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.hzmnefJY.css",
+    "file": "template_styles.CW7VPVyR.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -98,7 +98,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.detail/portfolio-detail/_src/scss/index.scss": {
-    "file": "components/bitrix/news.detail/portfolio-detail/style.DVClMz9r.css",
+    "file": "components/bitrix/news.detail/portfolio-detail/style.DnFU3fCn.css",
     "src": "local/templates/littleweb/components/bitrix/news.detail/portfolio-detail/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_detail_portfolio-detail_scss",
@@ -122,15 +122,6 @@
     "name": "bitrix_news_list_accordeon-list_scss",
     "names": [
       "bitrix_news_list_accordeon-list_scss.css"
-    ]
-  },
-  "local/templates/littleweb/components/bitrix/news.list/features-list copy/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/features-list/style.BBSpecCb.css",
-    "src": "local/templates/littleweb/components/bitrix/news.list/features-list copy/_src/scss/index.scss",
-    "isEntry": true,
-    "name": "bitrix_news_list_features-list copy_scss",
-    "names": [
-      "bitrix_news_list_features-list copy_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/features-list/_src/scss/index.scss": {
@@ -176,7 +167,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/news.list/news-list/_src/scss/index.scss": {
-    "file": "components/bitrix/news.list/news-list/style.DqLgD3sd.css",
+    "file": "components/bitrix/news.list/news-list/style.Je9s185m.css",
     "src": "local/templates/littleweb/components/bitrix/news.list/news-list/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_news_list_news-list_scss",
@@ -311,7 +302,7 @@
     ]
   },
   "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss": {
-    "file": "components/bitrix/system.pagenavigation/lw-page-navigation/style.CDe11z2Q.css",
+    "file": "components/bitrix/system.pagenavigation/lw-page-navigation/style.yt7QVOFo.css",
     "src": "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_system_pagenavigation_lw-page-navigation_scss",

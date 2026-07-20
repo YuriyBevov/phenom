@@ -1,0 +1,3 @@
+<?
+$sSectionName = "Дизайнерам";
+$arDirProperties = array();

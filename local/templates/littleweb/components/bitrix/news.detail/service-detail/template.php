@@ -143,7 +143,7 @@ if ($serviceSectionId):
 			"CACHE_TIME" => "36000000",
 			"CACHE_TYPE" => "A",
 			"CHECK_DATES" => "Y",
-			"DETAIL_URL" => "/news/#ELEMENT_CODE#/",
+			"DETAIL_URL" => "/services/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 			"DISPLAY_BOTTOM_PAGER" => "N",
 			"DISPLAY_DATE" => "N",
 			"DISPLAY_NAME" => "N",

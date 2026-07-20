@@ -1,9 +1,11 @@
+@use "@scss/base/container-queries" as *;
+
 .page-head {
 	padding: clamp(24px, 4vw, 48px) 0;
 	position: relative;
 	background-size: cover;
 	background-position: center;
-	// min-height: 35svw;
+	container: page-head / inline-size;
 
 	&--bg {
 		&::before {
@@ -43,10 +45,9 @@
 	}
 
 	&-description {
-		font-size: clamp(18px, 3.6vw, 32px);
+		font-size: clamp(18px, 2.8vw, 28px);
 		font-weight: 300;
 		text-transform: uppercase;
-		// text-wrap: balance;
 		max-width: 90svw;
 	}
 
@@ -55,12 +56,51 @@
 		z-index: 3;
 		gap: 16px;
 		display: flex;
-		// justify-content: center;
 		flex-direction: column;
 		min-height: inherit;
 	}
 
 	.main-btn {
 		width: fit-content;
+	}
+
+	&:has(.page-head-content-wrapper) {
+		padding-bottom: 24px;
+
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			align-items: center;
+			gap: clamp(44px, 4vw, 72px) 0;
+
+			@include container-up("page-head", 1140px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				border-radius: var(--base-border-radius);
+				box-shadow: var(--base-box-shadow);
+				object-fit: cover;
+				order: 2;
+				aspect-ratio: 1/1;
+
+				@include container-up("page-head", 1140px) {
+					order: revert;
+				}
+			}
+		}
+
+		.page-head-content-wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+
+			@include container-up("page-head", 1140px) {
+				padding: clamp(24px, 4.4vw, 64px);
+			}
+		}
 	}
 }

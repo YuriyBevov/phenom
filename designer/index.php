@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("О нас");
+$APPLICATION->SetTitle("Дизайнерам");
 ?>
 
 <section class="section static-layout">
@@ -8,21 +8,21 @@ $APPLICATION->SetTitle("О нас");
   <div class="page-head">
     <div class="container">
       <? $APPLICATION->IncludeFile(
-        SITE_DIR . 'include/about/img.php',
+        SITE_DIR . 'include/designer/img.php',
         array(),
         array('MODE' => 'html', 'NAME' => 'изображение', 'SHOW_BORDER' => true)
       ); ?>
       <div class="page-head-content-wrapper">
         <h1 class="page-head-title">
           <? $APPLICATION->IncludeFile(
-            SITE_DIR . 'include/about/title.php',
+            SITE_DIR . 'include/designer/title.php',
             array(),
             array('MODE' => 'html', 'NAME' => 'заголовок', 'SHOW_BORDER' => true)
           ); ?>
         </h1>
         <p class="page-head-description">
           <? $APPLICATION->IncludeFile(
-            SITE_DIR . 'include/about/description.php',
+            SITE_DIR . 'include/designer/description.php',
             array(),
             array('MODE' => 'html', 'NAME' => 'описание', 'SHOW_BORDER' => true)
           ); ?>
@@ -36,7 +36,7 @@ $APPLICATION->SetTitle("О нас");
   <div class="static-layout__grid">
     <div class="container content-block">
       <? $APPLICATION->IncludeFile(
-        SITE_DIR . 'include/about/content.php',
+        SITE_DIR . 'include/designer/content.php',
         array(),
         array('MODE' => 'html', 'NAME' => 'контент', 'SHOW_BORDER' => true)
       ); ?>

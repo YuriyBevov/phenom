@@ -15,11 +15,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
-	"services-list",
-	array(
+	"news-list",
+	[
 		"IS_INNER" => "Y",
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -30,6 +29,9 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER2" => $arParams["SORT_ORDER2"],
 		"FIELD_CODE" => $arParams["LIST_FIELD_CODE"],
 		"PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
+		"DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
+		"SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
+		"IBLOCK_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"],
 		"SET_TITLE" => $arParams["SET_TITLE"],
 		"SET_LAST_MODIFIED" => $arParams["SET_LAST_MODIFIED"],
 		"MESSAGE_404" => $arParams["MESSAGE_404"],
@@ -37,7 +39,6 @@ $APPLICATION->IncludeComponent(
 		"SHOW_404" => $arParams["SHOW_404"],
 		"FILE_404" => $arParams["FILE_404"],
 		"INCLUDE_IBLOCK_INTO_CHAIN" => $arParams["INCLUDE_IBLOCK_INTO_CHAIN"],
-		"ADD_SECTIONS_CHAIN" => $arParams["ADD_SECTIONS_CHAIN"],
 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
 		"CACHE_TIME" => $arParams["CACHE_TIME"],
 		"CACHE_FILTER" => $arParams["CACHE_FILTER"],
@@ -64,79 +65,6 @@ $APPLICATION->IncludeComponent(
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
-		"STRICT_SECTION_CHECK" => $arParams["STRICT_SECTION_CHECK"],
-
-		"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
-		"PARENT_SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
-		"DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
-		"SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
-		"IBLOCK_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"],
-	),
-	$component
-);
-
-$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"image-creeper-line",
-	[
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "/news/#ELEMENT_CODE#/",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "N",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => [
-			0 => "",
-			1 => "",
-		],
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "15",
-		"IBLOCK_TYPE" => "site_content",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => [
-			0 => "",
-			1 => "",
-		],
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "image-creeper-line"
 	],
 	$component
 );

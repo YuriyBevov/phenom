@@ -1,4 +1,5 @@
 import "./modules/setHeaderHeight";
+import "./modules/menu";
 import "./modules/swiper-init";
 import "./modules/scroll-up-btn";
 import "./modules/autofill-slider";

@@ -1,7 +1,7 @@
 @use "./partials/logo";
 @use "./ui/form-controls/custom-select";
 @use "./ui/main-btn";
-@use "./ui/burger-btn";
+// @use "./ui/burger-btn";
 @use "./ui/swiper";
 @use "./partials/breadcrumbs";
 @use "./partials/fixed-contacts";
@@ -11,6 +11,7 @@
 @use "./partials/content-block";
 @use "./ui/blockquote";
 @use "./ui/table";
+@use "./partials/burger-btn";
 
 @use "./ui/accordeon";
 @use "./ui/form-controls/ctrl-wrapper";

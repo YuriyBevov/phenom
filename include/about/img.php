@@ -1,1 +1,1 @@
-<img width="1024" alt="ChatGPT Image 12 июн. 2026 г., 20_43_12 (5).png" src="/upload/medialibrary/29d/grwipb9wh0wzu4lvbz1ec5bn0sn5at8t.png" height="768" title="about.png">
+<img width="1024" alt="ChatGPT Image 13 июн. 2026 г., 18_51_15 (4).png" src="/upload/medialibrary/9ff/dn8vuk2olf3tl063j70mfxsx0qihgsm6.png" height="1024" title="ChatGPT Image 13 июн. 2026 г., 18_51_15 (4).png">

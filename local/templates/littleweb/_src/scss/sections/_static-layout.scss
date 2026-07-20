@@ -1,16 +1,11 @@
 .static-layout {
 	.page-head {
-		margin-bottom: clamp(24px, 4.4vw, 64px);
-	}
-	&__grid {
-		// display: grid;
-		// grid-template-columns: repeat(2, 1fr);
-		// gap: 24px;
+		// &:has(.page-head-content-wrapper) .container img {
+		// 	order: 2;
+		// }
 
-		img {
-			width: 100%;
-			height: auto;
-			object-fit: contain;
-		}
+		// .page-head-content-wrapper {
+		// 	padding-left: 0;
+		// }
 	}
 }

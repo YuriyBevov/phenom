@@ -4,28 +4,9 @@
 }
 
 .portfolio-detail {
-	// .page-head {
-	// 	padding-bottom: 24px;
-	// 	.container {
-	// 		display: grid;
-	// 		grid-template-columns: repeat(2, 1fr);
-	// 		align-items: center;
-	// 	}
-
-	// 	img {
-	// 		width: 100%;
-	// 		height: 100%;
-	// 		border-radius: var(--base-border-radius);
-	// 	}
-
-	// 	&-content-wrapper {
-	// 		display: flex;
-	// 		flex-direction: column;
-	// 		justify-content: center;
-	// 		height: 100%;
-	// 		padding: clamp(24px, 4.4vw, 64px);
-	// 	}
-	// }
+	.page-head:has(.page-head-content-wrapper) {
+		margin-bottom: 0;
+	}
 
 	.content-block {
 		margin: clamp(24px, 4vw, 48px) 0;

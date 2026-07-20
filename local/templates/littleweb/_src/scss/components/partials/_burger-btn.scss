@@ -1,0 +1,19 @@
+.burger-btn {
+	svg {
+		fill: var(--white);
+	}
+
+	&--opener {
+		svg {
+			width: 20px !important;
+			height: auto;
+		}
+	}
+
+	&--closer {
+		svg {
+			width: 18px !important;
+			height: auto;
+		}
+	}
+}

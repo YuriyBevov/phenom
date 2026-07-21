@@ -29,16 +29,9 @@
 		backdrop-filter: none;
 	}
 
-	.search-opener-btn {
-		display: none;
-
-		@media (min-width: 534px) {
-			display: flex;
+	@media (min-width: 534px) {
+		.search-opener-btn {
 			margin: 0 12px;
-
-			svg {
-				fill: var(--white);
-			}
 		}
 	}
 
@@ -60,7 +53,7 @@
 		&-col {
 			display: flex;
 			align-items: center;
-			gap: 24px;
+			gap: clamp(8px, 2.4vw, 24px);
 
 			&--left {
 				display: none;
@@ -72,10 +65,6 @@
 			}
 
 			&--right {
-				// grid-column: span 2;
-				// @media (min-width: 960px) {
-				// 	grid-column: revert;
-				// }
 				justify-content: flex-end;
 			}
 		}
@@ -110,6 +99,7 @@
 
 	&__contacts {
 		display: none;
+
 		@media (min-width: 960px) {
 			display: flex;
 			flex-direction: column;

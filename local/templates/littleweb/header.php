@@ -78,25 +78,6 @@
       </div>
 
       <div class="header__row">
-        <?/* $APPLICATION->IncludeComponent(
-          "bitrix:menu",
-          "top-menu",
-          array(
-            "ALLOW_MULTI_SELECT" => "N",
-            "CHILD_MENU_TYPE" => "left",
-            "DELAY" => "N",
-            "MAX_LEVEL" => "2",
-            "MENU_CACHE_GET_VARS" => array(),
-            "MENU_CACHE_TIME" => "3600",
-            "MENU_CACHE_TYPE" => "N",
-            "MENU_CACHE_USE_GROUPS" => "Y",
-            "MENU_THEME" => "site",
-            "ROOT_MENU_TYPE" => "top",
-            "USE_EXT" => "Y",
-            "COMPONENT_TEMPLATE" => "top-menu"
-          ),
-          false
-        ); */ ?>
 
         <div class="menu">
           <div class="menu__wrapper">
@@ -144,6 +125,10 @@
                 array('MODE' => 'html', 'NAME' => 'адрес эл.почты', 'SHOW_BORDER' => true)
               );
               ?>
+
+              <button class="main-btn header__callback-btn" data-form-id="1">
+                Написать нам
+              </button>
             </div>
 
             <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php");  ?>

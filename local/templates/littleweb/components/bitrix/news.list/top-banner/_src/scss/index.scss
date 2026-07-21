@@ -48,7 +48,7 @@
 
 	&__navigation-row {
 		position: absolute;
-		bottom: 8px;
+		bottom: 48px;
 		left: 50%;
 		transform: translateX(-50%);
 		padding: clamp(4px, 1.6cqw, 10px) var(--container-offset);
@@ -60,10 +60,6 @@
 
 		width: 100%;
 		z-index: 11;
-
-		@include container-up("top-banner", 768px) {
-			bottom: 48px;
-		}
 
 		.swiper-pagination {
 			position: static;

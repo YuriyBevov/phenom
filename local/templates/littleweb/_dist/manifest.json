@@ -62,7 +62,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.BxRcueYu.css",
+    "file": "template_styles.9k-2uEot.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -283,26 +283,26 @@
       "bitrix_news_list_workflow_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss": {
-    "file": "components/bitrix/search.title/.default/style.hRaW-brd.css",
-    "src": "local/templates/littleweb/components/bitrix/search.title/.default/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/search.page/littleweb/_src/scss/index.scss": {
+    "file": "components/bitrix/search.page/littleweb/style.hjRcIpXq.css",
+    "src": "local/templates/littleweb/components/bitrix/search.page/littleweb/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_search_title__default_scss",
+    "name": "bitrix_search_page_littleweb_scss",
     "names": [
-      "bitrix_search_title__default_scss.css"
+      "bitrix_search_page_littleweb_scss.css"
     ]
   },
-  "local/templates/littleweb/components/bitrix/search.title/littleweb/_src/scss/index.scss": {
-    "file": "components/bitrix/search.title/littleweb/style.B3r30FVr.css",
-    "src": "local/templates/littleweb/components/bitrix/search.title/littleweb/_src/scss/index.scss",
+  "local/templates/littleweb/components/bitrix/search.title/search-title/_src/scss/index.scss": {
+    "file": "components/bitrix/search.title/search-title/style.CbnDE7Wn.css",
+    "src": "local/templates/littleweb/components/bitrix/search.title/search-title/_src/scss/index.scss",
     "isEntry": true,
-    "name": "bitrix_search_title_littleweb_scss",
+    "name": "bitrix_search_title_search-title_scss",
     "names": [
-      "bitrix_search_title_littleweb_scss.css"
+      "bitrix_search_title_search-title_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss": {
-    "file": "components/bitrix/system.pagenavigation/lw-page-navigation/style.yt7QVOFo.css",
+    "file": "components/bitrix/system.pagenavigation/lw-page-navigation/style.CYyaTlW_.css",
     "src": "local/templates/littleweb/components/bitrix/system.pagenavigation/lw-page-navigation/_src/scss/index.scss",
     "isEntry": true,
     "name": "bitrix_system_pagenavigation_lw-page-navigation_scss",

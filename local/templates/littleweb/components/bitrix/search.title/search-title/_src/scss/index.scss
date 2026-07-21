@@ -1,0 +1,147 @@
+@use "@scss/base/container-queries" as *;
+
+div:has(.search-title) {
+	flex-grow: 1;
+}
+
+.search-title {
+	position: relative;
+	outline: none;
+
+	&-closer {
+		svg {
+			fill: var(--white);
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		border-radius: 30px;
+		overflow: hidden;
+
+		label {
+			flex-grow: 1;
+			border-radius: 30px;
+			overflow: hidden;
+		}
+
+		input {
+			width: 100%;
+			height: 46px;
+			padding: 8px 16px;
+			padding-right: 52px;
+			outline: none;
+		}
+
+		button {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			background-color: transparent;
+			svg {
+				fill: var(--dark);
+			}
+		}
+	}
+
+	&__expand-wrapper {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 199;
+	}
+}
+
+.search-result {
+	&-container {
+		display: flex;
+		flex-direction: column;
+
+		background-color: var(--dark);
+		border-radius: 30px;
+		margin-top: 12px;
+		height: fit-content;
+		max-height: clamp(140px, 60vh, 440px);
+		overflow: hidden;
+		overflow-y: auto;
+		box-shadow: var(--base-box-shadow);
+	}
+
+	&-item {
+		a {
+			display: inline-block;
+			width: 100%;
+			line-height: 1.4;
+			color: var(--white);
+
+			b {
+				color: var(--white);
+			}
+		}
+		padding: 16px 24px;
+		border-bottom: 1px solid var(--white);
+
+		&--all {
+			position: sticky;
+			bottom: 0;
+			background-color: var(--secondary);
+			z-index: 11;
+			border-bottom: none;
+			border-top: 1px solid var(--white);
+
+			a {
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 500;
+				color: var(--dark);
+			}
+		}
+	}
+}
+
+.search-title {
+	display: none;
+
+	@include container-up("header", 1024px) {
+		display: block;
+	}
+
+	&.mobile-expanded {
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		height: fit-content;
+		background-color: transparent;
+		padding: 12px 0;
+		z-index: 199;
+
+		form {
+			display: flex;
+			align-items: center;
+			gap: clamp(8px, 2.4vw, 24px);
+			width: 100%;
+			max-width: 640px;
+			margin: 0 auto;
+		}
+
+		.search-title__wrapper {
+			flex-grow: 1;
+		}
+
+		.search-title__expand-wrapper {
+			padding: 16px var(--container-offset);
+
+			.search-result-container {
+				margin-top: 0;
+			}
+		}
+	}
+}

@@ -22,8 +22,9 @@
   <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 
 
-  <header class="header">
+  <header class="header" <?= ($USER->isAdmin() ? 'style="position:static !important;"' : '') ?>>
     <div class="container">
+
       <div class="header__row">
 
         <div class="header__row-col header__row-col--left">
@@ -42,7 +43,7 @@
         </div>
 
         <div class="header__row-col header__row-col--right">
-          <button class="search-opener-btn main-btn">
+          <button class="search-title-opener main-btn">
             <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
               <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
             </svg>
@@ -137,68 +138,42 @@
           </div>
         </div>
 
-        <!-- <button class="search-opener-btn">
+        <!-- <button class="search-title-opener">
           <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
             <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
           </svg>
         </button> -->
       </div>
-    </div>
-  </header>
 
-
-  <?/*
-  <div class="" style="margin-top:140px;">
-
-    <? $APPLICATION->IncludeComponent(
+      <? $APPLICATION->IncludeComponent(
 	"bitrix:search.title", 
-	"littleweb", 
+	"search-title", 
 	[
-		"NUM_CATEGORIES" => "1",
-		"TOP_COUNT" => "20",
-		"CHECK_DATES" => "N",
-		"SHOW_OTHERS" => "N",
-		"PAGE" => SITE_DIR."search/",
-		"CATEGORY_0_TITLE" => "Результаты поиска",
 		"CATEGORY_0" => [
 			0 => "iblock_site_content",
 		],
-		"CATEGORY_0_iblock_catalog" => [
-			0 => "all",
-		],
-		"CATEGORY_OTHERS_TITLE" => "Прочее",
-		"SHOW_INPUT" => "Y",
-		"INPUT_ID" => "title-search-input",
-		"CONTAINER_ID" => "search",
-		"PRICE_CODE" => [
-			0 => "BASE",
-		],
-		"SHOW_PREVIEW" => "Y",
-		"PREVIEW_WIDTH" => "75",
-		"PREVIEW_HEIGHT" => "75",
-		"CONVERT_CURRENCY" => "Y",
-		"COMPONENT_TEMPLATE" => "littleweb",
-		"ORDER" => "date",
-		"USE_LANGUAGE_GUESS" => "Y",
-		"CATEGORY_0_iblock_1c_catalog" => [
-			0 => "all",
-		],
-		"PRICE_VAT_INCLUDE" => "Y",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"CURRENCY_ID" => "RUB",
-		"CATEGORY_0_iblock_news" => [
-			0 => "all",
-		],
-		"TEMPLATE_THEME" => "blue",
+		"CATEGORY_0_TITLE" => "Результаты поиска",
 		"CATEGORY_0_iblock_site_content" => [
 			0 => "11",
-		]
+			1 => "14",
+		],
+		"CHECK_DATES" => "N",
+		"CONTAINER_ID" => "title-search",
+		"INPUT_ID" => "title-search-input",
+		"NUM_CATEGORIES" => "1",
+		"ORDER" => "date",
+		"PAGE" => "#SITE_DIR#search/index.php",
+		"SHOW_INPUT" => "Y",
+		"SHOW_OTHERS" => "N",
+		"TOP_COUNT" => "5",
+		"USE_LANGUAGE_GUESS" => "Y",
+		"COMPONENT_TEMPLATE" => "search-title"
 	],
 	false
 ); ?>
-  </div>
-  */ ?>
 
+    </div>
+  </header>
 
   <main id="workarea">
     <?

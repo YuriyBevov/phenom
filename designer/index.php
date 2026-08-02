@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Дизайнерам");
 ?>
 
-<section class="section static-layout">
+<section class="section">
 
   <div class="page-head">
     <div class="container">
@@ -33,14 +33,12 @@ $APPLICATION->SetTitle("Дизайнерам");
     </div>
   </div>
 
-  <div class="static-layout__grid">
-    <div class="container content-block">
-      <? $APPLICATION->IncludeFile(
-        SITE_DIR . 'include/designer/content.php',
-        array(),
-        array('MODE' => 'html', 'NAME' => 'контент', 'SHOW_BORDER' => true)
-      ); ?>
-    </div>
+  <div class="container content-block">
+    <? $APPLICATION->IncludeFile(
+      SITE_DIR . 'include/designer/content.php',
+      array(),
+      array('MODE' => 'html', 'NAME' => 'контент', 'SHOW_BORDER' => true)
+    ); ?>
   </div>
 </section>
 

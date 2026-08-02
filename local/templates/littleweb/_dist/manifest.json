@@ -62,7 +62,7 @@
     "isEntry": true
   },
   "local/templates/littleweb/_src/scss/template.scss": {
-    "file": "template_styles.ClwCBfJb.css",
+    "file": "template_styles.CthWTz1t.css",
     "src": "local/templates/littleweb/_src/scss/template.scss",
     "isEntry": true,
     "name": "template",
@@ -86,6 +86,15 @@
     "name": "bitrix_form_result_new_callback-form_scss",
     "names": [
       "bitrix_form_result_new_callback-form_scss.css"
+    ]
+  },
+  "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss": {
+    "file": "components/bitrix/menu/bottom-menu/style.CrQQ4aWu.css",
+    "src": "local/templates/littleweb/components/bitrix/menu/bottom-menu/_src/scss/index.scss",
+    "isEntry": true,
+    "name": "bitrix_menu_bottom-menu_scss",
+    "names": [
+      "bitrix_menu_bottom-menu_scss.css"
     ]
   },
   "local/templates/littleweb/components/bitrix/menu/top-menu/_src/scss/index.scss": {

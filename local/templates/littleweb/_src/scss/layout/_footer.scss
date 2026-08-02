@@ -80,38 +80,3 @@
 		}
 	}
 }
-
-.bottom-menu {
-	&__title {
-		display: inline-block;
-		font-size: clamp(18px, 4vw, 24px);
-		font-weight: 400;
-		margin-bottom: 24px;
-	}
-	ul {
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
-
-		list-style: none;
-		padding: 0;
-		margin: 0;
-
-		align-items: center;
-		text-align: center;
-
-		@include container-up("footer", 1024px) {
-			align-items: revert;
-			text-align: revert;
-		}
-
-		li {
-			a {
-				display: flex;
-				font-size: 16px;
-
-				@extend %hover-opacity;
-			}
-		}
-	}
-}

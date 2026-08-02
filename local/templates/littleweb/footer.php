@@ -56,37 +56,51 @@
       </div>
 
       <div class="footer__row-col">
-        <div class="bottom-menu">
-          <span class="bottom-menu__title">Каталог</span>
-          <ul>
-            <li>
-              <a href="/">Раздел каталога</a>
-            </li>
-            <li>
-              <a href="/">Раздел каталога</a>
-            </li>
-            <li>
-              <a href="/">Раздел каталога</a>
-            </li>
-          </ul>
-        </div>
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:menu",
+          "bottom-menu",
+          [
+            "MENU_TITLE" => "Каталог",
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "left",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "1",
+            "MENU_CACHE_GET_VARS" => [],
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_THEME" => "site",
+            "ROOT_MENU_TYPE" => "bottomleft",
+            "USE_EXT" => "Y",
+            "COMPONENT_TEMPLATE" => "bottom-menu"
+          ],
+          false
+        ); ?>
       </div>
 
       <div class="footer__row-col">
-        <div class="bottom-menu">
-          <span class="bottom-menu__title">Информация</span>
-          <ul>
-            <li>
-              <a href="/">О компании</a>
-            </li>
-            <li>
-              <a href="/">Статьи</a>
-            </li>
-            <li>
-              <a href="/">Контакты</a>
-            </li>
-          </ul>
-        </div>
+        <? $APPLICATION->IncludeComponent(
+          "bitrix:menu",
+          "bottom-menu",
+          array(
+            "MENU_TITLE" => "Информация",
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "left",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "1",
+            "MENU_CACHE_GET_VARS" => array(),
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_THEME" => "site",
+            "ROOT_MENU_TYPE" => "bottomright",
+            "USE_EXT" => "Y",
+            "COMPONENT_TEMPLATE" => "bottom-menu"
+          ),
+          false
+        ); ?>
+
+
       </div>
 
       <div class="footer__row-col">

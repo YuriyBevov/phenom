@@ -43,7 +43,7 @@
         </div>
 
         <div class="header__row-col header__row-col--right">
-          <button class="search-title-opener main-btn">
+          <button class="search-title-opener main-btn" aria-label="Открыть поиск по сайту">
             <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
               <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
             </svg>
@@ -131,18 +131,9 @@
                 Написать нам
               </button>
             </div>
-
             <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php");  ?>
-
-
           </div>
         </div>
-
-        <!-- <button class="search-title-opener">
-          <svg style="fill:var(--white);" width='16' height='16' role='img' aria-hidden='true' focusable='false'>
-            <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-search'></use>
-          </svg>
-        </button> -->
       </div>
 
       <? $APPLICATION->IncludeComponent(

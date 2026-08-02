@@ -11,6 +11,7 @@ lerna-debug.log*
 /bitrix/
 /upload/
 /cache/
+/include/
 /node_modules/
 .vscode/
 .access.php

@@ -1,1 +1,1 @@
-<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2f684d3f3e97c823b0ec6e2076caa27d4dc3845463805662a76ae4c4ac6f7142&amp;source=constructor&amp;scroll=false" width="100%" height="480" frameborder="0"></iframe>
+<iframe title="Как нас найти" src="https://yandex.ru/map-widget/v1/?um=constructor%3A2f684d3f3e97c823b0ec6e2076caa27d4dc3845463805662a76ae4c4ac6f7142&amp;source=constructor&amp;scroll=false" width="100%" height="480" frameborder="0"></iframe>

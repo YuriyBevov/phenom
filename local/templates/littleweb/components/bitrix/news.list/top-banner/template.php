@@ -41,7 +41,7 @@ if ($arResult["ITEMS"]): ?>
 		<div class="container-fluid">
 			<div class="swiper">
 				<div class="swiper-wrapper">
-					<? foreach ($arResult["ITEMS"] as $arItem):
+					<? foreach ($arResult["ITEMS"] as $index => $arItem):
 						$mobileImage = $getCroppedBanner($arItem["PROPERTIES"]["MOBILE_IMAGE"]["VALUE"], $bannerSizes["mobile"]);
 						$tabletImage = $getCroppedBanner($arItem["PROPERTIES"]["TABLET_IMAGE"]["VALUE"], $bannerSizes["tablet"]);
 						$desktopImage = $getCroppedBanner($arItem["PROPERTIES"]["DESKTOP_IMAGE"]["VALUE"], $bannerSizes["desktop"]);
@@ -55,7 +55,7 @@ if ($arResult["ITEMS"]): ?>
 									<picture>
 										<source srcset="<?= htmlspecialcharsbx($desktopImage["src"]) ?>" media="(min-width: 960px)" width="<?= $desktopImage["width"] ?>" height="<?= $desktopImage["height"] ?>">
 										<source srcset="<?= htmlspecialcharsbx($tabletImage["src"]) ?>" media="(min-width: 760px)" width="<?= $tabletImage["width"] ?>" height="<?= $tabletImage["height"] ?>">
-										<img src="<?= htmlspecialcharsbx($mobileImage["src"]) ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $mobileImage["width"] ?>" height="<?= $mobileImage["height"] ?>">
+										<img src="<?= htmlspecialcharsbx($mobileImage["src"]) ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" width="<?= $mobileImage["width"] ?>" height="<?= $mobileImage["height"] ?>"<?= $index === 0 ? ' fetchpriority="high"' : '' ?>>
 									</picture>
 									<? if ($arItem["PROPERTIES"]["LINK"]["VALUE"]): ?>
 									</a>

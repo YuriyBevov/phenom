@@ -132,7 +132,7 @@
     <div class="footer__row footer__row--bottom">
       <a href="mailto:yuriybevov@gmail.com" class="dev-link">
         <span>Сделано в</span>
-        <img data-v-12762536="" src="<?= SITE_TEMPLATE_PATH ?>/_dist/images/littleweb-logo.svg" alt="Littleweb" class="footer-logo">
+        <img data-v-12762536="" src="<?= SITE_TEMPLATE_PATH ?>/_dist/images/littleweb-logo.svg" alt="Littleweb" class="footer-logo" width="120" height="16">
       </a>
     </div>
   </div>

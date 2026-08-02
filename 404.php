@@ -6,7 +6,7 @@ CHTTP::SetStatus("404 Not Found");
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
-/** @global CMain $APPLICATION */
+
 
 $APPLICATION->SetTitle("Страница не найдена"); ?>
 

@@ -1,4 +1,5 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .popup-window .review-card {
 	border: none;
@@ -66,23 +67,23 @@
 	}
 
 	&__content {
-		// position: relative;
+		
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
 		margin-bottom: 12px;
 		padding: 12px 0;
 
-		// &::before {
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0px;
-		// 	content: "";
-		// 	width: 70%;
-		// 	max-width: 160px;
-		// 	height: 2px;
-		// 	background-color: var(--danger);
-		// }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		span {
 			font-size: 16px;
@@ -95,10 +96,7 @@
 	}
 
 	&__expander {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: fit-content;
+		@extend %centered-control;
 		border: none;
 		background-color: transparent;
 		padding: 0;
@@ -115,27 +113,7 @@
 	background-position: center;
 
 	&::before {
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		content: "";
-		pointer-events: none;
-		background:
-			linear-gradient(
-				180deg,
-				var(--site-bg-color) 0%,
-				rgb(255 255 255 / 0%) 18%,
-				rgb(255 255 255 / 0%) 82%,
-				var(--site-bg-color) 100%
-			),
-			linear-gradient(
-				90deg,
-				var(--site-bg-color) 0%,
-				rgb(255 255 255 / 96%) 14%,
-				rgb(255 255 255 / 86%) 45%,
-				rgb(255 255 255 / 54%) 68%,
-				var(--site-bg-color) 100%
-			);
+		@include edge-fade-overlay;
 		backdrop-filter: blur(8px);
 		-webkit-backdrop-filter: blur(8px);
 	}
@@ -179,16 +157,7 @@
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	padding: 24px 32px;
-
-	&::-webkit-scrollbar {
-		background-color: transparent;
-		width: 4px;
-		border-radius: 0;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: transparent;
-	}
+	@include thin-scrollbar;
 
 	.review-card {
 		max-width: none;

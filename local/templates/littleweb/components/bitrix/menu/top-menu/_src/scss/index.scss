@@ -17,6 +17,7 @@
 	visibility: hidden;
 	pointer-events: none;
 	z-index: -1;
+	overflow: hidden;
 
 	@media (min-width: 1240px) {
 		position: revert;
@@ -156,10 +157,13 @@
 		@media (min-width: 1240px) {
 			display: none;
 		}
+
+		.callback-btn {
+			margin-top: 24px;
+		}
 	}
 
 	.social-block {
-		// margin-top: auto;
 		@media (min-width: 1240px) {
 			display: none;
 		}

@@ -120,7 +120,7 @@ while ($arSection = $rsSections->GetNext(false, false)) {
 			"S"
 		);
 		$arSection["SECTION_PAGE_URL"] = rawurldecode($arSection["SECTION_PAGE_URL"]);
-		$arSection["SECTION_PAGE_URL"] = preg_replace("#(?<!:)//+#", "/", $arSection["SECTION_PAGE_URL"]);
+		$arSection["SECTION_PAGE_URL"] = normalizeBitrixUrl($arSection["SECTION_PAGE_URL"]);
 	}
 
 	$arSectionItems[] = [

@@ -1,5 +1,5 @@
 <?php
-// /local/php_interface/classes/ViteManifest.php
+
 
 class ViteManifest
 {
@@ -24,9 +24,9 @@ class ViteManifest
     }
   }
 
-  /**
-   * Получить путь к глобальному CSS файлу
-   */
+  
+
+
   public function getTemplateCss()
   {
     if (!$this->isManifestExists) {
@@ -42,9 +42,9 @@ class ViteManifest
     return $this->templatePath . '/' . $this->buildDir . '/template_styles.css';
   }
 
-  /**
-   * Получить путь к глобальному JS файлу
-   */
+  
+
+
   public function getTemplateJs()
   {
     if (!$this->isManifestExists) {
@@ -60,9 +60,9 @@ class ViteManifest
     return $this->templatePath . '/' . $this->buildDir . '/template_scripts.js';
   }
 
-  /**
-   * Получить путь к CSS файлу компонента
-   */
+  
+
+
   public function getComponentCss($componentPath)
   {
     if (!$this->isManifestExists) {
@@ -80,9 +80,9 @@ class ViteManifest
     return $this->templatePath . '/components/bitrix/' . $folderPath . '/style.css';
   }
 
-  /**
-   * Получить путь к JS файлу компонента
-   */
+  
+
+
   public function getComponentJs($componentPath)
   {
     if (!$this->isManifestExists) {
@@ -100,9 +100,9 @@ class ViteManifest
     return $this->templatePath . '/components/bitrix/' . $folderPath . '/script.js';
   }
 
-  /**
-   * Получить URL изображения (для использования в PHP)
-   */
+  
+
+
   public function getImageUrl($imagePath)
   {
     if ($this->isManifestExists) {
@@ -115,7 +115,7 @@ class ViteManifest
       }
     }
 
-    // Если не нашли в манифесте или нет манифеста
+    
     return $this->templatePath . '/' . $this->buildDir . '/images/' . basename($imagePath);
   }
 

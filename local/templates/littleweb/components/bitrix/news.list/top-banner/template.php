@@ -46,8 +46,7 @@ if ($arResult["ITEMS"]): ?>
 						$tabletImage = $getCroppedBanner($arItem["PROPERTIES"]["TABLET_IMAGE"]["VALUE"], $bannerSizes["tablet"]);
 						$desktopImage = $getCroppedBanner($arItem["PROPERTIES"]["DESKTOP_IMAGE"]["VALUE"], $bannerSizes["desktop"]);
 						if ($mobileImage && $tabletImage && $desktopImage):
-							$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-							$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+							registerIblockElementEditActions($this, $arItem);
 					?>
 							<div class="swiper-slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 								<? if ($arItem["PROPERTIES"]["LINK"]["VALUE"]): ?>

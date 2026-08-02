@@ -23,3 +23,133 @@
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 }
+
+@mixin center-flex($justify: center) {
+	display: flex;
+	align-items: center;
+	justify-content: $justify;
+}
+
+%centered-control {
+	@include center-flex;
+	width: fit-content;
+}
+
+%section-stack-large {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(48px, 5vw, 72px);
+}
+
+%transform-transition {
+	transform-origin: center;
+	backface-visibility: hidden;
+	will-change: transform;
+	transition: transform var(--main-transition);
+}
+
+@mixin thin-scrollbar($width: 4px) {
+	&::-webkit-scrollbar {
+		background-color: transparent;
+		width: $width;
+		border-radius: 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: transparent;
+	}
+}
+
+@mixin card-title($color: var(--white)) {
+	font-size: var(--base-subtitle);
+	color: $color;
+	text-wrap: balance;
+	text-transform: uppercase;
+}
+
+%card-title {
+	@include card-title;
+}
+
+@mixin edge-fade-overlay($color: var(--site-bg-color)) {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	content: "";
+	pointer-events: none;
+	background:
+		linear-gradient(
+			180deg,
+			$color 0%,
+			rgb(255 255 255 / 0%) 18%,
+			rgb(255 255 255 / 0%) 82%,
+			$color 100%
+		),
+		linear-gradient(
+			90deg,
+			$color 0%,
+			rgb(255 255 255 / 96%) 14%,
+			rgb(255 255 255 / 86%) 45%,
+			rgb(255 255 255 / 54%) 68%,
+			$color 100%
+		);
+
+	@content;
+}
+
+@mixin dark-edge-fade-overlay($color: var(--site-bg-color)) {
+	@include edge-fade-overlay($color) {
+		background:
+			linear-gradient(
+				180deg,
+				$color 0%,
+				rgb(34 34 34 / 72%) 18%,
+				rgb(34 34 34 / 42%) 50%,
+				rgb(34 34 34 / 72%) 82%,
+				$color 100%
+			),
+			linear-gradient(
+				90deg,
+				$color 0%,
+				rgb(34 34 34 / 84%) 18%,
+				rgb(34 34 34 / 38%) 50%,
+				rgb(34 34 34 / 84%) 82%,
+				$color 100%
+			);
+
+		@content;
+	}
+}
+
+@mixin image-card {
+	@extend %glass-dark;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	height: 100%;
+	overflow: hidden;
+	box-shadow: var(--base-box-shadow);
+	padding: 32px 24px;
+	border: none;
+	border-radius: var(--base-border-radius);
+	transition: background-size var(--image-scale-transition);
+	background-position: center;
+	background-size: 100%;
+	aspect-ratio: 1/1;
+}
+
+%image-card {
+	@include image-card;
+}
+
+%image-card-arrow {
+	position: absolute;
+	width: 16px;
+	height: auto;
+	bottom: 32px;
+	right: 24px;
+	fill: var(--white);
+	@extend %transform-transition;
+}

@@ -3,14 +3,10 @@
 
 .services-list {
 	container: services-list / inline-size;
-	display: flex;
-	flex-direction: column;
-	gap: clamp(48px, 5vw, 72px);
+	@extend %section-stack-large;
 
 	.container {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(48px, 5vw, 72px);
+		@extend %section-stack-large;
 	}
 
 	&__section {
@@ -40,28 +36,7 @@
 		overflow: hidden;
 
 		&::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			z-index: 1;
-			pointer-events: none;
-			background:
-				linear-gradient(
-					180deg,
-					var(--site-bg-color) 0%,
-					rgb(34 34 34 / 72%) 18%,
-					rgb(34 34 34 / 42%) 50%,
-					rgb(34 34 34 / 72%) 82%,
-					var(--site-bg-color) 100%
-				),
-				linear-gradient(
-					90deg,
-					var(--site-bg-color) 0%,
-					rgb(34 34 34 / 84%) 18%,
-					rgb(34 34 34 / 38%) 50%,
-					rgb(34 34 34 / 84%) 82%,
-					var(--site-bg-color) 100%
-				);
+			@include dark-edge-fade-overlay;
 		}
 
 		img {
@@ -107,23 +82,7 @@
 	}
 
 	&-card {
-		@extend %glass-dark;
-
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-		height: 100%;
-		overflow: hidden;
-		box-shadow: var(--base-box-shadow);
-		padding: 32px 24px;
-		border: none;
-		border-radius: var(--base-border-radius);
-		transition: background-size var(--image-scale-transition);
-
-		background-position: center;
-		background-size: 100%;
-		aspect-ratio: 1/1;
+		@include image-card;
 
 		&-container {
 			container: service-card / inline-size;
@@ -141,12 +100,8 @@
 
 			span {
 				z-index: 2;
-
 				width: 100%;
-				font-size: var(--base-subtitle);
-				color: var(--white);
-				text-wrap: balance;
-				text-transform: uppercase;
+				@include card-title;
 			}
 		}
 
@@ -162,19 +117,12 @@
 		}
 
 		svg {
-			position: absolute;
-			width: 16px;
-			height: auto;
-			bottom: 32px;
-			right: 24px;
-			fill: var(--white);
-			will-change: transform;
-			transition: transform var(--main-transition);
+			@extend %image-card-arrow;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				// opacity: 0.6;
+				
 				background-size: 105%;
 				svg {
 					transform: rotate(45deg);

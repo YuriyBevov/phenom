@@ -40,7 +40,7 @@
 		tbody {
 			tr {
 				&:nth-child(odd) {
-					background-color: var(--primary); //rgba(83, 44, 249, 0.2);
+					background-color: var(--primary); 
 				}
 				&:not(:last-child) {
 					border-bottom: 1px solid var(--white);

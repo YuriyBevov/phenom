@@ -1,7 +1,7 @@
 <?
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
 
-// 1. Получаем ID из GET
+
 $formId = $_GET['form_id'] ?? null;
 
 if (!$formId) {
@@ -12,10 +12,10 @@ if (!$formId) {
 
 $APPLICATION->IncludeComponent(
   "bitrix:form.result.new",
-  "callback-form",
+  "popup-form",
   array(
     "POPUP_VIEW" => "Y",
-    "AJAX_MODE" => "Y", // включаем AJAX-режим
+    "AJAX_MODE" => "Y",
     "AJAX_OPTION_JUMP" => "N",
     "AJAX_OPTION_STYLE" => "Y",
     "AJAX_OPTION_HISTORY" => "N",

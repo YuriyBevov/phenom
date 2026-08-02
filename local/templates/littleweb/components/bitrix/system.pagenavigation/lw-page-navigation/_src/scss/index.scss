@@ -1,4 +1,5 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .pagination {
 	display: flex;
@@ -22,10 +23,7 @@
 	}
 
 	&__btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: fit-content;
+		@extend %centered-control;
 		min-width: clamp(32px, 4vw, 46px);
 		height: clamp(32px, 4vw, 46px);
 		font-size: clamp(14px, 2.2vw, 18px);
@@ -51,12 +49,11 @@
 
 		&--prev {
 			transform: translateZ(0) rotate(-180deg);
-			backface-visibility: hidden;
-			will-change: transform;
+			@extend %transform-transition;
 		}
 
 		&--selected {
-			// color: var(--danger);
+			
 			pointer-events: none;
 			opacity: 0.6;
 		}

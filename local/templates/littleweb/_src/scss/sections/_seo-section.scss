@@ -1,4 +1,5 @@
 @use "@scss/base/container-queries" as *;
+@use "@scss/extends/index" as *;
 
 .seo-section {
 	position: relative;
@@ -27,38 +28,36 @@
 	}
 
 	&::before {
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		content: "";
-		pointer-events: none;
-		background:
-			linear-gradient(
-				180deg,
-				var(--site-bg-color) 0%,
-				rgb(255 255 255 / 0%) 18%,
-				rgb(255 255 255 / 0%) 82%,
-				var(--site-bg-color) 100%
-			),
-			linear-gradient(
-				90deg,
-				rgb(34 34 34 / 96%) 0%,
-				rgb(34 34 34 / 90%) 24%,
-				rgb(34 34 34 / 74%) 48%,
-				rgb(34 34 34 / 46%) 72%,
-				var(--site-bg-color) 100%
-			);
+		@include edge-fade-overlay {
+			z-index: -1;
+			background:
+				linear-gradient(
+					180deg,
+					var(--site-bg-color) 0%,
+					rgb(255 255 255 / 0%) 18%,
+					rgb(255 255 255 / 0%) 82%,
+					var(--site-bg-color) 100%
+				),
+				linear-gradient(
+					90deg,
+					rgb(34 34 34 / 96%) 0%,
+					rgb(34 34 34 / 90%) 24%,
+					rgb(34 34 34 / 74%) 48%,
+					rgb(34 34 34 / 46%) 72%,
+					var(--site-bg-color) 100%
+				);
+		}
 	}
 
 	&__content {
-		// display: flex;
-		// flex-direction: column;
+		
+		
 		font-size: 18px;
 
 		text-align: center;
 
 		strong {
-			// font-size: var(--base-subtitle);
+			
 			color: var(--white);
 			font-weight: 500;
 		}

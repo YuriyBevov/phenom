@@ -7,8 +7,7 @@ $this->setFrameMode(true);
 		<? foreach ($arResult["ITEMS"] as $arItem):
 			$icon = CFile::GetPath($arItem["PROPERTIES"]["ICON"]["VALUE"]);
 
-			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			registerIblockElementEditActions($this, $arItem);
 		?>
 			<a href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"] ?>" aria-label="<?= $arItem["NAME"] ?>" rel="noopener nofollow norefferer" target="_blank" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<img src="<?= $icon ?>" alt="<?= $arItem["NAME"] ?>" width="40" height="40">

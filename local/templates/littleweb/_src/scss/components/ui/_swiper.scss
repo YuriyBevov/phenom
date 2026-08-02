@@ -1,29 +1,28 @@
+@use "@scss/extends/index" as *;
+
 .swiper-navigation {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 6px;
 
-	// .swiper-button-lock {
-	// 	display: none;
-	// }
+	
+	
+	
 
 	.swiper-button-disabled {
 		opacity: 0.5;
 	}
 
 	.swiper-btn {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: fit-content;
+		@extend %centered-control;
 		padding: 12px;
 		height: 44px;
 		border: none;
 		background-color: rgba(248, 248, 248, 0.3);
 		aspect-ratio: 1/1;
 		border-radius: 50%;
-		// clip-path: var(--base-clip-path);
+		
 
 		svg {
 			width: 17px;
@@ -44,7 +43,7 @@
 
 .swiper-pagination {
 	&-bullet {
-		// border-radius: 0;
+		
 		margin: 0 2px !important;
 		background-color: var(--white);
 	}

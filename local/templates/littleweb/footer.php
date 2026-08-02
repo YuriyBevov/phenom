@@ -19,7 +19,7 @@
     "SEF_MODE" => "N",
     "SUCCESS_URL" => "",
     "USE_EXTENDED_ERRORS" => "Y",
-    "WEB_FORM_ID" => "3",
+    "WEB_FORM_ID" => "1",
     "COMPONENT_TEMPLATE" => "callback-form",
     "VARIABLE_ALIASES" => array(
       "WEB_FORM_ID" => "WEB_FORM_ID",

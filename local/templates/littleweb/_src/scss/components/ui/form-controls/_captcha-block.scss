@@ -1,10 +1,8 @@
-
 .captcha-block {
 	display: grid;
 	grid-template-columns: 120px auto;
 	align-items: center;
 	gap: 12px;
-
 
 	img {
 		display: flex;
@@ -13,9 +11,10 @@
 		object-fit: contain;
 		object-position: left;
 		background-color: var(--white);
-		border-radius: 12px;
+
+		border-radius: var(--base-border-radius);
 		padding: 4px;
-		max-height: 46px;
+		max-height: 45px;
 	}
 
 	input {

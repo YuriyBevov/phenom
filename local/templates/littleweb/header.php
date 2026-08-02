@@ -33,7 +33,7 @@
               <use xlink:href='<?= SITE_TEMPLATE_PATH ?>/_dist/sprite.svg#icon-pin'></use>
             </svg>
           </a>
-          <button class="main-btn header__callback-btn" data-form-id="1">
+          <button class="main-btn header__callback-btn" data-form-id="5">
             Написать нам
           </button>
         </div>
@@ -127,7 +127,7 @@
               );
               ?>
 
-              <button class="main-btn header__callback-btn" data-form-id="1">
+              <button class="main-btn callback-btn" data-form-id="5">
                 Написать нам
               </button>
             </div>
@@ -146,31 +146,31 @@
       </div>
 
       <? $APPLICATION->IncludeComponent(
-	"bitrix:search.title", 
-	"search-title", 
-	[
-		"CATEGORY_0" => [
-			0 => "iblock_site_content",
-		],
-		"CATEGORY_0_TITLE" => "Результаты поиска",
-		"CATEGORY_0_iblock_site_content" => [
-			0 => "11",
-			1 => "14",
-		],
-		"CHECK_DATES" => "N",
-		"CONTAINER_ID" => "title-search",
-		"INPUT_ID" => "title-search-input",
-		"NUM_CATEGORIES" => "1",
-		"ORDER" => "date",
-		"PAGE" => "#SITE_DIR#search/index.php",
-		"SHOW_INPUT" => "Y",
-		"SHOW_OTHERS" => "N",
-		"TOP_COUNT" => "5",
-		"USE_LANGUAGE_GUESS" => "Y",
-		"COMPONENT_TEMPLATE" => "search-title"
-	],
-	false
-); ?>
+        "bitrix:search.title",
+        "search-title",
+        [
+          "CATEGORY_0" => [
+            0 => "iblock_site_content",
+          ],
+          "CATEGORY_0_TITLE" => "Результаты поиска",
+          "CATEGORY_0_iblock_site_content" => [
+            0 => "11",
+            1 => "14",
+          ],
+          "CHECK_DATES" => "N",
+          "CONTAINER_ID" => "title-search",
+          "INPUT_ID" => "title-search-input",
+          "NUM_CATEGORIES" => "1",
+          "ORDER" => "date",
+          "PAGE" => "#SITE_DIR#search/index.php",
+          "SHOW_INPUT" => "Y",
+          "SHOW_OTHERS" => "N",
+          "TOP_COUNT" => "5",
+          "USE_LANGUAGE_GUESS" => "Y",
+          "COMPONENT_TEMPLATE" => "search-title"
+        ],
+        false
+      ); ?>
 
     </div>
   </header>

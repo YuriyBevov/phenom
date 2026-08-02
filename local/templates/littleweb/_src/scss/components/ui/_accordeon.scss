@@ -1,3 +1,5 @@
+@use "@scss/extends/index" as *;
+
 :root {
 	--accordeon-inner-padding: 32px;
 	--accordeon-border-radius: var(--base-border-radius);
@@ -90,10 +92,7 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		transform-origin: center;
-		backface-visibility: hidden;
-		will-change: transform;
-		transition: transform var(--main-transition);
+		@extend %transform-transition;
 
 		svg {
 			width: 14px;
@@ -108,13 +107,13 @@
 		opacity: 0;
 		padding: 0;
 		will-change: auto;
-		// transition:
-		// grid-template-rows var(--main-transition),
-		// opacity 0.1s var(--main-transition);
+		
+		
+		
 		& > .content {
 			margin: 0;
 			overflow: hidden;
-			// transition: padding var(--main-transition);
+			
 
 			& > * {
 				margin-top: 0;

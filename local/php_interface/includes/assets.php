@@ -3,12 +3,12 @@
 use Bitrix\Main\Page\Asset;
 
 if (!function_exists('includeComponentAssets')) {
-  /**
-   * Подключает CSS и JS файлы Vite компонентов
-   * 
-   * @param string|array $components
-   * @return bool
-   */
+  
+
+
+
+
+
   function includeComponentAssets($components)
   {
     global $vite;
@@ -45,11 +45,11 @@ if (!function_exists('includeComponentAssets')) {
 }
 
 if (!function_exists('includeGlobalAssets')) {
-  /**
-   * Подключает глобальные ассеты Vite
-   * 
-   * @return bool
-   */
+  
+
+
+
+
   function includeGlobalAssets()
   {
     global $vite;

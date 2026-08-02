@@ -45,7 +45,7 @@ while ($arSection = $rsSections->GetNext(false, false)) {
 			"S"
 		);
 		$arSection["SECTION_PAGE_URL"] = rawurldecode($arSection["SECTION_PAGE_URL"]);
-		$arSection["SECTION_PAGE_URL"] = preg_replace("#(?<!:)//+#", "/", $arSection["SECTION_PAGE_URL"]);
+		$arSection["SECTION_PAGE_URL"] = normalizeBitrixUrl($arSection["SECTION_PAGE_URL"]);
 	}
 
 	$arSection["ITEMS"] = [];
@@ -102,7 +102,7 @@ if (!empty($arSectionIds)) {
 				"S"
 			);
 			$arChildSection["SECTION_PAGE_URL"] = rawurldecode($arChildSection["SECTION_PAGE_URL"]);
-			$arChildSection["SECTION_PAGE_URL"] = preg_replace("#(?<!:)//+#", "/", $arChildSection["SECTION_PAGE_URL"]);
+			$arChildSection["SECTION_PAGE_URL"] = normalizeBitrixUrl($arChildSection["SECTION_PAGE_URL"]);
 		}
 
 		$arResult["SERVICE_SECTIONS"][$arChildSection["IBLOCK_SECTION_ID"]]["ITEMS"][] = [

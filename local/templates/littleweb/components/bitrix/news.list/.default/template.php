@@ -1,22 +1,22 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-/** @var array $arParams */
-/** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
-/** @var string $templateName */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
+
+
+
+
+
+
+
+
+
+
+
 $this->setFrameMode(true);
 
-// debug($arResult);
+
 ?>
 
 <?
-// передаю описание динамически. Вызывается в header.php
+
 $this->SetViewTarget("section-head"); ?>
 <? if (!empty($arResult["CURRENT_SECTION"]["NAME"])): ?>
 	<h1 class="page-head-title"><?= $arResult["CURRENT_SECTION"]["NAME"] ?></h1>

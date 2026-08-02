@@ -48,39 +48,47 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__row footer__row--top">
+
       <div class="footer__row-col">
         <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/logo.php");  ?>
         <small><?= date("Y") ?> © RlabGroup</small>
         <a href="/policy/" class="policy-link"><small>Политика конфиденциальности</small></a>
       </div>
+
       <div class="footer__row-col">
-        <span class="footer__row-col-title">Каталог</span>
-        <ul class="bottom-menu">
-          <li>
-            <a href="/">Раздел каталога</a>
-          </li>
-          <li>
-            <a href="/">Раздел каталога</a>
-          </li>
-          <li>
-            <a href="/">Раздел каталога</a>
-          </li>
-        </ul>
+        <div class="bottom-menu">
+          <span class="bottom-menu__title">Каталог</span>
+          <ul>
+            <li>
+              <a href="/">Раздел каталога</a>
+            </li>
+            <li>
+              <a href="/">Раздел каталога</a>
+            </li>
+            <li>
+              <a href="/">Раздел каталога</a>
+            </li>
+          </ul>
+        </div>
       </div>
+
       <div class="footer__row-col">
-        <span class="footer__row-col-title">Информация</span>
-        <ul class="bottom-menu">
-          <li>
-            <a href="/">О компании</a>
-          </li>
-          <li>
-            <a href="/">Статьи</a>
-          </li>
-          <li>
-            <a href="/">Контакты</a>
-          </li>
-        </ul>
+        <div class="bottom-menu">
+          <span class="bottom-menu__title">Информация</span>
+          <ul>
+            <li>
+              <a href="/">О компании</a>
+            </li>
+            <li>
+              <a href="/">Статьи</a>
+            </li>
+            <li>
+              <a href="/">Контакты</a>
+            </li>
+          </ul>
+        </div>
       </div>
+
       <div class="footer__row-col">
         <span class="footer__row-col-title">Контакты</span>
         <div class="footer__contacts-wrapper">
@@ -105,6 +113,7 @@
         </div>
         <? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/social.php"); ?>
       </div>
+
     </div>
     <div class="footer__row footer__row--bottom">
       <a href="mailto:yuriybevov@gmail.com" class="dev-link">

@@ -30,18 +30,7 @@ $reviewTextLimit = 100;
 							id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= intval($arItem["PREVIEW_PICTURE"]["WIDTH"]) ?>" height="<?= intval($arItem["PREVIEW_PICTURE"]["HEIGHT"]) ?>" alt="<?= htmlspecialcharsbx($arResult["NAME"]) ?>" loading="lazy">
 						</div>
-						<div class="swiper-slide"
-							href="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>"
-							data-fancybox="<?= $arResult["ID"] ?>"
-							id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= intval($arItem["PREVIEW_PICTURE"]["WIDTH"]) ?>" height="<?= intval($arItem["PREVIEW_PICTURE"]["HEIGHT"]) ?>" alt="<?= htmlspecialcharsbx($arResult["NAME"]) ?>" loading="lazy">
-						</div>
-						<div class="swiper-slide"
-							href="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>"
-							data-fancybox="<?= $arResult["ID"] ?>"
-							id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= intval($arItem["PREVIEW_PICTURE"]["WIDTH"]) ?>" height="<?= intval($arItem["PREVIEW_PICTURE"]["HEIGHT"]) ?>" alt="<?= htmlspecialcharsbx($arResult["NAME"]) ?>" loading="lazy">
-						</div>
+
 					<? endforeach; ?>
 				</div>
 			</div>

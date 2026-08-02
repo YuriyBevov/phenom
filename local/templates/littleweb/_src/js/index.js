@@ -10,3 +10,4 @@ import "./modules/search";
 import "./modules/table-wrapper";
 import "./modules/custom-select";
 import "./modules/portfolioListBatch";
+import "./modules/phone-mask";

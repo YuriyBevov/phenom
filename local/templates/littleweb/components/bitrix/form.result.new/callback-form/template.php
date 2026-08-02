@@ -73,18 +73,3 @@
 	</div>
 </section>
 
-
-<? if ($_REQUEST['AJAX_CALL'] == 'Y'): ?>
-	<script src="https://unpkg.com/imask"></script>
-	<script>
-		var fields = document.querySelectorAll('[data-type="tel"]', '[data-type="phone"]');
-		console.log(fields);
-		var options = {
-			mask: '+{7}(000) 000-00-00'
-		};
-
-		fields.forEach(field => {
-			IMask(field, options);
-		});
-	</script>
-<? endif; ?>

@@ -61,23 +61,15 @@
 				grid-template-columns: repeat(2, 1fr);
 			}
 
-			
-			
-			
-			
-			
-			
-			
-
 			img {
 				width: 100%;
-				
+
 				height: 100%;
 				border-radius: var(--base-border-radius);
 				box-shadow: var(--base-box-shadow);
 				object-fit: cover;
+				object-position: left;
 				order: 2;
-				
 
 				@include container-up("page-head", 1140px) {
 					order: revert;
